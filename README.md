@@ -6,6 +6,5 @@ feature list:
 
 
 # Screenshots
-**screenshot**
 
-![screenshot](https://github.com/tinoschroeter/dotfiles/blob/master/Battery_bash_Lenovo.png)
+![screenshot](https://github.com/tinoschroeter/dotfiles/raw/master/Battery_bash_Lenovo.png)
