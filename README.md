@@ -5,6 +5,6 @@ feature list:
 * date in bash promt
 
 
-# Screenshots
+# Screenshot
 
 ![screenshot](https://github.com/tinoschroeter/dotfiles/raw/master/Battery_bash_Lenovo.png)
