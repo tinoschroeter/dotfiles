@@ -12,25 +12,25 @@ if [ $PERCENT -gt "90" ] ; then
     bar="[########]"
     elif [ $PERCENT -gt "80" ] ; then
     color="tput setaf 2"
-    bar="[####### ]"
+    bar="[#######.]"
     elif [ $PERCENT -gt "70" ] ; then
     color="tput setaf 2"
-    bar="[######  ]"
+    bar="[######..]"
     elif [ $PERCENT -gt "60" ] ; then
     color="tput setaf 3"
-    bar="[#####   ]"
+    bar="[#####...]"
     elif [ $PERCENT -gt "50" ] ; then
     color="tput setaf 3"
-    bar="[####    ]"
+    bar="[####....]"
     elif [ $PERCENT -gt "40" ] ; then
     color="tput setaf 3"
-    bar="[###     ]"
+    bar="[###.....]"
     elif [ $PERCENT -gt "15" ] ; then
     color="tput setaf 3"
-    bar="[##      ]"
+    bar="[##......]"
     else
     color="tput setaf 1"
-    bar="[#       ]"
+    bar="[#.......]"
     fi
 $color    
 if grep -q on-line ${AC_DIR}/state; then
