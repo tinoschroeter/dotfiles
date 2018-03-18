@@ -62,7 +62,7 @@ export SCM_CHECK=true
 
 # Load Bash It
 source "\$BASH_IT"/bash_it.sh
-export PATH=/bin/lscript:/bin/lscript:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+export PATH=/bin/lscript:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 EOF
 if [[ $EUID -eq 0 ]]; then
 sed -i 's/\/home//' /root/.bashrc
