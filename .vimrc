@@ -1,5 +1,6 @@
 execute pathogen#infect() 
 set autoindent
+set bg=dark
 set paste
 set backspace=2
 set encoding=utf-8
