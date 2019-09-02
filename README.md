@@ -8,6 +8,7 @@
     * chefdir
     * workdir
     * dnsdir
+    * show
 
 ## vim
  

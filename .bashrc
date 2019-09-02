@@ -32,6 +32,27 @@ export IRC_CLIENT='irssi'
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
 
+show() {
+if [[ -z $1 ]];then
+  echo "usage: $? file.jpg"
+fi
+
+descriptor=$(echo $1|awk '{print $2}' FS='.'|tr "[A-Z]" "[a-z]")
+
+case $descriptor in                                                                                                                                              
+jpg|png|jpeg|gif)
+  eog $1
+  ;;  
+pdf)
+  evince $1
+  ;;  
+*)
+  echo "$descriptor nicht gefunden"
+  ;;  
+esac
+}
+alias show=show 
+
 # https://github.com/chubin/cheat.sh
 cheat() {
     curl "cheat.sh/$1/$2+$3+$4+$5+$6+$7+$8+$9"
@@ -41,6 +62,7 @@ alias cheat=cheat
 # https://github.com/dutchcoders/transfer.sh/
 transfer() {
     curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename $1) | tee /dev/null;
+    echo -e "\n\n"
 }
 alias transfer=transfer
 
