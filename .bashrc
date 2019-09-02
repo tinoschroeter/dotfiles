@@ -32,6 +32,12 @@ export IRC_CLIENT='irssi'
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
 
+# https://github.com/chubin/cheat.sh
+cheat() {
+    curl "cheat.sh/$1/$2+$3+$4+$5+$6+$7+$8+$9"
+}
+alias cheat=cheat 
+
 # https://github.com/dutchcoders/transfer.sh/
 transfer() {
     curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename $1) | tee /dev/null;
@@ -170,7 +176,7 @@ alias dnsdir='cd ~/work/dns/'
 # export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
 
 # auto competion
-#complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
+complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
 
 # Load Bash It
 source "$BASH_IT"/bash_it.sh

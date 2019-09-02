@@ -4,6 +4,7 @@
 
     * boilerplate p5    
     * transfer file.sh
+    * cheat.sh
     * chefdir
     * workdir
     * dnsdir
