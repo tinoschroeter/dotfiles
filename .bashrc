@@ -1,92 +1,178 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+#!/usr/bin/env bash
 
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+# Path to the bash it configuration
+# Lock and Load a custom theme file
+# location /.bash_it/themes/
+export BASH_IT_THEME='zork'
 
-# don't put duplicate lines in the history. See bash(1) for more options
-# ... or force ignoredups and ignorespace
-HISTCONTROL=ignoredups:ignorespace
+export GOPATH=$HOME/go
 
-# append to the history file, don't overwrite it
-shopt -s histappend
+#export HOSTALIASES=/etc/host.aliases
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTCONTROL=ignoreboth
-HISTIGNORE="cd:ls:[bf]g:clear:exit"
-HISTSIZE=512000
-HISTFILESIZE=1024000
-# Timestamps for history entries
-HISTTIMEFORMAT='%F %r '
+# (Advanced): Change this to the name of your remote repo if you
+# cloned bash-it with a remote other than origin such as .
+# export BASH_IT_REMOTE='bash-it'
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
+export BASH_IT="/home/$(whoami)/.bash_it"
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+export EDITOR="vim"
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
+# Your place for hosting Git repos. I use this for private repos.
+#export GIT_HOSTING='git@git.domain.com'
 
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
+# Don't check mail when opening terminal.
+unset MAILCHECK
+
+# Change this to your console based IRC client of choice.
+export IRC_CLIENT='irssi'
+
+# Set this to the command you use for todo.txt-cli
+#export TODO="t"
+
+# Set this to false to turn off version control status checking within the prompt for all themes
+export SCM_CHECK=true
+
+# https://github.com/dutchcoders/transfer.sh/
+transfer() {
+    curl --progress-bar --upload-file "$1" https://transfer.sh/$(basename $1) | tee /dev/null;
+}
+alias transfer=transfer
+
+boilerplate() {
+    html() {
+        cat << 'EOF' > index.html
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>wow</title>
+  <meta name="description" content="awesome new site">
+  <meta name="Tino Schroeter" content="SitePoint">
+  <link rel="stylesheet" href="assets/css/styles.css?v=1.0">
+</head>
+
+<body>
+  <script src="assets/js/scripts.js"></script>
+</body>
+</html>
+EOF
+
+mkdir -p assets/css assets/js 
+touch assets/css/styles.css assets/js/scripts.js 
+}
+
+p5() {
+    cat << 'EOF' > index.html
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p5js</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <script src="sketch.js"></script>
+  </body>
+</html>
+EOF
+
+cat << 'EOF' > sketch.js
+function preload() {
+}
+
+function setup() {
+    createCanvas(windowWidth, windowHeight);
+    //frameRate(30);
+}
+
+function draw() {
+    background(0);
+}
+
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+}
+EOF
+
+cat << 'EOF' > style.css
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+}
+EOF
+}
+
+arduino() {
+  cat << 'EOF' > sketch.io
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(1000);                       // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);                       // wait for a second
+}
+EOF
+}
+
+case "$1" in
+    "html")
+        html
+        ;;
+    "p5")
+        p5
+        ;;
+    "arduino")
+        arduino
+        ;;
+    *)
+        echo "$1 ? html / p5 / arduino"
+        ;;
 esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+}
+alias boilerplate=boilerplate
 
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
-fi
+# Set Xterm/screen/Tmux title with only a short hostname.
+# Uncomment this (or set SHORT_HOSTNAME to something else),
+# Will otherwise fall back on $HOSTNAME.
+#export SHORT_HOSTNAME=$(hostname -s)
 
-unset color_prompt force_color_prompt
+# Set Xterm/screen/Tmux title with only a short username.
+# Uncomment this (or set SHORT_USER to something else),
+# Will otherwise fall back on $USER.
+#export SHORT_USER=${USER:0:8}
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias pdf='evince'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
+# Set Xterm/screen/Tmux title with shortened command and directory.
+# Uncomment this to set.
+#export SHORT_TERM_LINE=true
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias df='/usr/bin/pydf'
-alias rspoty='rm -r /home/tino/.cache/spotify'
+# Set vcprompt executable path for scm advance info in prompt (demula theme)
+# https://github.com/djl/vcprompt
+#export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
 
-# my aliases
-alias licht='echo "licht"|nc 10.0.1.25 9090'
-alias tv='echo "tv"|nc 10.0.1.25 9090'
+alias chefdir='cd ~/work/chef/'
+alias workdir='cd ~/work/'
+alias dnsdir='cd ~/work/dns/' 
 
-case $TERM in 
-     xterm*)
-            who="HOME"
-            ;;
-     screen)
-            who="SCREEN"
-            ;;
-          *)
-            who="TERMINAL"
-esac
+# (Advanced): Uncomment this to make Bash-it reload itself automatically
+# after enabling or disabling aliases, plugins, and completions.
+# export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
 
-export PS1='`~/.battery.bash` [\d] \w\n\[\e[0;32m\][\[\e[1;37m\]($who)\[\e[0;32m\]]€\[\e[0m\] '
+# auto competion
+#complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# Load Bash It
+source "$BASH_IT"/bash_it.sh
+export PATH=/bin/lscript:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+export PATH=$HOME/.local/bin:$HOME/go/bin:$PATH
