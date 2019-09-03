@@ -32,24 +32,39 @@ export IRC_CLIENT='irssi'
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
 
+webserver_simple() {
+    if [ ! -z $1 ];then
+        python3 -m http.server --bind 0.0.0.0 $1
+    else
+        python3 -m http.server --bind 0.0.0.0 8000
+    fi  
+}
+
 show() {
-if [[ -z $1 ]];then
-  echo "usage: $? file.jpg"
-fi
+    if [[ -z $1 ]];then
+        echo "usage: $? file.jpg"
+    fi
 
-descriptor=$(echo $1|awk '{print $2}' FS='.'|tr "[A-Z]" "[a-z]")
+    descriptor=$(echo $1|awk '{print $2}' FS='.'|tr "[A-Z]" "[a-z]")
 
-case $descriptor in                                                                                                                                              
-jpg|png|jpeg|gif)
-  eog $1
-  ;;  
-pdf)
-  evince $1
-  ;;  
-*)
-  echo "$descriptor nicht gefunden"
-  ;;  
-esac
+    if [ -d $1 ];then
+        descriptor="folder"
+    fi 
+    case $descriptor in
+
+        jpg|png|jpeg|gif|webp)
+            eog $1 > /dev/null 2>&1
+            ;;  
+        pdf)
+            evince $1 > /dev/null 2>&1
+            ;;  
+        folder)
+            xdg-open $1 > /dev/null 2>&1
+            ;;
+        *)
+            echo ".$descriptor nicht gefunden"
+            ;;  
+    esac
 }
 alias show=show 
 
@@ -136,7 +151,7 @@ EOF
 }
 
 arduino() {
-  cat << 'EOF' > sketch.ino 
+    cat << 'EOF' > sketch.ino 
 // the setup function runs once when you press reset or power the board
 void setup() {
     // initialize digital pin LED_BUILTIN as an output.
