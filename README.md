@@ -1,5 +1,7 @@
 ![dotfile](dotfile.png)
 
+[![asciicast](https://asciinema.org/a/ARQeAeUGieyEveHr5cPncJeKm.svg)](https://asciinema.org/a/ARQeAeUGieyEveHr5cPncJeKm)
+
 ## alias
 
     * boilerplate p5 / Arduino / html    
