@@ -1,4 +1,5 @@
 execute pathogen#infect() 
+filetype plugin indent on
 set autoindent
 set bg=dark
 set paste
