@@ -3,8 +3,9 @@
 # Path to the bash it configuration
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
-export BASH_IT_THEME='zork'
+export BASH_IT_THEME='sexy'
 
+export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 
 #export HOSTALIASES=/etc/host.aliases
@@ -219,3 +220,4 @@ complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g 
 source "$BASH_IT"/bash_it.sh
 export PATH=/bin/lscript:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 export PATH=$HOME/.local/bin:$HOME/go/bin:$PATH
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
