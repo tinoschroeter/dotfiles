@@ -2,6 +2,14 @@
 
 [![asciicast](https://asciinema.org/a/ARQeAeUGieyEveHr5cPncJeKm.svg)](https://asciinema.org/a/ARQeAeUGieyEveHr5cPncJeKm)
 
+
+## zsh
+ apt install zsh
+
+ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" ## Oh My Zsh
+ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 ## alias
 
     * boilerplate p5 / Arduino / html    
