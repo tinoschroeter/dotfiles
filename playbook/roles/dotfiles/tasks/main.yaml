@@ -1,5 +1,10 @@
-- name: 
+- name: get .zshrc
   ansible.builtin.get_url:
-    url: https://get.docker.com
-    dest: /tmp/docker.sh
+    url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.zshrc
+    dest: ~/.zshrc
+
+- name: get .vimrc
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.vimrc
+    dest: ~/.vimrc
 

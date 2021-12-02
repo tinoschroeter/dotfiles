@@ -1,8 +1,8 @@
 - hosts: laptop
   roles:
-    - dotfiles
     - system
     - software
     - zsh
     - vim
+    - dotfiles
     - npm
