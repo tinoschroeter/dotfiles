@@ -1,0 +1,96 @@
+- name: download Docker Installer
+  ansible.builtin.get_url:
+    url: https://get.docker.com
+    dest: /tmp/docker.sh
+  become: yes
+
+- name: Run Docker install script
+  ansible.builtin.shell:
+    cmd: ls /etc/docker || cat /tmp/docker.sh | sh -s -- -y
+  become: yes
+
+- name: Reload Docker Service
+  ansible.builtin.service:
+    name: docker
+    state: reloaded
+  become: yes
+
+- name: Install utility packages
+  apt:
+    state: present
+    name:
+      - zsh
+      - net-tools
+      - tree
+      - jq
+      - htop
+      - dstat
+      - curl
+      - unattended-upgrades
+      - neofetch
+      - dnsutils
+      - git
+      - sysstat
+      - iotop
+      - python3-pip
+      - nfs-common
+      - libxrender1
+      - nextcloud-desktop
+      - google-chrome-stable
+      - mongodb-compass
+      - firefox
+      - firefox-locale-en
+      - firefox-locale-de
+  become: yes
+
+- name: Install AWS CLI
+  pip:
+    name: awscli
+
+- name: Install skaffold
+  ansible.builtin.get_url:
+    url: https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64
+    dest: /usr/local/bin/skaffold
+  become: yes
+
+- name: make skaffold executable
+  ansible.builtin.file:
+    path: /usr/local/bin/skaffold
+    owner: root
+    group: root
+    mode: '0755'
+  become: yes
+
+- name: Install kubectl
+  ansible.builtin.get_url:
+    url: https://dl.k8s.io/release/v1.22.0/bin/linux/amd64/kubectl
+    dest: /usr/local/bin/kubectl
+  become: yes
+
+- name: make kubectl executable
+  ansible.builtin.file:
+    path: /usr/local/bin/kubectl
+    owner: root
+    group: root
+    mode: '0755'
+  become: yes
+
+- name: "Add nodejs apt key"
+  apt_key:
+    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+    state: present
+  become: yes
+
+  #- name: "Add nodejs 16.x ppa for apt repo"
+  #  apt_repository:
+  #    repo: deb https://deb.nodesource.com/node_16.x bionic main
+  #    #update_cache: yes
+  #  become: yes
+  #
+  #- name: "Install nodejs"
+  #  apt:
+  #    #update_cache: yes
+  #    name: nodejs
+  #    state: present
+  #  become: yes
+  #

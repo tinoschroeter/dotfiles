@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if grep --quiet Ubuntu /etc/issue; then
+#  sudo apt-get update
+#  sudo apt-get install ansible python git -y
+
+ansible-playbook -i playbook/inventory playbook/site.yaml -c local
+else
+  echo "only works on Ubuntu"
+fi

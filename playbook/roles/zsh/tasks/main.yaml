@@ -1,0 +1,32 @@
+- name: Install zsh
+  apt:
+    state: present
+    name:
+      - zsh
+
+- name: Install Oh My Zsh
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    dest: /tmp/install_zsh.sh
+
+- name: Run zsh install script
+  ansible.builtin.shell:
+    cmd: ls /etc/docker || cat /tmp/install_zsh.sh | sh -s -- -y
+
+- name: zsh-syntax-highlighting
+  ansible.builtin.git:
+    repo: 'https://github.com/zsh-users/zsh-syntax-highlighting.git'
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    update: yes
+
+- name: zsh-autosuggestions
+  ansible.builtin.git:
+    repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    update: yes
+
+- name: zsh-kubectl-prompt
+  ansible.builtin.git:
+    repo: 'https://github.com/superbrothers/zsh-kubectl-prompt.git'
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-kubectl-prompt
+    update: yes
