@@ -1,6 +1,6 @@
 - hosts: laptop
   roles:
-    - system
+    #- system
     - software
     - zsh
     - vim
