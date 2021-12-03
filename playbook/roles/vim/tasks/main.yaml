@@ -15,7 +15,7 @@
     dest: ~/.vim/UltiSnips
     update: yes
 
-- name: add undo file # 
+- name: add undo file 
   ansible.builtin.file:
     path: ~/.vim/undo
 
@@ -25,44 +25,38 @@
     dest: ~/.vim/bundle/lightline.vim
     update: yes
 
-- name: lightline.vim
-  ansible.builtin.git:
-    repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
-    dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-    update: yes
-
 - name: mundo.vim
   ansible.builtin.git:
     repo: 'https://github.com/simnalamburt/vim-mundo.git'
-    dest: ~/.oh-my-zsh/custom/plugins/vim-mundo
+    dest: ~/.vim/bundle/vim-mundo
     update: yes
 
 - name: nerdtree
   ansible.builtin.git:
     repo: 'https://github.com/scrooloose/nerdtree.git'
-    dest: ~/.oh-my-zsh/custom/plugins/nerdtree
+    dest: ~/.vim/bundle/nerdtree
     update: yes
 
 - name: ultisnips
   ansible.builtin.git:
     repo: 'https://github.com/SirVer/ultisnips.git'
-    dest: ~/.oh-my-zsh/custom/plugins/ultisnips
+    dest: ~/.vim/bundle/ultisnips
     update: yes
 
 - name: vim-irblack
   ansible.builtin.git:
     repo: 'https://github.com/wgibbs/vim-irblack.git'
-    dest: ~/.oh-my-zsh/custom/plugins/vim-irblack
+    dest: ~/.vim/bundle/vim-irblack
     update: yes
 
 - name: vim-prettier
   ansible.builtin.git:
     repo: 'https://github.com/prettier/vim-prettier.git'
-    dest: ~/.oh-my-zsh/custom/plugins/vim-prettier
+    dest: ~/.vim/bundle/vim-prettier
     update: yes
 
 - name: vim-snippets
   ansible.builtin.git:
     repo: 'https://github.com/honza/vim-snippets.git'
-    dest: ~/.oh-my-zsh/custom/plugins/vim-snippets
+    dest: ~/.vim/bundle/vim-snippets
     update: yes
