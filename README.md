@@ -6,6 +6,40 @@
   && cd dotfiles \
   && ./setup
 ```
+## Ansible Tree
+```shell
+.
+├── ansible.cfg
+├── inventory
+├── roles
+│   ├── dotfiles
+│   │   └── tasks
+│   │       └── main.yaml
+│   ├── folder
+│   │   └── tasks
+│   │       └── main.yaml
+│   ├── npm
+│   │   └── tasks
+│   │       └── npm.yaml
+│   ├── software
+│   │   └── tasks
+│   │       └── main.yaml
+│   ├── system
+│   │   └── tasks
+│   │       └── main.yaml
+│   ├── vim
+│   │   └── tasks
+│   │       └── main.yaml
+│   ├── vm
+│   │   └── tasks
+│   │       └── main.yaml
+│   └── zsh
+│       └── tasks
+│           └── main.yaml
+└── site.yaml
+
+```
+
 ## vim
 * gg=G           # formating code
 * :set nu!       # hide line Number
