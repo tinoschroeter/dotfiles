@@ -1,0 +1,8 @@
+- name: create folter structure
+  ansible.builtin.file:
+    path: "{{ item }}" 
+    state: directory
+  loop:
+    - ~/work
+    - ~/privat
+    - ~/tools

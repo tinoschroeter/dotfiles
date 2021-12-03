@@ -1,8 +1,10 @@
 - hosts: laptop
   roles:
-    #- system
+    - folder
     - software
+    - system
     - zsh
     - vim
     - dotfiles
     - npm
+    - vm

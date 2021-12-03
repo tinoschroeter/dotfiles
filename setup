@@ -1,7 +1,24 @@
 #!/usr/bin/env bash
 
+cat << "EOF"
+      _       _      __ _ _           
+     | |     | |    / _(_) |          
+   __| | ___ | |_  | |_ _| | ___  ___ 
+  / _` |/ _ \| __| |  _| | |/ _ \/ __|
+ | (_| | (_) | |_ _| | | | |  __/\__ \
+  \__,_|\___/ \__(_)_| |_|_|\___||___/
+                                      
+EOF
+
+if [ $1 == "test" ]; then
+  ansible-playbook -i playbook/inventory playbook/site.yaml -c local
+  exit 0
+fi
+
 if grep --quiet Ubuntu /etc/issue; then
   sudo apt-get update
+  sudo apt install software-properties-common
+  sudo add-apt-repository --yes --update ppa:ansible/ansible
   sudo apt-get install ansible python git -y
   ansible-playbook -i playbook/inventory playbook/site.yaml -c local
 else

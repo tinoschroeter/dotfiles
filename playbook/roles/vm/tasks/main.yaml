@@ -1,0 +1,6 @@
+- name: Install VM stuff
+  apt:
+    state: present
+    name:
+      - virtualbox
+      - vagrant

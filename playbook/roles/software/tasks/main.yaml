@@ -2,7 +2,6 @@
   ansible.builtin.get_url:
     url: https://get.docker.com
     dest: /tmp/docker.sh
-  become: yes
 
 - name: Run Docker install script
   ansible.builtin.shell:
@@ -75,22 +74,12 @@
     mode: '0755'
   become: yes
 
-- name: "Add nodejs apt key"
-  apt_key:
-    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
-    state: present
-  become: yes
+- name: Install nvm (Node Version Manager)
+  ansible.builtin.shell:
+    cmd: ls ~/.nvm || curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
 
-  #- name: "Add nodejs 16.x ppa for apt repo"
-  #  apt_repository:
-  #    repo: deb https://deb.nodesource.com/node_16.x bionic main
-  #    #update_cache: yes
-  #  become: yes
-  #
-  #- name: "Install nodejs"
-  #  apt:
-  #    #update_cache: yes
-  #    name: nodejs
-  #    state: present
-  #  become: yes
-  #
+- name: Install Slack
+  snap:
+    name: slack
+    classic: yes
+  become: yes
