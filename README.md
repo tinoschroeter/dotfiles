@@ -45,68 +45,74 @@
 <details>
   <summary>folder</summary>
 
-  ### folder
-  * create folter structure
+  * Setup
+    * create folter structure
 
 </details>
 
 <details>
   <summary>software</summary>
-
-  ### software
-  * install docker
-  * Install utility packages
-  * Install aws cli
-  * Install skaffold
-  * Install kubectl
-  * Install nvm (Node Version Manager)
-  * Install Slack
+  
+  * Setup
+    * install docker
+    * Install utility packages
+    * Install aws cli
+    * Install skaffold
+    * Install kubectl
+    * Install nvm (Node Version Manager)
+    * Install Slack
 
 </details>
 
 <details>
   <summary>system</summary>
 
-  * Set timezone to Europe/Berlin
+  * Setup
+    * Set timezone to Europe/Berlin
 
 </details>
 
 <details>
   <summary>zsh</summary>
 
-  * Install zsh
-  * Install Oh My Zsh
-  * setup some plugins
+  * Setup
+    * Install zsh
+    * Install Oh My Zsh
+    * setup some plugins
 
 </details>
 
 <details>
   <summary>vim</summary>
 
-  * Install vim 
-  * Setup vim plugins
+  * Setup
+    * Install vim 
+    * Setup vim plugins
 
 </details>
 
 <details>
   <summary>dotfiles</summary>
 
-  * put .zshrc in place
-  * put .vimrc in place
+  * Setup
+    * put .zshrc in place
+    * put .vimrc in place
 
 </details>
 
 <details>
   <summary>npm</summary>
 
-  * install global npm packages
+  * Setup
+    * install global npm packages
 
 </details>
 
 <details>
   <summary>vm</summary>
 
-  * Install virtualbox
-  * Install vagrant
+  * Setup
+    * Install virtualbox
+    * Install vagrant
 
 </details>
