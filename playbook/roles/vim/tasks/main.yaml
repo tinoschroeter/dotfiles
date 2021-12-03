@@ -4,11 +4,16 @@
     name:
       - vim
 
-#- name: UltiSnips
-#  ansible.builtin.git:
-#    repo: 'https://github.com/tinoschroeter/template.git'
-#    dest: ~/.vim/UltiSnips
-#    update: yes
+- name: Create undo directory
+  ansible.builtin.file:
+    path: ~/.vim/undo
+    state: directory
+
+- name: UltiSnips
+  ansible.builtin.git:
+    repo: 'https://github.com/tinoschroeter/vim.UltiSnips.git'
+    dest: ~/.vim/UltiSnips
+    update: yes
 
 - name: add undo file # 
   ansible.builtin.file:

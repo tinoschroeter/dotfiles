@@ -12,7 +12,8 @@ EOF
 
 sleep 2
 
-if [ $1 == "test" ]; then
+if [ ! -z $1 ]; then
+  sudo ls && \
   ansible-playbook -i playbook/inventory playbook/site.yaml -c local
   exit 0
 fi

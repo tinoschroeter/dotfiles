@@ -9,9 +9,9 @@
     url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
     dest: /tmp/install_zsh.sh
 
-- name: Run zsh install script
+- name: Run Oh My Zsh install script
   ansible.builtin.shell:
-    cmd: ls /etc/docker || cat /tmp/install_zsh.sh | sh -s -- -y
+    cmd: ls ~/.oh-my-zsh || cat /tmp/install_zsh.sh | sh -s -- -y
 
 - name: zsh-syntax-highlighting
   ansible.builtin.git:
