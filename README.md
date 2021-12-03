@@ -40,7 +40,7 @@
 
 ```
 
-## roles
+## Roles
 
 <details>
   <summary>folder</summary>
@@ -67,7 +67,6 @@
 <details>
   <summary>system</summary>
 
-  ### system
   * Set timezone to Europe/Berlin
 
 </details>
@@ -75,7 +74,6 @@
 <details>
   <summary>zsh</summary>
 
-  ### zsh
   * Install zsh
   * Install Oh My Zsh
   * setup some plugins
@@ -85,7 +83,6 @@
 <details>
   <summary>vim</summary>
 
-  ### vim  have a look again
   * Install vim 
   * Setup vim plugins
 
@@ -94,7 +91,6 @@
 <details>
   <summary>dotfiles</summary>
 
-  ### dotfiles
   * put .zshrc in place
   * put .vimrc in place
 
@@ -103,7 +99,6 @@
 <details>
   <summary>npm</summary>
 
-  ### npm
   * install global npm packages
 
 </details>
@@ -111,9 +106,7 @@
 <details>
   <summary>vm</summary>
 
-  ### Virtual Machine
   * Install virtualbox
   * Install vagrant
 
 </details>
-
