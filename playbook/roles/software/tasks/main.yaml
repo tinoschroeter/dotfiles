@@ -18,26 +18,25 @@
   apt:
     state: present
     name:
-      - zsh
-      - net-tools
-      - tree
-      - jq
-      - htop
-      - dstat
-      - curl
-      - unattended-upgrades
-      - neofetch
-      - dnsutils
-      - git
-      - sysstat
-      - iotop
-      - python3-pip
-      - nfs-common
-      - libxrender1
-      - nextcloud-desktop
-      - google-chrome-stable
-      - mongodb-compass
-      - firefox
+      - zsh       # nice shell
+      - net-tools # collection of base networking utilities for Linux.
+      - nmap      # network scanner
+      - tree      # recursively list or display the content of a directory in a tree-like format.
+      - jq        # jq is a lightweight and flexible command-line JSON processor.
+      - htop      # interactively monitor the system’s vital resources.
+      - dstat     # versatile tool for generating system resource statistics
+      - curl      # curl is a tool to transfer data from or to a server, using one of the supported protocols.
+      - neofetch  #
+      - dnsutils  # is a flexible tool for interrogating DNS name servers. 
+      - git       # fast, scalable, distributed revision control system
+      - sysstat   #
+      - iotop     # iotop watches I/O usage information output by the Linux kernel  
+      - python3-pip   # package installer for Python.
+      - nfs-common    # nsf tools
+      - nextcloud-desktop    # Connect to your Nextcloud from Windows, macOS or Linux.
+      - google-chrome-stable # browser
+      - mongodb-compass      # The GUI for MongoDB.
+      - firefox              # browser
       - firefox-locale-en
       - firefox-locale-de
   become: yes
@@ -78,7 +77,7 @@
   ansible.builtin.shell:
     cmd: ls ~/.nvm || curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
 
-- name: Install Slack
+- name: Install Slack chat client
   snap:
     name: slack
     classic: yes

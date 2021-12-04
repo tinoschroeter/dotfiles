@@ -9,7 +9,7 @@
     path: ~/.vim/undo
     state: directory
 
-- name: UltiSnips
+- name: My UltiSnips
   ansible.builtin.git:
     repo: 'https://github.com/tinoschroeter/vim.UltiSnips.git'
     dest: ~/.vim/UltiSnips
@@ -19,43 +19,43 @@
   ansible.builtin.file:
     path: ~/.vim/undo
 
-- name: indentLine
+- name: addon indentLine.vim
   ansible.builtin.git:
     repo: 'https://github.com/itchyny/lightline.vim.git'
     dest: ~/.vim/bundle/lightline.vim
     update: yes
 
-- name: mundo.vim
+- name: addon mundo.vim
   ansible.builtin.git:
     repo: 'https://github.com/simnalamburt/vim-mundo.git'
     dest: ~/.vim/bundle/vim-mundo
     update: yes
 
-- name: nerdtree
+- name: addon nerdtree.vim
   ansible.builtin.git:
     repo: 'https://github.com/scrooloose/nerdtree.git'
     dest: ~/.vim/bundle/nerdtree
     update: yes
 
-- name: ultisnips
+- name: addon ultisnips.vim
   ansible.builtin.git:
     repo: 'https://github.com/SirVer/ultisnips.git'
     dest: ~/.vim/bundle/ultisnips
     update: yes
 
-- name: vim-irblack
+- name: addon vim-irblack.vim
   ansible.builtin.git:
     repo: 'https://github.com/wgibbs/vim-irblack.git'
     dest: ~/.vim/bundle/vim-irblack
     update: yes
 
-- name: vim-prettier
+- name: addon vim-prettier.vim
   ansible.builtin.git:
     repo: 'https://github.com/prettier/vim-prettier.git'
     dest: ~/.vim/bundle/vim-prettier
     update: yes
 
-- name: vim-snippets
+- name: addon vim-snippets.vim
   ansible.builtin.git:
     repo: 'https://github.com/honza/vim-snippets.git'
     dest: ~/.vim/bundle/vim-snippets

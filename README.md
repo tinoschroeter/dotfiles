@@ -45,7 +45,7 @@
 <details>
   <summary>folder</summary>
 
-  * Setup
+  * Setup [roles/folder/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/folder/tasks/main.yaml)
     * create folter structure
 
 </details>
@@ -53,7 +53,7 @@
 <details>
   <summary>software</summary>
   
-  * Setup
+  * Setup [roles/software/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/software/tasks/main.yaml)
     * install docker
     * Install utility packages
     * Install aws cli
@@ -67,7 +67,7 @@
 <details>
   <summary>system</summary>
 
-  * Setup
+  * Setup [roles/system/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/system/tasks/main.yaml)
     * Set timezone to Europe/Berlin
 
 </details>
@@ -75,7 +75,7 @@
 <details>
   <summary>zsh</summary>
 
-  * Setup
+  * Setup [roles/zsh/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/zsh/tasks/main.yaml)
     * Install zsh
     * Install Oh My Zsh
     * setup some plugins
@@ -85,7 +85,7 @@
 <details>
   <summary>vim</summary>
 
-  * Setup
+  * Setup [roles/vim/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/vim/tasks/main.yaml)
     * Install vim 
     * Setup vim plugins
 
@@ -94,7 +94,7 @@
 <details>
   <summary>dotfiles</summary>
 
-  * Setup
+  * Setup [roles/dotfiles/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/dotfiles/tasks/main.yaml)
     * put .zshrc in place
     * put .vimrc in place
 
@@ -103,7 +103,7 @@
 <details>
   <summary>npm</summary>
 
-  * Setup
+  * Setup [roles/npm/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/npm/tasks/main.yaml)
     * install global npm packages
 
 </details>
@@ -111,7 +111,7 @@
 <details>
   <summary>vm</summary>
 
-  * Setup
+  * Setup [roles/vm/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/vm/tasks/main.yaml)
     * Install virtualbox
     * Install vagrant
 
