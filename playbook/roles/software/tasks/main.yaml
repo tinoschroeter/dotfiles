@@ -89,6 +89,17 @@
     mode: '0755'
   become: yes
 
+- name: download velero
+  ansible.builtin.get_url:
+    url: https://github.com/vmware-tanzu/velero/releases/download/v1.7.1/velero-v1.7.1-linux-amd64.tar.gz
+    dest: /tmp/velero-v1.7.1-linux-amd64.tar.gz
+
+- name: Extract /tmp/velero-v1.7.1-linux-amd64.tar.gz
+  ansible.builtin.unarchive:
+    src: /tmp/velero-v1.7.1-linux-amd64.tar.gz
+    dest: /usr/local/bin/
+  become: yes
+
 - name: Install nvm (Node Version Manager)
   ansible.builtin.shell:
     cmd: ls ~/.nvm || curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 

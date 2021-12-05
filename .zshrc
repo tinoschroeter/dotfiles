@@ -126,9 +126,6 @@ source $ZSH/oh-my-zsh.sh
 # https://blog.confirm.ch/zsh-tips-changing-directories/
 setopt auto_cd
 
-# https://github.com/rupa/z
-. ~/.zsh/z.sh
-
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
