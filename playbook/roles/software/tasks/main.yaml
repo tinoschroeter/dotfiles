@@ -89,6 +89,10 @@
     mode: '0755'
   become: yes
 
+- name: Install helm 3
+  ansible.builtin.shell:
+    cmd: curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash 
+
 - name: download velero
   ansible.builtin.get_url:
     url: https://github.com/vmware-tanzu/velero/releases/download/v1.7.1/velero-v1.7.1-linux-amd64.tar.gz
@@ -103,7 +107,7 @@
   ansible.builtin.copy:
     src: /tmp/velero-v1.7.1-linux-amd64/velero
     dest: /usr/local/bin/velero
-    mode: '0644'
+    mode: '0555'
   become: yes
 
 - name: Install nvm (Node Version Manager)
@@ -124,3 +128,8 @@
     name: slack
     classic: yes
   become: yes
+
+- name: Copy terminator config
+  ansible.builtin.copy:
+    src: .config/terminator/config
+    dest: ~/.config/terminator/config
