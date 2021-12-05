@@ -97,8 +97,13 @@
 - name: Extract /tmp/velero-v1.7.1-linux-amd64.tar.gz
   ansible.builtin.unarchive:
     src: /tmp/velero-v1.7.1-linux-amd64.tar.gz
-    dest: /usr/local/bin/
+    dest: /tmp/velero
   become: yes
+
+- name: Copy velero binary
+  ansible.builtin.copy:
+    src: /tmp/velero/velero
+    dest: /usr/local/bin/velero
 
 - name: Install nvm (Node Version Manager)
   ansible.builtin.shell:
