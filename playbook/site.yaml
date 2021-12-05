@@ -6,5 +6,5 @@
     - zsh
     - vim
     - dotfiles
-    - npm
+      #    - npm
     - vm
