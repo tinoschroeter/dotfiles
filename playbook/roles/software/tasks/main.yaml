@@ -96,6 +96,7 @@
 - name: Setup nvm env
   ansible.builtin.shell:
     cmd: $HOME/.nvm/nvm.sh  # This loads nvm 
+  become: yes
 
 - name: Install Node 16
   ansible.builtin.shell:
