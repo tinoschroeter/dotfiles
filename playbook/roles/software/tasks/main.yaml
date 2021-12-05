@@ -37,7 +37,6 @@
       - nfs-common        # nsf tools
       - snapd             #   
       - nextcloud-desktop    # Connect to your Nextcloud from Windows, macOS or Linux.
-      - google-chrome-stable # browser
       - firefox              # browser
       - firefox-locale-en
       - firefox-locale-de
@@ -46,6 +45,20 @@
 - name: Install AWS CLI
   pip:
     name: awscli
+
+- name: add google ppa
+  ansible.builtin.shell:
+    cmd: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+
+- name: add google source list
+  ansible.builtin.shell:
+    cmd: sudo sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+
+- name: Install google-chrome-stable
+  apt:
+    state: present
+    update_cache: yes
+    name: google-chrome-stable
 
 - name: Install skaffold
   ansible.builtin.get_url:
