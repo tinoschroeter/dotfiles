@@ -12,7 +12,7 @@ export OPENFAAS_URL="https://openfaas.tino.sh"
 export DOCKER_HOST=tcp://10.0.1.60:2375
 
 # Path to your oh-my-zsh installation.
-export ZSH="~/.oh-my-zsh"
+export ZSH="/home/tino/.oh-my-zsh"
 
 # Krew is the plugin manager for kubectl command-line tool.
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
@@ -193,5 +193,5 @@ fi
 RPROMPT='%{$bg[$([[ "$(kubectl config current-context)" =~ "PRODUCTION" ]] && \
 echo red || echo green)]$fg[white]%}[$ZSH_KUBECTL_PROMPT]%{$reset_color%}'
 
-export NVM_DIR="~/.nvm"
+export NVM_DIR="/home/tino/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
