@@ -13,19 +13,19 @@
   ansible.builtin.shell:
     cmd: ls ~/.oh-my-zsh || cat /tmp/install_zsh.sh | sh -s -- -y
 
-- name: zsh-syntax-highlighting
+- name: zsh-syntax-highlighting (Fish shell-like syntax highlighting for Zsh.)
   ansible.builtin.git:
     repo: 'https://github.com/zsh-users/zsh-syntax-highlighting.git'
     dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
     update: yes
 
-- name: zsh-autosuggestions
+- name: zsh-autosuggestions (Fish-like fast/unobtrusive autosuggestions for zsh.)
   ansible.builtin.git:
     repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
     dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
     update: yes
 
-- name: zsh-kubectl-prompt
+- name: zsh-kubectl-prompt (displays information about the kubectl current context and namespace in zsh prompt.)
   ansible.builtin.git:
     repo: 'https://github.com/superbrothers/zsh-kubectl-prompt.git'
     dest: ~/.oh-my-zsh/custom/plugins/zsh-kubectl-prompt

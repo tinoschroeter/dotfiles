@@ -3,4 +3,4 @@
     global: yes
     name: "{{ item }}"
   with_items:
-    - snyk
+    - snyk  # Find and automatically fix vulnerabilities in your code.
