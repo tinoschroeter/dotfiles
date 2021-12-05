@@ -35,6 +35,7 @@
       - python3-pip       # package installer for Python.
       - python-setuptools # 
       - nfs-common        # nsf tools
+      - snapd             #   
       - nextcloud-desktop    # Connect to your Nextcloud from Windows, macOS or Linux.
       - google-chrome-stable # browser
       - firefox              # browser
