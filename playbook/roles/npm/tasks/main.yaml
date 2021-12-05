@@ -4,3 +4,4 @@
     name: "{{ item }}"
   with_items:
     - snyk  # Find and automatically fix vulnerabilities in your code.
+  become: yes
