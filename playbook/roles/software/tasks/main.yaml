@@ -103,6 +103,7 @@
   ansible.builtin.copy:
     src: /tmp/velero-v1.7.1-linux-amd64/velero
     dest: /usr/local/bin/velero
+    mode: '0644'
   become: yes
 
 - name: Install nvm (Node Version Manager)
