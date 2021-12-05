@@ -98,9 +98,9 @@
     cmd: /home/tino/.nvm/nvm.sh  # This loads nvm 
   become: yes
 
-- name: Install Node 16
-  ansible.builtin.shell:
-    cmd: nvm install 16
+  #- name: Install Node 16
+  #  ansible.builtin.shell:
+  #    cmd: nvm install 16
 
 - name: Install Slack chat client
   snap:
