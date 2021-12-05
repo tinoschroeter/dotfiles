@@ -32,8 +32,9 @@
       - git        # fast, scalable, distributed revision control system
       - sysstat    #
       - iotop      # iotop watches I/O usage information output by the Linux kernel  
-      - python3-pip   # package installer for Python.
-      - nfs-common    # nsf tools
+      - python3-pip       # package installer for Python.
+      - python-setuptools # 
+      - nfs-common        # nsf tools
       - nextcloud-desktop    # Connect to your Nextcloud from Windows, macOS or Linux.
       - google-chrome-stable # browser
       - firefox              # browser
