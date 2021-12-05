@@ -95,7 +95,7 @@
 
 - name: Setup nvm env
   ansible.builtin.shell:
-    cmd: export NVM_DIR="~/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm 
+    cmd: export NVM_DIR="~/.nvm" && $NVM_DIR/nvm.sh  # This loads nvm 
 
 - name: Install Node 16
   ansible.builtin.shell:
