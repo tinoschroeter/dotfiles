@@ -93,6 +93,14 @@
   ansible.builtin.shell:
     cmd: ls ~/.nvm || curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
 
+- name: Setup nvm env
+  ansible.builtin.shell:
+    cmd: export NVM_DIR="~/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm 
+
+- name: Install Node 16
+  ansible.builtin.shell:
+    cmd: nvm install 16
+
 - name: Install Slack chat client
   snap:
     name: slack
