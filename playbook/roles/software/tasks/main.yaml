@@ -59,6 +59,7 @@
     state: present
     update_cache: yes
     name: google-chrome-stable
+  become: yes
 
 - name: Install skaffold
   ansible.builtin.get_url:
