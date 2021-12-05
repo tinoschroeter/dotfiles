@@ -3,6 +3,7 @@
     state: present
     name:
       - vim
+  become: yes
 
 - name: addon indentLine.vim (A light and configurable statusline/tabline plugin for Vim)
   ansible.builtin.git:
