@@ -14,7 +14,7 @@ set shiftwidth=4
 set smartindent
 set tabstop=4
 set expandtab
-set nowrap
+"set nowrap
 "set spell
 "set spelllang=de_de
 "set spelllang=en_US
@@ -22,6 +22,8 @@ set sw=2
 set ai
 %retab
 
+
+map <F10> :w!<CR>:!aspell -c %<CR>:e! %<CR>  " spell check aspell
 set clipboard=unnamedplus           " interact with linux clipboard
 set cul
 map <C-n> :NERDTreeToggle<CR>       " toggle NERDTree
