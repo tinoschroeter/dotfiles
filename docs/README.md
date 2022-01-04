@@ -1,10 +1,9 @@
 # ![dotfile](dotfile.png)
 
+## Install Notebook ":computer:"
 [![Ansible](https://img.shields.io/badge/Ansible-blue.svg)](https://github.com/ansible/ansible)
 [![GitHub Super-Linter](https://github.com/tinoschroeter/dotfiles/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/tinoschroeter/dotfiles/actions/workflows/linter.yml)
 ![last-commit](https://img.shields.io/github/last-commit/tinoschroeter/dotfiles.svg?style=flat)
-
-## Install Notebook ":computer:"
 
 ```shell
   git clone https://github.com/tinoschroeter/dotfiles.git \
