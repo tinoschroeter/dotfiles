@@ -20,6 +20,7 @@
     name:
       - terminator # terminal
       - zsh        # nice shell
+      - gnupg      # GNU Privacy Guard
       - net-tools  # collection of base networking utilities for Linux.
       - nmap       # network scanner
       - tree       # recursively list or display the content of a directory in a tree-like format.
@@ -40,6 +41,9 @@
       - firefox              # browser
       - firefox-locale-en
       - firefox-locale-de
+      - aspell            # interactive spell checker  
+      - aspell-de 
+      - aspell-en
   become: yes
 
 - name: Install AWS CLI
@@ -52,13 +56,13 @@
 
 - name: add google source list
   ansible.builtin.shell:
-    cmd: sudo sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+    cmd: sudo sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/google.list'
 
 - name: Install google-chrome-stable
   apt:
     state: present
-    update_cache: yes
     name: google-chrome-stable
+    update_cache: yes
   become: yes
 
 - name: Install skaffold
@@ -88,6 +92,17 @@
     group: root
     mode: '0755'
   become: yes
+
+- name: Add the HashiCorp GPG key
+  ansible.builtin.shell:
+    cmd: 
+      - curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+      - sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+
+- name: install the Terraform CLI.
+  apt:
+    name: terraform
+    update_cache: yes
 
 - name: Install helm 3
   ansible.builtin.shell:
