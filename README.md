@@ -4,7 +4,7 @@
 [![GitHub Super-Linter](https://github.com/tinoschroeter/dotfiles/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/tinoschroeter/dotfiles/actions/workflows/linter.yml)
 ![last-commit](https://img.shields.io/github/last-commit/tinoschroeter/dotfiles.svg?style=flat)
 
-## Install Nodebook :computer:
+# Install Nodebook :computer:
 ```shell
   git clone https://github.com/tinoschroeter/dotfiles.git \
   && cd dotfiles \
@@ -63,7 +63,7 @@
     * Install aws cli
     * Install skaffold
     * Install kubectl
-    * Install nvm (Node Version Manager)
+    * Install nvm (Node.js Version Manager)
     * Install Slack
 
 </details>
