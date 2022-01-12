@@ -12,6 +12,8 @@
   git clone https://github.com/tinoschroeter/dotfiles.git \
   && cd dotfiles \
   && ./setup
+
+  gpg password.txt.gpg
 ```
 
 ## Ansible Tree
