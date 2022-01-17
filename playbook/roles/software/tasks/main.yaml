@@ -44,6 +44,7 @@
       - aspell            # interactive spell checker  
       - aspell-de 
       - aspell-en
+      - lolcat            # color output
   become: yes
 
 - name: Install AWS CLI
@@ -148,3 +149,17 @@
   ansible.builtin.copy:
     src: .config/terminator/config
     dest: ~/.config/terminator/config
+
+- name: install update_all_repo
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/tinoschroeter/update_all_repo.sh/master/update_all_repo
+    dest: /usr/local/bin/update_all_repo
+  become: yes
+
+- name: make update_all_repo executable
+  ansible.builtin.file:
+    path: /usr/local/bin/update_all_repo
+    owner: root
+    group: root
+    mode: '0755'
+  become: yes
