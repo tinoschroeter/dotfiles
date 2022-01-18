@@ -159,8 +159,3 @@
     name: slack
     classic: yes
   become: yes
-
-#- name: Copy terminator config
-#  ansible.builtin.copy:
-#    src: .config/terminator/config
-#    dest: ~/.config/terminator/config

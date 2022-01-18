@@ -8,3 +8,7 @@
     url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.vimrc
     dest: ~/.vimrc
 
+- name: Copy terminator config
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.config/terminator/config 
+    dest: ~/.config/terminator/config
