@@ -44,7 +44,7 @@
       - aspell            # interactive spell checker  
       - aspell-de 
       - aspell-en
-      - lolcat            # color output
+      - lolcat           # color output
   become: yes
 
 - name: Install AWS CLI
@@ -80,6 +80,20 @@
     mode: '0755'
   become: yes
 
+- name: Install Minikube
+  ansible.builtin.get_url:
+    url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    dest: /usr/local/bin/minikube
+  become: yes
+
+- name: make Minikube executable
+  ansible.builtin.file:
+    path: /usr/local/bin/minikube
+    owner: root
+    group: root
+    mode: '0755'
+  become: yes
+
 - name: Install kubectl
   ansible.builtin.get_url:
     url: https://dl.k8s.io/release/v1.22.0/bin/linux/amd64/kubectl
@@ -94,16 +108,17 @@
     mode: '0755'
   become: yes
 
-- name: Add the HashiCorp GPG key
-  ansible.builtin.shell:
-    cmd: 
-      - curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-      - sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+#- name: Add the HashiCorp GPG key
+#  ansible.builtin.shell:
+#    cmd: 
+#      - curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+#      - sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 
 - name: install the Terraform CLI.
   apt:
     name: terraform
     update_cache: yes
+  become: yes
 
 - name: Install helm 3
   ansible.builtin.shell:
@@ -130,14 +145,14 @@
   ansible.builtin.shell:
     cmd: ls ~/.nvm || curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
 
-- name: Setup nvm env
-  ansible.builtin.shell:
-    cmd: /home/tino/.nvm/nvm.sh  # This loads nvm 
-  become: yes
+#- name: Setup nvm env
+#  ansible.builtin.shell:
+#    cmd: /home/tino/.nvm/nvm.sh  # This loads nvm 
+#  become: yes
 
-  #- name: Install Node 16
-  #  ansible.builtin.shell:
-  #    cmd: nvm install 16
+#- name: Install Node 16
+#  ansible.builtin.shell:
+#    cmd: nvm install 16
 
 - name: Install Slack chat client
   snap:
@@ -145,21 +160,7 @@
     classic: yes
   become: yes
 
-- name: Copy terminator config
-  ansible.builtin.copy:
-    src: .config/terminator/config
-    dest: ~/.config/terminator/config
-
-- name: install update_all_repo
-  ansible.builtin.get_url:
-    url: https://raw.githubusercontent.com/tinoschroeter/update_all_repo.sh/master/update_all_repo
-    dest: /usr/local/bin/update_all_repo
-  become: yes
-
-- name: make update_all_repo executable
-  ansible.builtin.file:
-    path: /usr/local/bin/update_all_repo
-    owner: root
-    group: root
-    mode: '0755'
-  become: yes
+#- name: Copy terminator config
+#  ansible.builtin.copy:
+#    src: .config/terminator/config
+#    dest: ~/.config/terminator/config
