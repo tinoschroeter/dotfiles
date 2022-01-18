@@ -33,6 +33,8 @@
       - git        # fast, scalable, distributed revision control system
       - sysstat    #
       - iotop      # iotop watches I/O usage information output by the Linux kernel  
+      - nodejs     # V8 javascript runtime 
+      - npm        # package manager for Node.js
       - python3-pip       # package installer for Python.
       - python-setuptools # 
       - nfs-common        # nsf tools
