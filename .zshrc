@@ -140,6 +140,7 @@ alias k="kubectl"
 alias ks="kubens"
 alias ska="skaffold"
 alias kv="kubeval"
+alias m="minikube"
 
 # Velero Backup
 alias v=velero
