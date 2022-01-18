@@ -44,7 +44,7 @@
       - aspell            # interactive spell checker  
       - aspell-de 
       - aspell-en
-      - lolcat           # color output
+      - lolcat            # color output
   become: yes
 
 - name: Install AWS CLI
@@ -75,6 +75,20 @@
 - name: make skaffold executable
   ansible.builtin.file:
     path: /usr/local/bin/skaffold
+    owner: root
+    group: root
+    mode: '0755'
+  become: yes
+
+- name: Install kubens
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens
+    dest: /usr/local/bin/kubens
+  become: yes
+
+- name: make kubens executable
+  ansible.builtin.file:
+    path: /usr/local/bin/kubens
     owner: root
     group: root
     mode: '0755'
