@@ -84,6 +84,7 @@
 
 * Setup [roles/system/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/system/tasks/main.yaml)
   * Set timezone to Europe/Berlin
+  * Set login shell to zsh
 
 </details>
 
@@ -92,8 +93,8 @@
 
 * Setup [roles/zsh/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/zsh/tasks/main.yaml)
   * Install zsh
-    * Install Oh My Zsh
-    * setup some plugins
+  * Install Oh My Zsh
+  * setup some plugins
 
 </details>
 
@@ -102,7 +103,7 @@
 
 * Setup [roles/vim/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/vim/tasks/main.yaml)
   * Install vim
-    * Setup vim plugins
+  * Setup vim plugins
 
 </details>
 
@@ -111,7 +112,7 @@
 
 * Setup [roles/dotfiles/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/dotfiles/tasks/main.yaml)
   * put .zshrc in place
-    * put .vimrc in place
+  * put .vimrc in place
 
 </details>
 
@@ -128,6 +129,6 @@
 
 * Setup [roles/vm/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/vm/tasks/main.yaml)
   * Install virtualbox
-    * Install vagrant
+  * Install vagrant
 
 </details>
