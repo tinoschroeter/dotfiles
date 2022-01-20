@@ -1,6 +1,5 @@
 # ![dotfile](dotfile.png)
 
-[work in progress]
 
 > **Install Notebook** ":computer:"
 
@@ -14,6 +13,7 @@
   && ./setup
 
   gpg password.txt.gpg
+  nvm install 16 # install nodejs 16
 ```
 
 ## Ansible Tree
