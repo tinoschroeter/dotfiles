@@ -13,6 +13,7 @@
   && ./setup
 
   gpg password.txt.gpg
+  source ~/.zshrc
   nvm install 16 # install nodejs 16
   ~./secrets # stored in bitwarden
 ```
