@@ -18,30 +18,29 @@
   apt:
     state: present
     name:
-      - terminator # terminal
-      - zsh        # nice shell
-      - gnupg      # GNU Privacy Guard
-      - net-tools  # collection of base networking utilities for Linux.
-      - nmap       # network scanner
-      - tree       # recursively list or display the content of a directory in a tree-like format.
-      - jq         # jq is a lightweight and flexible command-line JSON processor.
-      - htop       # interactively monitor the system’s vital resources.
-      - dstat      # versatile tool for generating system resource statistics
-      - curl       # curl is a tool to transfer data from or to a server, using one of the supported protocols.
-      - neofetch   #
-      - dnsutils   # is a flexible tool for interrogating DNS name servers. 
-      - git        # fast, scalable, distributed revision control system
-      - sysstat    #
-      - iotop      # iotop watches I/O usage information output by the Linux kernel  
-      - nodejs     # V8 javascript runtime 
-      - npm        # package manager for Node.js
+      - terminator        # terminal
+      - zsh               # nice shell
+      - gnupg             # GNU Privacy Guard
+      - net-tools         # collection of base networking utilities for Linux.
+      - nmap              # network scanner
+      - tree              # recursively list or display the content of a directory in a tree-like format.
+      - jq                # jq is a lightweight and flexible command-line JSON processor.
+      - htop              # interactively monitor the system’s vital resources.
+      - dstat             # versatile tool for generating system resource statistics
+      - curl              # curl is a tool to transfer data from or to a server, using one of the supported protocols.
+      - neofetch          # Shows Linux System Information with Distribution Logo
+      - dnsutils          # is a flexible tool for interrogating DNS name servers. 
+      - git               # fast, scalable, distributed revision control system
+      - sysstat           # system performance tools for Linux
+      - iotop             # iotop watches I/O usage information output by the Linux kernel  
+      - nodejs            # V8 javascript runtime 
       - python3-pip       # package installer for Python.
       - python-setuptools # 
       - shellcheck        # lint tool for shell scripts
       - nfs-common        # nsf tools
       - snapd             #   
-      - nextcloud-desktop    # Connect to your Nextcloud from Windows, macOS or Linux.
-      - firefox              # browser
+      - nextcloud-desktop # Connect to your Nextcloud from Windows, macOS or Linux.
+      - firefox           # browser
       - firefox-locale-en
       - firefox-locale-de
       - aspell            # interactive spell checker  
