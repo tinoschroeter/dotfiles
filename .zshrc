@@ -17,6 +17,8 @@ export ZSH="/home/tino/.oh-my-zsh"
 # Krew is the plugin manager for kubectl command-line tool.
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
+# secrets
+source ~/.secrets
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

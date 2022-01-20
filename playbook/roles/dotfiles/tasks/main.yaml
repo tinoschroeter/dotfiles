@@ -12,3 +12,9 @@
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.config/terminator/config 
     dest: ~/.config/terminator/config
+
+- name: create .secrets file
+  ansible.builtin.file:
+    path: ~/.secrets
+    state: touch
+    mode: 400

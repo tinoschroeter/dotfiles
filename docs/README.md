@@ -14,7 +14,10 @@
 
   gpg password.txt.gpg
   nvm install 16 # install nodejs 16
+  ~./secrets # stored in bitwarden
 ```
+
+
 
 ## Ansible Tree
 
