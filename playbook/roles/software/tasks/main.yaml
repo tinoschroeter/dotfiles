@@ -37,6 +37,7 @@
       - npm        # package manager for Node.js
       - python3-pip       # package installer for Python.
       - python-setuptools # 
+      - shellcheck        # lint tool for shell scripts
       - nfs-common        # nsf tools
       - snapd             #   
       - nextcloud-desktop    # Connect to your Nextcloud from Windows, macOS or Linux.
@@ -161,14 +162,10 @@
   ansible.builtin.shell:
     cmd: ls ~/.nvm || curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
 
-#- name: Setup nvm env
-#  ansible.builtin.shell:
-#    cmd: /home/tino/.nvm/nvm.sh  # This loads nvm 
-#  become: yes
-
-#- name: Install Node 16
-#  ansible.builtin.shell:
-#    cmd: nvm install 16
+- name: Setup nvm env
+  ansible.builtin.shell:
+    cmd: cat /home/tino/.nvm/nvm.sh | bash  # This loads nvm 
+  become: yes
 
 - name: Install Slack chat client
   snap:
