@@ -22,6 +22,7 @@ set sw=2
 set ai
 %retab
 
+source ~/.vim/dockerfile.vim 
 
 map <F10> :w!<CR>:!aspell -c %<CR>:e! %<CR>  " spell check aspell
 set clipboard=unnamedplus           " interact with linux clipboard
