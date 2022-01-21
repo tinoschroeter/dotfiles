@@ -65,6 +65,7 @@
   ansible.builtin.git:
     repo: 'https://github.com/prettier/vim-prettier.git'
     dest: ~/.vim/bundle/vim-prettier
+    update: no
 
 - name: addon vim-snippets.vim (This repository contains snippets files for various programming languages.)
   ansible.builtin.git:

@@ -11,7 +11,7 @@
 - name: get dockerfile.vim
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/dockerfile.vim
-    dest: ~/.vimrc
+    dest: ~/.vim/dockerfile.vim
 
 - name: Copy terminator config
   ansible.builtin.get_url:
