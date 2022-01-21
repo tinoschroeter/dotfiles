@@ -1,7 +1,6 @@
 # ![dotfile](dotfile.png)
 
-
-> **Install Notebook** ":computer:"
+> **Install my new Notebook** or sync my setup between all of my computers. ":computer:"
 
 [![Ansible](https://img.shields.io/badge/Ansible-blue.svg)](https://github.com/ansible/ansible)
 [![GitHub Super-Linter](https://github.com/tinoschroeter/dotfiles/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/tinoschroeter/dotfiles/actions/workflows/linter.yml)
@@ -18,7 +17,10 @@
   ~./secrets # stored in bitwarden
 ```
 
-
+```shell
+  # This Setup is idempotent, you can run it as often you want.
+  ./setup run
+```
 
 ## Ansible Tree
 
@@ -70,7 +72,7 @@
   
 * Setup [roles/software/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/software/tasks/main.yaml)
   * install docker
-  * Install utility packages
+  * Install [utility packages](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/software/tasks/main.yaml#L21-L49)
   * Install aws cli
   * Install skaffold
   * Install kubens
