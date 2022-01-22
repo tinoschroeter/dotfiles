@@ -81,6 +81,8 @@
   * Install terraform
   * Install helm3
   * Install velero
+  * Install argocd
+  * Install argo
   * Install nvm (Node.js Version Manager)
   * Install Slack
 
