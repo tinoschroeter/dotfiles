@@ -138,7 +138,7 @@
 <details>
   <summary>pip</summary>
 
-* Setup [roles/npm/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/pip/tasks/main.yaml)
+* Setup [roles/pip/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/pip/tasks/main.yaml)
   * install pip packages
 
 </details>
