@@ -37,7 +37,10 @@
 │   │       └── main.yaml
 │   ├── npm
 │   │   └── tasks
-│   │       └── npm.yaml
+│   │       └── main.yaml
+│   ├── pip
+│   │   └── tasks
+│   │       └── main.yaml
 │   ├── software
 │   │   └── tasks
 │   │       └── main.yaml
@@ -54,7 +57,6 @@
 │       └── tasks
 │           └── main.yaml
 └── site.yaml
-
 ```
 
 ## Roles
@@ -130,6 +132,14 @@
 
 * Setup [roles/npm/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/npm/tasks/main.yaml)
   * install global npm packages
+
+</details>
+
+<details>
+  <summary>pip</summary>
+
+* Setup [roles/npm/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/pip/tasks/main.yaml)
+  * install pip packages
 
 </details>
 
