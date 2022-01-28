@@ -5,4 +5,5 @@
   with_items:
     - snyk    # Find and automatically fix vulnerabilities in your code.
     - swagger # Swagger utilities and project lifecycle support.
+    - yarn    # FAST, RELIABLE, AND SECURE DEPENDENCY MANAGEMENT.
   become: yes

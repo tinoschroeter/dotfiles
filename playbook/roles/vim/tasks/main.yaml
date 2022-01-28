@@ -73,6 +73,18 @@
     dest: ~/.vim/bundle/vim-snippets
     update: yes
 
+- name: addon vim-jsx-pretty
+  ansible.builtin.git:
+    repo: 'https://github.com/MaxMEllon/vim-jsx-pretty.git'
+    dest: ~/.vim/bundle/vim-jsx-pretty
+    update: yes
+
+- name: Create symbolic link for vim_vim-jsx-pretty
+  ansible.builtin.file:
+    src: ~/.vim/bundle/vim-jsx-pretty/autoload/jsx_pretty/indent.vim
+    dest: ~/.vim/autoload/jsx_pretty_indent.vim
+    state: link
+
 - name: Create symbolic link for vim_snippets
   ansible.builtin.file:
     src: ~/.vim/bundle/vim-snippets/autoload/vim_snippets.vim

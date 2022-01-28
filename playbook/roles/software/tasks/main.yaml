@@ -157,6 +157,30 @@
     mode: '0555'
   become: yes
 
+- name: download golang (don't installed new version of Go on top a previous one. rm -rvf /usr/local/go/)
+  ansible.builtin.get_url:
+    url: https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
+    dest: /usr/local/go1.17.6.linux-amd64.tar.gz
+  become: yes
+
+- name: Extract go1.17.6.linux-amd64.tar.gz
+  ansible.builtin.unarchive:
+    src: /usr/local/go1.17.6.linux-amd64.tar.gz
+    dest: /usr/local
+  become: yes
+
+- name: download protoc (API for protocol buffers using modern Haskell language and library patterns.)
+  ansible.builtin.get_url:
+    url: https://github.com/protocolbuffers/protobuf/releases/download/v3.14.0/protoc-3.14.0-linux-x86_64.zip
+    dest: /usr/local/protoc-3.14.0-linux-x86_64.zip
+  become: yes
+
+- name: Extract protoc-3.14.0-linux-x86_64.zip
+  ansible.builtin.unarchive:
+    src: /usr/local/protoc-3.14.0-linux-x86_64.zip
+    dest: /usr/local
+  become: yes
+  
 - name: get and install argocd cli 
   ansible.builtin.get_url:
     url: https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
