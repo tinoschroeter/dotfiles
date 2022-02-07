@@ -3,7 +3,8 @@
     global: yes
     name: "{{ item }}"
   with_items:
-    - snyk    # Find and automatically fix vulnerabilities in your code.
-    - swagger # Swagger utilities and project lifecycle support.
-    - yarn    # FAST, RELIABLE, AND SECURE DEPENDENCY MANAGEMENT.
+    - snyk       # Find and automatically fix vulnerabilities in your code.
+    - swagger    # Swagger utilities and project lifecycle support.
+    - yarn       # FAST, RELIABLE, AND SECURE DEPENDENCY MANAGEMENT.
+    - gatsby-cli # React static-site generatior
   become: yes
