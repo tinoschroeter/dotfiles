@@ -49,6 +49,12 @@
     dest: ~/.vim/bundle/ultisnips
     update: yes
 
+- name: addon salt-vim
+  ansible.builtin.git:
+    repo: 'https://github.com/vmware-archive/salt-vim.git'
+    dest: ~/.vim/bundle/salt-vim
+    update: yes
+
 - name: setup my ultisnips
   ansible.builtin.git:
     repo: 'https://github.com/tinoschroeter/vim.UltiSnips.git'
