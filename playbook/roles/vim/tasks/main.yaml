@@ -85,6 +85,12 @@
     dest: ~/.vim/bundle/vim-jsx-pretty
     update: yes
 
+- name: addon vim-go
+  ansible.builtin.git:
+    repo: 'https://github.com/fatih/vim-go.git'
+    dest: ~/.vim/bundle/vim-go
+    update: yes
+
 - name: Create symbolic link for vim_vim-jsx-pretty
   ansible.builtin.file:
     src: ~/.vim/bundle/vim-jsx-pretty/autoload/jsx_pretty/indent.vim
