@@ -5,11 +5,8 @@ autoload -U colors; colors
 setopt nocorrectall
 setopt correct
 
-# Open FAAS
-export OPENFAAS_URL="https://openfaas.tino.sh"
-
 # Remote Docker
-export DOCKER_HOST=tcp://10.0.1.60:2375
+export DOCKER_HOST=tcp://10.0.1.70:2375
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/tino/.oh-my-zsh"
@@ -131,7 +128,6 @@ setopt auto_cd
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Command line alias to start the browser-sync server
 alias serve="browser-sync start --server --files ."
