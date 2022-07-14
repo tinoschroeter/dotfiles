@@ -22,6 +22,12 @@ set sw=2
 set ai
 %retab
 
+" color theme
+let g:gruvbox_transparent_bg = '0'
+let g:gruvbox_contrast_dark = 'hard'
+
+autocmd vimenter * nested colorscheme gruvbox
+
 source ~/.vim/dockerfile.vim 
 
 map <F10> :w!<CR>:!aspell -c %<CR>:e! %<CR>  " spell check aspell

@@ -32,6 +32,12 @@
     dest: ~/.vim/bundle/vim-mundo
     update: yes
 
+- name: The only theme you should be using. Heavily influenced by The Primeagen
+  ansible.builtin.git:
+    repo: 'https://github.com/morhetz/gruvbox.git'
+    dest: ~/.vim/bundle/gruvbox
+    update: yes
+
 - name: Create undo directory
   ansible.builtin.file:
     path: ~/.vim/undo
