@@ -150,7 +150,7 @@ alias t="terraform"
 alias d="docker"
 
 # cat clone with syntax highlighting and Git integration.
-alias cut="batcat"
+alias cat="batcat"
 
 #ssh tunnel k3s
 tunnel="ssh -p 22 -L 6443:localhost:6443 root@tino.sh"
