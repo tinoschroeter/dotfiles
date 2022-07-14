@@ -48,6 +48,7 @@
       - aspell-en
       - lolcat            # color output
       - rdesktop          # RDP client for Windows Terminal Server 
+      - bat               # A cat clone with syntax highlighting and Git integration.
   become: yes
 
 - name: Install AWS CLI
@@ -113,7 +114,7 @@
 
 - name: Install kubectl
   ansible.builtin.get_url:
-    url: https://dl.k8s.io/release/v1.22.0/bin/linux/amd64/kubectl
+    url: https://dl.k8s.io/release/v1.22.7/bin/linux/amd64/kubectl
     dest: /usr/local/bin/kubectl
   become: yes
 
@@ -220,3 +221,14 @@
     name: slack
     classic: yes
   become: yes
+
+- name: download fzf command-line fuzzy finder
+  ansible.builtin.git:
+    repo: 'https://github.com/junegunn/fzf.git'
+    dest: ~/.fzf
+    update: yes
+
+- name: install fzf
+  ansible.builtin.shell:
+    cmd: ~/.fzf/install
+#  become: yes

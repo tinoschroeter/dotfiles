@@ -149,6 +149,9 @@ alias t="terraform"
 # Docker
 alias d="docker"
 
+# cat clone with syntax highlighting and Git integration.
+alias cut="batcat"
+
 #ssh tunnel k3s
 tunnel="ssh -p 22 -L 6443:localhost:6443 root@tino.sh"
 
@@ -191,3 +194,5 @@ echo red || echo green)]$fg[white]%}[$ZSH_KUBECTL_PROMPT]%{$reset_color%}'
 
 export NVM_DIR="/home/tino/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
