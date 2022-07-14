@@ -28,7 +28,7 @@ let g:gruvbox_contrast_dark = 'hard'
 
 autocmd vimenter * nested colorscheme gruvbox
 
-set mouse=a               " tell vim to recognize mouse commands in "all" modes
+set mouse=n               " tell vim to recognize mouse commands in "Normal" modes
 set ttyfast               " improve fluidity of mouse commands, this isn't necessary but I believe improves performance
 set paste                 " don't mess up the indenting of pasted text
 
