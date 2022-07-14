@@ -47,6 +47,7 @@
       - aspell-de 
       - aspell-en
       - lolcat            # color output
+      - rdesktop          # RDP client for Windows Terminal Server 
   become: yes
 
 - name: Install AWS CLI
