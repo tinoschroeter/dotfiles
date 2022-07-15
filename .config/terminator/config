@@ -6,8 +6,9 @@
     background_darkness = 0.97
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Z003 Bold Italic 20
+    font = MonoLisa 14
     foreground_color = "#ebdbb2"
+    use_system_font = False
 [layouts]
   [[default]]
     [[[child1]]]
