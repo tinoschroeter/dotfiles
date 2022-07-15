@@ -7,4 +7,3 @@
     - swagger    # Swagger utilities and project lifecycle support.
     - yarn       # FAST, RELIABLE, AND SECURE DEPENDENCY MANAGEMENT.
     - pkg        # Package your Node.js project into an executable that can be run even on devices without Node.js installed.
-  become: yes

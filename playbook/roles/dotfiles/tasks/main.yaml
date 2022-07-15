@@ -13,6 +13,11 @@
     url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/dockerfile.vim
     dest: ~/.vim/dockerfile.vim
 
+- name: create terminator config file 
+  ansible.builtin.file:
+    path: ~/.config/terminator
+    state: directory
+
 - name: Copy terminator config
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.config/terminator/config 

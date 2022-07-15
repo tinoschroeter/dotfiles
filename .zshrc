@@ -164,7 +164,9 @@ fi
 }
 
 # export Multiple Kubernetes Clusters to KUBECONFIG
-export KUBECONFIG="$(ls -m ~/.kube/custom-contexts/*|tr -d '\n'|sed 's/,/:/g'):/home/${USER}/.kube/config"
+if [[ -f /home/${USER}/.kube/config ]]
+  export KUBECONFIG="$(ls -m ~/.kube/custom-contexts/*|tr -d '\n'|sed 's/,/:/g'):/home/${USER}/.kube/config"
+fi
 
 # Auto completion
 source <(kubectl completion zsh)
@@ -189,8 +191,10 @@ if [[ $#h -gt 0 ]]; then
 fi
 
 #
-RPROMPT='%{$bg[$([[ "$(kubectl config current-context)" =~ "PRODUCTION" ]] && \
-echo red || echo green)]$fg[white]%}[$ZSH_KUBECTL_PROMPT]%{$reset_color%}'
+if [[ -f /home/${USER}/.kube/config ]]
+  RPROMPT='%{$bg[$([[ "$(kubectl config current-context)" =~ "PRODUCTION" ]] && \
+  echo red || echo green)]$fg[white]%}[$ZSH_KUBECTL_PROMPT]%{$reset_color%}'
+fi
 
 export NVM_DIR="/home/tino/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

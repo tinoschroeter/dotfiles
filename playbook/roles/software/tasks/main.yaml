@@ -18,37 +18,39 @@
   apt:
     state: present
     name:
-      - terminator        # terminal
-      - zsh               # nice shell
-      - gnupg             # GNU Privacy Guard
-      - net-tools         # collection of base networking utilities for Linux.
-      - nmap              # network scanner
-      - tree              # recursively list or display the content of a directory in a tree-like format.
-      - jq                # jq is a lightweight and flexible command-line JSON processor.
-      - htop              # interactively monitor the system’s vital resources.
-      - dstat             # versatile tool for generating system resource statistics
-      - curl              # curl is a tool to transfer data from or to a server, using one of the supported protocols.
-      - neofetch          # Shows Linux System Information with Distribution Logo
-      - dnsutils          # is a flexible tool for interrogating DNS name servers. 
-      - git               # fast, scalable, distributed revision control system
-      - sysstat           # system performance tools for Linux
-      - iotop             # iotop watches I/O usage information output by the Linux kernel  
-      - nodejs            # V8 javascript runtime 
-      - python3-pip       # package installer for Python.
-      - python-setuptools # 
-      - shellcheck        # lint tool for shell scripts
-      - nfs-common        # nsf tools
-      - snapd             #   
-      - nextcloud-desktop # Connect to your Nextcloud from Windows, macOS or Linux.
-      - firefox           # browser
-      - firefox-locale-en
-      - firefox-locale-de
       - aspell            # interactive spell checker  
       - aspell-de 
       - aspell-en
-      - lolcat            # color output
-      - rdesktop          # RDP client for Windows Terminal Server 
       - bat               # A cat clone with syntax highlighting and Git integration.
+      - curl              # curl is a tool to transfer data from or to a server, using one of the supported protocols.
+      - dnsutils          # is a flexible tool for interrogating DNS name servers. 
+      - dstat             # versatile tool for generating system resource statistics
+      - firefox           # browser
+      - firefox-locale-de
+      - firefox-locale-en
+      - git               # fast, scalable, distributed revision control system
+      - gnupg 
+      - gnupg             # GNU Privacy Guard
+      - htop              # interactively monitor the system’s vital resources.
+      - iotop             # iotop watches I/O usage information output by the Linux kernel  
+      - jq                # jq is a lightweight and flexible command-line JSON processor.
+      - lolcat            # color output
+      - neofetch          # Shows Linux System Information with Distribution Logo
+      - net-tools         # collection of base networking utilities for Linux.
+      - nextcloud-desktop # Connect to your Nextcloud from Windows, macOS or Linux.
+      - nfs-common        # nsf tools
+      - nmap              # network scanner
+      - nodejs            # V8 javascript runtime 
+      - python-setuptools # 
+      - python3-pip       # package installer for Python.
+      - rdesktop          # RDP client for Windows Terminal Server 
+      - shellcheck        # lint tool for shell scripts
+      - snapd             #   
+      - software-properties-common
+      - sysstat           # system performance tools for Linux
+      - terminator        # terminal
+      - tree              # recursively list or display the content of a directory in a tree-like format.
+      - zsh               # nice shell
   become: yes
 
 - name: Install AWS CLI
@@ -61,7 +63,7 @@
 
 - name: add google source list
   ansible.builtin.shell:
-    cmd: sudo sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/google.list'
+    cmd: echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
 
 - name: Install google-chrome-stable
   apt:
@@ -130,13 +132,19 @@
 #  ansible.builtin.shell:
 #    cmd: 
 #      - curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-#      - sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+#  become: yes
 
-- name: install the Terraform CLI.
-  apt:
-    name: terraform
-    update_cache: yes
-  become: yes
+#- name: Add the HashiCorp repo
+#  ansible.builtin.shell:
+#    cmd: 
+#      - sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+#  become: yes
+#
+#- name: install the Terraform CLI.
+#  apt:
+#    name: terraform
+#    update_cache: yes
+#  become: yes
 
 - name: Install helm 3
   ansible.builtin.shell:
