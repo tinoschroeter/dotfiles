@@ -164,7 +164,7 @@ fi
 }
 
 # export Multiple Kubernetes Clusters to KUBECONFIG
-if [[ -f /home/${USER}/.kube/config ]]
+if [[ -f /home/${USER}/.kube/config ]]; then
   export KUBECONFIG="$(ls -m ~/.kube/custom-contexts/*|tr -d '\n'|sed 's/,/:/g'):/home/${USER}/.kube/config"
 fi
 
@@ -191,7 +191,7 @@ if [[ $#h -gt 0 ]]; then
 fi
 
 #
-if [[ -f /home/${USER}/.kube/config ]]
+if [[ -f /home/${USER}/.kube/config ]]; then
   RPROMPT='%{$bg[$([[ "$(kubectl config current-context)" =~ "PRODUCTION" ]] && \
   echo red || echo green)]$fg[white]%}[$ZSH_KUBECTL_PROMPT]%{$reset_color%}'
 fi
