@@ -100,6 +100,23 @@
     mode: '0755'
   become: yes
 
+- name: Install kubeval
+  ansible.builtin.get_url:
+    url: https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
+    dest: /tmp/kubeval-linux-amd64.tar.gz
+
+- name: Extract /tmp/kubeval-linux-amd64.tar.gz
+  ansible.builtin.unarchive:
+    src: /tmp/kubeval-linux-amd64.tar.gz
+    dest: /tmp
+
+- name: Copy kubeval binary
+  ansible.builtin.copy:
+    src: /tmp/kubeval
+    dest: /usr/local/bin/kubeval
+    mode: '0555'
+  become: yes
+
 - name: Install Minikube
   ansible.builtin.get_url:
     url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
