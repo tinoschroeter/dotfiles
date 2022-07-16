@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 languages="javascript\nnodejs\nexpress\nsql\nbash\n"
-core_utils="xargs\nfind\nmv\ncp\nsed\nawk\ncurl\ntr\nip"
+core_utils="xargs\nfind\nmv\ncp\nsed\nawk\ncurl\ntr\nip\nvim"
 
-selected=`printf $languages\n$core_utils | fzf`
+selected=`printf $languages$core_utils | fzf`
 
 if printf "$core_utils" | grep -qs "$selected"; then
   curl -s cht.sh/"$selected"\?T | vim -
