@@ -257,3 +257,10 @@
   ansible.builtin.shell:
     cmd: ~/.fzf/install
 #  become: yes
+
+- name: copy cht.sh to /usr/local/bin/
+  ansible.builtin.copy:
+    src: cht.sh
+    dest: /usr/local/bin/cht.sh
+    mode: '777'
+  become: yes

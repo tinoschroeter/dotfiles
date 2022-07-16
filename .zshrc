@@ -155,12 +155,16 @@ alias bcat="batcat"
 #ssh tunnel k3s
 tunnel="ssh -p 22 -L 6443:localhost:6443 root@tino.sh"
 
-kx () {
+kx() {
 if [ -z "$1" ];then
     kubectl config get-contexts|lolcat
 else
     kubectl config use-context "$1"
 fi
+}
+
+help() {
+    /usr/local/bin/cht.sh
 }
 
 # export Multiple Kubernetes Clusters to KUBECONFIG

@@ -87,6 +87,7 @@
   * Install argo
   * Install nvm (Node.js Version Manager)
   * Install Slack
+  * Instal help cheat.sh script
 
 </details>
 
