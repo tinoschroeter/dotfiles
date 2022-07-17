@@ -8,29 +8,29 @@ set expandtab
 set hlsearch
 set incsearch
 set nocp
-set number                          " enable line numbers
+set number " enable line numbers
 set ruler
 set shiftwidth=4
 set smartindent
 set tabstop=4
 set expandtab
 "set nowrap
-"set spell
-"set spelllang=de_de
-"set spelllang=en_US
+set spell
+set spelllang=de_de
+set spelllang=en_us
 set sw=2
 set ai
 %retab
 
 " color theme
-let g:gruvbox_transparent_bg = '0'
-let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_transparent_bg = '1'
+let g:gruvbox_contrast_dark = 'soft'
 
 autocmd vimenter * nested colorscheme gruvbox
 
-set mouse=n               " tell vim to recognize mouse commands in "Normal" modes
-set ttyfast               " improve fluidity of mouse commands, this isn't necessary but I believe improves performance
-set nopaste                 " don't mess up the indenting of pasted text
+set mouse=n " tell vim to recognize mouse commands in "Normal" modes
+set ttyfast " improve fluidity of mouse commands, this isn't necessary but I believe improves performance
+set nopaste " don't mess up the indenting of pasted text
 
 source ~/.vim/dockerfile.vim 
 
@@ -66,10 +66,10 @@ let g:ycm_use_clangd = 0
 let g:lightline = {
       \ 'colorscheme': 'powerline',
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
-      \ }
+        \   'left': [ [ 'mode', 'paste' ],
+        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+        \ },
+        \ 'component_function': {
+          \   'gitbranch': 'fugitive#head'
+          \ },
+          \ }

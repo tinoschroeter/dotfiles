@@ -67,11 +67,11 @@
     dest: ~/.vim/UltiSnips
     update: yes
 
-- name: addon vim-irblack.vim (Infinite Red's vim theme)
-  ansible.builtin.git:
-    repo: 'https://github.com/wgibbs/vim-irblack.git'
-    dest: ~/.vim/bundle/vim-irblack
-    update: yes
+#- name: addon vim-irblack.vim (Infinite Red's vim theme)
+#  ansible.builtin.git:
+#    repo: 'https://github.com/wgibbs/vim-irblack.git'
+#    dest: ~/.vim/bundle/vim-irblack
+#    update: yes
 
 - name: addon vim-prettier.vim (An opinionated code formatter)
   ansible.builtin.git:
