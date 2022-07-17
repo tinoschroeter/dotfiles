@@ -29,7 +29,6 @@
       - firefox-locale-de
       - firefox-locale-en
       - git               # fast, scalable, distributed revision control system
-      - gnupg 
       - gnupg             # GNU Privacy Guard
       - htop              # interactively monitor the system’s vital resources.
       - iotop             # iotop watches I/O usage information output by the Linux kernel  
@@ -47,6 +46,7 @@
       - shellcheck        # lint tool for shell scripts
       - snapd             #   
       - software-properties-common
+      - sqlite3           # sqlite3 client 
       - sysstat           # system performance tools for Linux
       - terminator        # terminal
       - tree              # recursively list or display the content of a directory in a tree-like format.

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-languages="javascript\nnodejs\nexpress\nhtml\ncss\nsql\nreact\nbash\n"
+languages="javascript\nnodejs\nexpress\nhtml\ncss\nsql\nsqlite\nreact\nbash\n"
 core_utils="xargs\nfind\nmv\ncp\nsed\nawk\ncurl\ntr\nip\nvim"
 
 selected=`printf $languages$core_utils | fzf`
