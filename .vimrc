@@ -28,6 +28,8 @@ let g:gruvbox_contrast_dark = 'soft'
 
 autocmd vimenter * nested colorscheme gruvbox
 
+au BufNewFile,BufRead *.ejs set filetype=html " Syntax highlight for .ejs files
+
 set mouse=n " tell vim to recognize mouse commands in "Normal" modes
 set ttyfast " improve fluidity of mouse commands, this isn't necessary but I believe improves performance
 set nopaste " don't mess up the indenting of pasted text
