@@ -167,6 +167,12 @@ gg=G                        # formating code
 
 ## help command
 
-[bin/cht.sh](https://github.com/tinoschroeter/dotfiles/blob/master/bin/cht.sh)
+[bin/cht.sh](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/files/cht.sh)
+
+```bash
+help() {
+    /usr/local/bin/cht.sh
+}
+```
 
 ![help command](docs/help.gif)
