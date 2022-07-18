@@ -167,4 +167,4 @@ gg=G                        # formating code
 
 ## help command
 
-![help command](help.gif)
+![help command](docs/help.gif)
