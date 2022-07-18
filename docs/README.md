@@ -164,3 +164,7 @@ gg=G                        # formating code
 :66,70s/^#/                 # and reverse
 [ctrl] +n or [ctrl] + p key # auto completion
 ```
+
+## help command
+
+![help command](help.gif)

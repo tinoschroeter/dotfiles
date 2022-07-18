@@ -5,6 +5,10 @@ core_utils="xargs\nfind\nmv\ncp\nsed\nawk\ncurl\ntr\nip\nvim"
 
 selected=`printf $languages$core_utils | fzf`
 
+if [[ ${#selected} -eq 0 ]]; then
+    exit 1 
+fi
+
 if printf "$core_utils" | grep -qs "$selected"; then
   curl -s cht.sh/"$selected"\?T | less
   exit 0
