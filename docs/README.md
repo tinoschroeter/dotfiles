@@ -165,13 +165,19 @@ gg=G                        # formating code
 [ctrl] +n or [ctrl] + p key # auto completion
 ```
 
-## help command
-
-[bin/cht.sh](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/files/cht.sh)
+## helper scripts
 
 ```bash
 help() {
     /usr/local/bin/cht.sh
+}
+
+spell() {
+    /usr/local/bin/spell.sh
+}
+
+reload() {
+    source ~/.zshrc
 }
 ```
 
