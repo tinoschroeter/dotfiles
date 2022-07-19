@@ -152,8 +152,13 @@ alias d="docker"
 # cat clone with syntax highlighting and Git integration.
 alias bcat="batcat"
 
-#ssh tunnel k3s
+# ssh tunnel k3s
 tunnel="ssh -p 22 -L 6443:localhost:6443 root@tino.sh"
+
+# folder 
+alias wrk="cd ~/work/"
+alias pri="cd ~/privat/"
+alias doc="~/work/documentation/"
 
 kx() {
 if [ -z "$1" ];then
