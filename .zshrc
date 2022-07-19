@@ -173,6 +173,11 @@ spell() {
     /usr/local/bin/spell.sh
 }
 
+# source .zshrc
+reload() {
+    source ~/.zshrc
+}
+
 # export Multiple Kubernetes Clusters to KUBECONFIG
 if [[ -f /home/${USER}/.kube/config ]]; then
   export KUBECONFIG="$(ls -m ~/.kube/custom-contexts/*|tr -d '\n'|sed 's/,/:/g'):/home/${USER}/.kube/config"
