@@ -163,8 +163,14 @@ else
 fi
 }
 
+# cheat cheat helper tool
 help() {
     /usr/local/bin/cht.sh
+}
+
+# spell helper tool
+spell() {
+    /usr/local/bin/spell.sh
 }
 
 # export Multiple Kubernetes Clusters to KUBECONFIG

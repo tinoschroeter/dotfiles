@@ -264,3 +264,10 @@
     dest: /usr/local/bin/cht.sh
     mode: '777'
   become: yes
+
+- name: copy spell.sh to /usr/local/bin/
+  ansible.builtin.copy:
+    src: spell.sh
+    dest: /usr/local/bin/spell.sh
+    mode: '777'
+  become: yes
