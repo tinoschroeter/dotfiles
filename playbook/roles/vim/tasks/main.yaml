@@ -26,6 +26,18 @@
     dest: ~/.vim/bundle/lightline.vim
     update: yes
 
+- name: addon vim-gitgutter A Vim plugin which shows a git diff in the sign column.
+  ansible.builtin.git:
+    repo: 'https://github.com/airblade/vim-gitgutter.git'
+    dest: ~/.vim/bundle/gitgutter.vim
+    update: yes
+
+- name: addon vim-gitbranch provides a function which returns the name of the git branch.
+  ansible.builtin.git:
+    repo: 'https://github.com/itchyny/vim-gitbranch.git'
+      dest: ~/.vim/bundle/gitbranch.vim
+    update: yes
+      
 - name: addon mundo.vim (A Vim plugin to visualizes the Vim undo tree.)
   ansible.builtin.git:
     repo: 'https://github.com/simnalamburt/vim-mundo.git'

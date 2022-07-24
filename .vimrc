@@ -34,6 +34,9 @@ set mouse=n " tell vim to recognize mouse commands in "Normal" modes
 set ttyfast " improve fluidity of mouse commands, this isn't necessary but I believe improves performance
 set nopaste " don't mess up the indenting of pasted text
 
+" settings vim-gitgutter
+set updatetime=100
+
 source ~/.vim/dockerfile.vim 
 
 map <F10> :w!<CR>:!aspell -c %<CR>:e! %<CR>  " spell check aspell
@@ -72,6 +75,6 @@ let g:lightline = {
         \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
         \ },
         \ 'component_function': {
-          \   'gitbranch': 'fugitive#head'
+          \   'gitbranch': 'gitbranch#name'
           \ },
           \ }
