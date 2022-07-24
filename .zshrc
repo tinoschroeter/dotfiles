@@ -183,6 +183,11 @@ reload() {
     source ~/.zshrc
 }
 
+# sync zsh history
+sync_history() {
+    /usr/local/bin/sync-zsh-history.js ~/Dropbox/zsh_history
+}
+
 # export Multiple Kubernetes Clusters to KUBECONFIG
 if [[ -f /home/${USER}/.kube/config ]]; then
   export KUBECONFIG="$(ls -m ~/.kube/custom-contexts/*|tr -d '\n'|sed 's/,/:/g'):/home/${USER}/.kube/config"

@@ -271,3 +271,10 @@
     dest: /usr/local/bin/spell.sh
     mode: '777'
   become: yes
+
+- name: copy sync-zsh-history to /usr/local/bin/
+  ansible.builtin.copy:
+    src: sync-zsh-history/index.js
+    dest: /usr/local/bin/sync-zsh-history.js
+    mode: '777'
+  become: yes

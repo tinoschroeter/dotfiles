@@ -179,6 +179,10 @@ spell() {
 reload() {
     source ~/.zshrc
 }
+
+sync_history() {
+    /usr/local/bin/sync-zsh-history.js ~/Dropbox/zsh_history
+}
 ```
 
 ![help command](docs/help.gif)
