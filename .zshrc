@@ -149,6 +149,19 @@ alias t="terraform"
 # Docker
 alias d="docker"
 
+# git 
+alias g="git"
+alias gs="git status"
+alias gd="git diff"
+alias gl="git log"
+
+# vim 
+alias v="vim"
+
+# nodejs
+alias n="node"
+alias nv="node --verion"
+
 # cat clone with syntax highlighting and Git integration.
 alias bcat="batcat"
 
