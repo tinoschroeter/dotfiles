@@ -51,6 +51,7 @@
       - terminator        # terminal
       - tree              # recursively list or display the content of a directory in a tree-like format.
       - zsh               # nice shell
+      - tig               # ncurses-based text-mode interface for Git
   become: yes
 
 - name: Install AWS CLI
