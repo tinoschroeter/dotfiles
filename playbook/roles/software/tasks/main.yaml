@@ -54,6 +54,20 @@
       - tig               # ncurses-based text-mode interface for Git
   become: yes
 
+- name: Install checkssl
+  ansible.builtin.get_url:
+    url: https://github.com/szazeski/checkssl/releases/download/v0.4.3/checkssl_0.4.3_Linux_x86_64.tar.gz
+    dest: /usr/bin/checkssl
+  become: yes
+
+- name: make checkssl executable
+  ansible.builtin.file:
+    path: /usr/bin/checkssl
+    owner: root
+    group: root
+    mode: '0755'
+  become: yes
+
 - name: Install AWS CLI
   pip:
     name: awscli
