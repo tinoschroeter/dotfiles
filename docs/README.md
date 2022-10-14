@@ -22,6 +22,16 @@
   ./setup run
 ```
 
+## Issues
+
+> Warning: Cannot find word list "de.utf-8.spl" or "de.ascii.spl"
+
+```bash
+vim
+:set spell spelllang=de_DE
+
+```
+
 ## Ansible Tree
 
 ```shell
