@@ -40,6 +40,7 @@
       - nfs-common        # nsf tools
       - nmap              # network scanner
       - nodejs            # V8 javascript runtime 
+      - pwgen             # Automatic Password generation
       - python-setuptools # 
       - python3-pip       # package installer for Python.
       - rdesktop          # RDP client for Windows Terminal Server 
@@ -49,9 +50,9 @@
       - sqlite3           # sqlite3 client 
       - sysstat           # system performance tools for Linux
       - terminator        # terminal
+      - tig               # ncurses-based text-mode interface for Git
       - tree              # recursively list or display the content of a directory in a tree-like format.
       - zsh               # nice shell
-      - tig               # ncurses-based text-mode interface for Git
   become: yes
 
 - name: Install checkssl
