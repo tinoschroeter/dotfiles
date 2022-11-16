@@ -24,7 +24,8 @@ set ai
 
 " color theme
 let g:gruvbox_transparent_bg = '1'
-let g:gruvbox_contrast_dark = 'soft'
+let g:gruvbox_contrast_dark = 'medium'
+let g:gruvbox_contrast_light = 'hard'
 
 autocmd vimenter * nested colorscheme gruvbox
 
@@ -35,7 +36,7 @@ set ttyfast " improve fluidity of mouse commands, this isn't necessary but I bel
 set nopaste " don't mess up the indenting of pasted text
 
 " settings vim-gitgutter
-set updatetime=100
+set updatetime=50
 
 source ~/.vim/dockerfile.vim 
 
@@ -48,6 +49,11 @@ let g:mundo_right = 1
 set foldenable                      " Enable folders
 set foldmethod=marker               " Do the marker folding thing
 set laststatus=2                    
+
+" Vim jump to the last position when reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
 if has('persistent_undo')      "check if your vim version supports it
   set undofile                 "turn on the feature  
