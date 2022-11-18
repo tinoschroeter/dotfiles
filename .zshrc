@@ -132,8 +132,6 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-
 # https://blog.confirm.ch/zsh-tips-changing-directories/
 setopt auto_cd
 
@@ -189,7 +187,15 @@ tunnel="ssh -p 22 -L 6443:localhost:6443 root@tino.sh"
 alias wrk="cd ~/work/"
 alias pri="cd ~/privat/"
 alias doc="~/work/documentation/"
-alias notes="cd ~/Dropbox/dev-notebook"
+alias notes="cd ~/Dropbox/dev-notebook && ls"
+
+update_home() {
+    for i in 60 70 100 101 102 103; do 
+      ssh ubuntu@10.0.1.$i "sudo apt-get update && \
+        sudo apt-get dist-upgrade -y && \
+        sudo apt-get autoremove -y"
+    done
+}
 
 kx() {
 if [ -z "$1" ];then

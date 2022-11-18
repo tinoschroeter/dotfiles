@@ -41,7 +41,7 @@
   # automatically hidden when the input line reaches it. Right prompt above the
   # last prompt line gets hidden if it would overlap with left prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
-    status                  # exit code of the last command
+    #status                 # exit code of the last command
     command_execution_time  # duration of the last command
     background_jobs         # presence of background jobs
     direnv                  # direnv status (https://direnv.net/)
@@ -59,8 +59,8 @@
     # dotnet_version        # .NET version (https://dotnet.microsoft.com)
     # php_version           # php version (https://www.php.net/)
     # laravel_version       # laravel php framework version (https://laravel.com/)
-    # java_version          # java version (https://www.java.com/)
-    # package               # name@version from package.json (https://docs.npmjs.com/files/package.json)
+    java_version            # java version (https://www.java.com/)
+    package                 # name@version from package.json (https://docs.npmjs.com/files/package.json)
     # rbenv                 # ruby version from rbenv (https://github.com/rbenv/rbenv)
     # rvm                   # ruby version from rvm (https://rvm.io)
     # fvm                   # flutter version management (https://github.com/leoafarias/fvm)
@@ -73,20 +73,20 @@
     haskell_stack           # haskell version from stack (https://haskellstack.org/)
     kubecontext             # current kubernetes context (https://kubernetes.io/)
     terraform               # terraform workspace (https://www.terraform.io)
-    # terraform_version     # terraform version (https://www.terraform.io)
+    terraform_version       # terraform version (https://www.terraform.io)
     aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
     aws_eb_env              # aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/)
     azure                   # azure account name (https://docs.microsoft.com/en-us/cli/azure)
     gcloud                  # google cloud cli account and project (https://cloud.google.com/)
     google_app_cred         # google application credentials (https://cloud.google.com/docs/authentication/production)
-    toolbox                 # toolbox name (https://github.com/containers/toolbox)
+    # toolbox               # toolbox name (https://github.com/containers/toolbox)
     context                 # user@hostname
     # nordvpn               # nordvpn connection status, linux only (https://nordvpn.com/)
     ranger                  # ranger shell (https://github.com/ranger/ranger)
     nnn                     # nnn shell (https://github.com/jarun/nnn)
     xplr                    # xplr shell (https://github.com/sayanarijit/xplr)
     vim_shell               # vim shell indicator (:sh)
-    midnight_commander      # midnight commander shell (https://midnight-commander.org/)
+    # midnight_commander    # midnight commander shell (https://midnight-commander.org/)
     nix_shell               # nix shell (https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html)
     # vpn_ip                # virtual private network indicator
     load                    # CPU load
@@ -94,8 +94,8 @@
     ram                     # free RAM
     # swap                  # used swap
     todo                    # todo items (https://github.com/todotxt/todo.txt-cli)
-    timewarrior             # timewarrior tracking status (https://timewarrior.net/)
-    taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
+    # timewarrior           # timewarrior tracking status (https://timewarrior.net/)
+    # taskwarrior           # taskwarrior task count (https://taskwarrior.org/)
     # cpu_arch              # CPU architecture
     time                    # current time
     # ip                    # ip address and bandwidth usage for a specified network interface
@@ -1191,10 +1191,11 @@
   #
   # For example, given these settings:
   #
-  #   typeset -g POWERLEVEL9K_KUBECONTEXT_CLASSES=(
-  #     '*prod*'  PROD
-  #     '*test*'  TEST
-  #     '*'       DEFAULT)
+     typeset -g POWERLEVEL9K_KUBECONTEXT_CLASSES=(
+       '*prd*'     PROD
+       '*str*'     STAGING
+       '*default*' HOME
+       '*'      DEFAULT)
   #
   # If your current kubernetes context is "deathray-testing/default", its class is TEST
   # because "deathray-testing/default" doesn't match the pattern '*prod*' but does match '*test*'.
@@ -1494,7 +1495,7 @@
   #   P9K_IP_RX_BYTES       | total number of bytes received
   #   P9K_IP_TX_BYTES       | total number of bytes sent
   #   P9K_IP_RX_BYTES_DELTA | number of bytes received since last prompt
-  #   P9K_IP_TX_BYTES_DELTA | number of bytes sent since last prompt
+  #   P9K_IP_TX_BYTGES_DELTA | number of bytes sent since last prompt
   #   P9K_IP_RX_RATE        | receive rate (since last prompt)
   #   P9K_IP_TX_RATE        | send rate (since last prompt)
   typeset -g POWERLEVEL9K_IP_CONTENT_EXPANSION='$P9K_IP_IP${P9K_IP_RX_RATE:+ %70F⇣$P9K_IP_RX_RATE}${P9K_IP_TX_RATE:+ %215F⇡$P9K_IP_TX_RATE}'
