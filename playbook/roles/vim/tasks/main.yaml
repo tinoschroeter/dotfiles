@@ -109,7 +109,7 @@
     dest: ~/.vim/bundle/vim-go
     update: yes
 
-- name: addon vim-go
+- name: addon vim-fzf
   ansible.builtin.git:
     repo: 'https://github.com/junegunn/fzf.vim'
     dest: ~/.vim/bundle/vim-fzf
