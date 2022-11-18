@@ -27,6 +27,9 @@ let g:gruvbox_transparent_bg = '1'
 let g:gruvbox_contrast_dark = 'medium'
 let g:gruvbox_contrast_light = 'hard'
 
+" fzf folder
+set rtp+=~/.fzf
+
 autocmd vimenter * nested colorscheme gruvbox
 
 au BufNewFile,BufRead *.ejs set filetype=html " Syntax highlight for .ejs files
