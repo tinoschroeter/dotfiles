@@ -180,7 +180,7 @@ alias bcat="batcat"
 # fzf
 alias f="fzf"
 
-export FZF_DEFAULT_OPTS="--border --height 80% --preview 'batcat --style numbers,changes --color=always {}'"
+export FZF_DEFAULT_OPTS="--border --height 100% --preview 'batcat --style numbers,changes --color=always {}'"
 
 # ssh tunnel k3s
 tunnel="ssh -p 22 -L 6443:localhost:6443 root@tino.sh"
