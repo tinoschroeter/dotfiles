@@ -53,6 +53,8 @@
       - tig               # ncurses-based text-mode interface for Git
       - tree              # recursively list or display the content of a directory in a tree-like format.
       - zsh               # nice shell
+      - silversearcher-ag # A code searching tool 
+      - ripgrep           # ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern.
   become: yes
 
 - name: Install checkssl
