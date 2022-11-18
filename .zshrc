@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 autoload -U colors; colors
@@ -125,6 +132,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+
 # https://blog.confirm.ch/zsh-tips-changing-directories/
 setopt auto_cd
 
@@ -171,7 +180,7 @@ alias bcat="batcat"
 # fzf
 alias f="fzf"
 
-export FZF_DEFAULT_OPTS="--border --height 30% --preview 'batcat --style numbers,changes --color=always {}'"
+export FZF_DEFAULT_OPTS="--border --height 80% --preview 'batcat --style numbers,changes --color=always {}'"
 
 # ssh tunnel k3s
 tunnel="ssh -p 22 -L 6443:localhost:6443 root@tino.sh"
@@ -247,3 +256,6 @@ export NVM_DIR="/home/tino/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
