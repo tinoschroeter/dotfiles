@@ -13,6 +13,11 @@
     url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.banner
     dest: ~/.banner
 
+- name: get .p10k.zsh
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.p10k.zsh
+    dest: ~/.p10k.zsh
+
 - name: get dockerfile.vim
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/dockerfile.vim
