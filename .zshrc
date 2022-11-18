@@ -31,7 +31,7 @@ source ~/.secrets
 ZSH_THEME="powerlevel10k/powerlevel10k"
 POWERLEVEL9K_MODE="nerdfont-complete"
 
-echo "$(cat $HOME/.banner)" | lolcat
+# echo "$(cat $HOME/.banner)" | lolcat
 
 # Set list of themes to pick from when loading at random
 # a theme from this variable instead of looking in $ZSH/themes/
