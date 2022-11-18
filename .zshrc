@@ -224,6 +224,10 @@ if [[ -f /home/${USER}/.kube/config ]]; then
   export KUBECONFIG="$(ls -m ~/.kube/custom-contexts/*|tr -d '\n'|sed 's/,/:/g'):/home/${USER}/.kube/config"
 fi
 
+# Source z
+if [[ -r /usr/local/bin/z.sh ]]; then
+  source /usr/local/bin/z.sh
+fi
 # Auto completion
 source <(kubectl completion zsh)
 complete -F __start_kubectl k

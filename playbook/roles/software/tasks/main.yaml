@@ -275,6 +275,13 @@
   ansible.builtin.shell:
     cmd: ~/.fzf/install
 #  become: yes
+#
+- name: install z
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/rupa/z/master/z.sh
+    dest: /usr/local/bin/z.sh
+    mode: '777'
+  become: yes
 
 - name: copy cht.sh to /usr/local/bin/
   ansible.builtin.copy:
