@@ -22,6 +22,9 @@ source ~/.secrets
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="af-magic"
+POWERLEVEL9K_MODE="nerdfont-complete"
+
+echo "$(cat $HOME/.banner)" | lolcat
 
 # Set list of themes to pick from when loading at random
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -165,6 +168,11 @@ alias nv="node --verion"
 # cat clone with syntax highlighting and Git integration.
 alias bcat="batcat"
 
+# fzf
+alias f="fzf"
+
+export FZF_DEFAULT_OPTS="--border --height 30% --preview 'batcat --style numbers,changes --color=always {}'"
+
 # ssh tunnel k3s
 tunnel="ssh -p 22 -L 6443:localhost:6443 root@tino.sh"
 
@@ -172,6 +180,7 @@ tunnel="ssh -p 22 -L 6443:localhost:6443 root@tino.sh"
 alias wrk="cd ~/work/"
 alias pri="cd ~/privat/"
 alias doc="~/work/documentation/"
+alias notes="cd ~/Dropbox/dev-notebook"
 
 kx() {
 if [ -z "$1" ];then

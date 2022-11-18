@@ -8,6 +8,11 @@
     url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.vimrc
     dest: ~/.vimrc
 
+- name: get .banner
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.banner
+    dest: ~/.banner
+
 - name: get dockerfile.vim
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/dockerfile.vim

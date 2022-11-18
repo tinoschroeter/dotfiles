@@ -30,3 +30,9 @@
     repo: 'https://github.com/superbrothers/zsh-kubectl-prompt.git'
     dest: ~/.oh-my-zsh/custom/plugins/zsh-kubectl-prompt
     update: yes
+
+- name: Powerlevel10k Theme 
+  ansible.builtin.git: 
+    repo: 'https://github.com/romkatv/powerlevel10k.git'
+    dest: ~/.oh-my-zsh/custom/themes/powerlevel10k
+    update: yes
