@@ -164,17 +164,28 @@ vim
 </details>
 
 ## vim
+
 ```shell
-gg=G                        # formating code
-:set nu!                    # hide line Number
-:50                         # go to line Number 50
-/search                     # search type n for next
-:%s/this/that/              # replace thist with that
-:66,70s/^/#                 # comment line 66 - 70
-:66,70s/^#/                 # and reverse
-[ctrl] +n or [ctrl] + p key # auto completion
+gg=G                         # formating code
+:set nu!                     # hide line Number
+:50                          # go to line Number 50
+/search                      # search type n for next
+:%s/this/that/               # replace thist with that
+:66,70s/^/#                  # comment line 66 - 70
+:66,70s/^#/                  # and reverse
+[ctrl] +n or [ctrl] + p key  # auto completion
+:File | :File!               # fuzzy search files 
+:Ag   | :Ag!                 # fuzzy search code
+"+y                          # Copy to Your System Clipboard
 ```
 
+## bash
+
+```shell
+z                            # maintains a jump-list of the directories you actually use
+f | fzf                      # General-purpose command-line fuzzy finder.
+bcat                         # A cat clone with syntax highlighting
+```
 ## helper scripts
 
 ```bash
