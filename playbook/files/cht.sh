@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-languages="javascript\nnodejs\nexpress\nhtml\ncss\nsql\nsqlite\nreact\nbash\n"
+languages="javascript\nnodejs\nexpress\nhtml\ncss\nsql\nsqlite\nreact\nbash\nsalt\n"
 core_utils="xargs\nfind\nmv\ncp\nsed\nawk\ncurl\ntr\nip\nvim"
 
-selected=`printf $languages$core_utils | fzf`
+selected=`printf $languages$core_utils | fzf --no-preview`
 
 if [[ ${#selected} -eq 0 ]]; then
     exit 1 

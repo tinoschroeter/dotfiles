@@ -1,7 +1,6 @@
 execute pathogen#infect() 
 filetype plugin indent on
 set autoindent
-set bg=dark
 set backspace=2
 set encoding=utf-8
 set expandtab
@@ -23,16 +22,19 @@ set ai
 %retab
 
 " color theme
+set background=dark
+
 let g:gruvbox_transparent_bg = '1'
-let g:gruvbox_contrast_dark = 'medium'
-let g:gruvbox_contrast_light = 'hard'
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_light = 'medium'
+let g:gruvbox_termcolors = 256
 
 " fzf folder
 set rtp+=~/.fzf
 
 autocmd vimenter * nested colorscheme gruvbox
 
-au BufNewFile,BufRead *.ejs set filetype=html " Syntax highlight for .ejs files
+"au BufNewFile,BufRead *.ejs set filetype=html " Syntax highlight for .ejs files
 
 set mouse=n " tell vim to recognize mouse commands in "Normal" modes
 set ttyfast " improve fluidity of mouse commands, this isn't necessary but I believe improves performance

@@ -63,7 +63,7 @@ export UPDATE_ZSH_DAYS=13
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -178,7 +178,7 @@ alias bcat="batcat"
 # fzf
 alias f="fzf"
 
-export FZF_DEFAULT_OPTS="--border --height 90% --preview 'batcat --style numbers,changes --color=always {}'"
+export FZF_DEFAULT_OPTS="--border --height 90% --preview 'batcat --style numbers,changes --theme Coldark-Cold --color=always {}'"
 
 # ssh tunnel k3s
 tunnel="ssh -p 22 -L 6443:localhost:6443 root@tino.sh"
