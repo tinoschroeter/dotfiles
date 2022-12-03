@@ -32,6 +32,13 @@ vim
 
 ```
 
+> YouCompleteMe add JavaScript and TypeScript
+
+```bash
+cd .vim/bundle/YouCompleteMe
+./install.py --ts-completer
+```
+
 ## Ansible Tree
 
 ```shell

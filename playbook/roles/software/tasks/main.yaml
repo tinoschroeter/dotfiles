@@ -22,6 +22,8 @@
       - aspell-de 
       - aspell-en
       - bat               # A cat clone with syntax highlighting and Git integration.
+      - build-essential 
+      - cmake 
       - curl              # curl is a tool to transfer data from or to a server, using one of the supported protocols.
       - dnsutils          # is a flexible tool for interrogating DNS name servers. 
       - dstat             # versatile tool for generating system resource statistics
@@ -42,9 +44,12 @@
       - nodejs            # V8 javascript runtime 
       - pwgen             # Automatic Password generation
       - python-setuptools # 
+      - python3-dev
       - python3-pip       # package installer for Python.
       - rdesktop          # RDP client for Windows Terminal Server 
+      - ripgrep           # ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern.
       - shellcheck        # lint tool for shell scripts
+      - silversearcher-ag # A code searching tool 
       - snapd             #   
       - software-properties-common
       - sqlite3           # sqlite3 client 
@@ -53,8 +58,6 @@
       - tig               # ncurses-based text-mode interface for Git
       - tree              # recursively list or display the content of a directory in a tree-like format.
       - zsh               # nice shell
-      - silversearcher-ag # A code searching tool 
-      - ripgrep           # ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern.
   become: yes
 
 - name: Install checkssl

@@ -34,6 +34,11 @@ set rtp+=~/.fzf
 
 autocmd vimenter * nested colorscheme gruvbox
 
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_add_preview_to_completeopt = 'popup'
+let g:ycm_auto_hover = 'CursorHold'
+
 "au BufNewFile,BufRead *.ejs set filetype=html " Syntax highlight for .ejs files
 
 set mouse=n " tell vim to recognize mouse commands in "Normal" modes
