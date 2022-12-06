@@ -7,7 +7,8 @@ set expandtab
 set hlsearch
 set incsearch
 set nocp
-set number " enable line numbers
+"set number " enable line numbers
+set relativenumber " turn relative line numbers on
 set ruler
 set shiftwidth=4
 set smartindent
