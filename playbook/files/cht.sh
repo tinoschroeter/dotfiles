@@ -3,7 +3,7 @@
 languages="javascript\nnodejs\nexpress\nhtml\ncss\nsql\nsqlite\nreact\nbash\nsalt\n"
 core_utils="xargs\nfind\nmv\ncp\nsed\nawk\ncurl\ntr\nip\nvim"
 
-selected=`printf $languages$core_utils | fzf --no-preview`
+selected=`printf $languages$core_utils | fzf --no-border --height 5% --no-preview`
 
 if [[ ${#selected} -eq 0 ]]; then
     exit 1 

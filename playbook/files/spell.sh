@@ -2,7 +2,7 @@
 
 language="de\nen"
 
-selected=`printf $language | fzf` 
+selected=`printf $language | fzf --no-border --height 5% --no-preview`
 
 if [[ $selected =~ "de" ]]; then
   echo -n "Gebe einen Text ein und Enter: "
