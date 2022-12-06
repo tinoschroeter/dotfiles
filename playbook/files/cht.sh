@@ -18,7 +18,7 @@ echo -n "${selected^^} "
 read -p $'\e[32mquery:\e[0m ' query
 
 if [[ "learn" =~ "$query"( |$) ]] || [[ ${#query} -eq 0 ]]; then
-  curl -s cht.sh/"$selected"/:learn\?T | less
+  curl -s cht.sh/"$selected"/:learn\?T | batcat
 else
-  curl -s cht.sh/"$selected"/`echo "$query" | tr ' ' '+'`\?T | less
+  curl -s cht.sh/"$selected"/`echo "$query" | tr ' ' '+'`\?T | batcat
 fi
