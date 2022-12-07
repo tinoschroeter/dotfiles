@@ -174,6 +174,8 @@ alias v="vim"
 # todo.sh
 alias t="todo.sh"
 
+export TODO_DIR="/home/tino/Dropbox/todo"
+
 # nodejs
 alias n="node"
 alias nv="node --verion"
