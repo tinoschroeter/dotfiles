@@ -292,6 +292,16 @@
     dest: /usr/local/bin/todo.sh
     mode: '777'
   become: yes
+  
+- name: create .toto folder
+  file:
+    path: ~/.todo
+    state: directory
+
+- name: get .todo-config
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/todo-config
+    dest: ~/.todo/config
 
 - name: copy cht.sh to /usr/local/bin/
   ansible.builtin.copy:

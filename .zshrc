@@ -91,6 +91,7 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  fd
   dnf
   zsh-autosuggestions
   zsh-syntax-highlighting
