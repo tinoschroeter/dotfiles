@@ -286,6 +286,13 @@
     mode: '777'
   become: yes
 
+- name: install todo.sh
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/todotxt/todo.txt-cli/master/todo.sh
+    dest: /usr/local/bin/todo.sh
+    mode: '777'
+  become: yes
+
 - name: copy cht.sh to /usr/local/bin/
   ansible.builtin.copy:
     src: cht.sh

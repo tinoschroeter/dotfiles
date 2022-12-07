@@ -171,6 +171,9 @@ alias gl="git log"
 # vim 
 alias v="vim"
 
+# todo.sh
+alias t="todo.sh"
+
 # nodejs
 alias n="node"
 alias nv="node --verion"
