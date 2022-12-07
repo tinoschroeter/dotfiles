@@ -184,6 +184,13 @@ gg=G                         # formating code
 :File | :File!               # fuzzy search files 
 :Ag   | :Ag!                 # fuzzy search code
 "+y                          # Copy to Your System Clipboard
+:tabe                        # open  a new tab
+gt                           # switch between tabs
+d$                           # delete to end of line
+[Control][b]                 # Move back one full screen
+[Control][f]                 # Move forward one full screen
+[Control][d]                 # Move forward 1/2 screen
+[Control][u]                 # Move back (up) 1/2 screen
 ```
 
 ## bash

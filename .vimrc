@@ -9,6 +9,7 @@ set incsearch
 set nocp
 "set number " enable line numbers
 set relativenumber " turn relative line numbers on
+set so=999 " Centering with scrolloff (scroll offset) 
 set ruler
 set shiftwidth=4
 set smartindent
