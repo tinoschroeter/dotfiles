@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-languages="javascript\nnodejs\nexpress\nhtml\ncss\nsql\nsqlite\nreact\nbash\nsalt\n"
-core_utils="xargs\nfind\nmv\ncp\nsed\nawk\ncurl\ntr\nip\nvim"
+languages="javascript\nnodejs\nexpress\nhtml\ncss\nsql\nsqlite\nreact\nbash\nsalt\nvim\n"
+core_utils="xargs\nfind\nmv\ncp\nsed\nawk\ncurl\ntr\nip"
 
 selected=`printf $languages$core_utils | fzf --no-border --height 5% --no-preview`
 

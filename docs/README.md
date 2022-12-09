@@ -186,6 +186,8 @@ gg=G                         # formating code
 "+y                          # Copy to Your System Clipboard
 :tabe                        # open  a new tab
 gt                           # switch between tabs
+1gt                          # switch to first tab (rotate)
+4gt                          # seitch to fourth tab
 d$                           # delete to end of line
 [Control][b]                 # Move back one full screen
 [Control][f]                 # Move forward one full screen
