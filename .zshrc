@@ -188,6 +188,7 @@ alias bcat="batcat"
 alias f="fzf"
 
 export FZF_DEFAULT_OPTS="--border --height 90% --preview 'batcat --style numbers,changes --theme Coldark-Cold --color=always {}'"
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 # ssh tunnel k3s
 tunnel="ssh -p 22 -L 6443:localhost:6443 root@tino.sh"
