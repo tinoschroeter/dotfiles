@@ -7,7 +7,7 @@ set expandtab
 set hlsearch
 set incsearch
 set nocp
-"set number " enable line numbers
+set number " enable line numbers
 set relativenumber " turn relative line numbers on
 set so=999 " Centering with scrolloff (scroll offset) 
 set ruler
@@ -37,6 +37,7 @@ set rtp+=~/.fzf
 autocmd vimenter * nested colorscheme gruvbox
 
 " YouCompleteMe
+let g:ycm_key_list_previous_completion=['<Up>']
 let g:ycm_autoclose_preview_window_after_completion = 0
 let g:ycm_add_preview_to_completeopt = 'popup'
 let g:ycm_auto_hover = 'CursorHold'
@@ -80,7 +81,8 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " UltiSnips
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-tab>"
+let g:UltiSnipsListSnippets="<c-s-tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 

@@ -27,16 +27,16 @@
 > Warning: Cannot find word list "de.utf-8.spl" or "de.ascii.spl"
 
 ```bash
-vim
-:set spell spelllang=de_DE
-
+  vim
+  :set spell spelllang=de_DE
 ```
 
 > YouCompleteMe add JavaScript and TypeScript
 
 ```bash
-cd .vim/bundle/YouCompleteMe
-./install.py --ts-completer
+  cd .vim/bundle/YouCompleteMe
+  ./install.py --ts-completer # only JavaScipt|TS
+  ./install.py --all          # install all
 ```
 
 ## Ansible Tree
