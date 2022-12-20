@@ -177,7 +177,7 @@ alias gl="git log"
 alias v="vim"
 
 # todo.sh
-alias t="todo.sh"
+alias todo="todo.sh"
 
 export TODO_DIR="/home/tino/Dropbox/todo"
 
