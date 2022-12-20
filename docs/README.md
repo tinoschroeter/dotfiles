@@ -173,6 +173,7 @@
 ## vim
 
 ```shell
+:X                           # encrypt files with a password
 gg=G                         # formating code
 :set nu!                     # hide line Number
 :50                          # go to line Number 50
