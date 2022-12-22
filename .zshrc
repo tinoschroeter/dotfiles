@@ -116,6 +116,10 @@ if [[ -d /usr/local/go ]]; then
   export PATH=$PATH:/usr/local/go/bin
 fi
 
+if [[ -d ~/.local/bin ]]; then
+  export PATH=$PATH:~/.local/bin
+fi
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
