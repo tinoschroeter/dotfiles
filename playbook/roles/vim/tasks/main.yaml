@@ -115,10 +115,10 @@
     dest: ~/.vim/bundle/vim-fzf
     update: yes
 
-- name: addon YouCompleteMe
+- name: addon ConquerOfCompletion
   ansible.builtin.git:
-    repo: 'https://github.com/Valloric/YouCompleteMe.git'
-    dest: ~/.vim/bundle/YouCompleteMe
+    repo: 'https://github.com/neoclide/coc.nvim.git'
+    dest: ~/.vim/bundle/coc.nvim
     update: yes
 
 - name: Create symbolic link for vim_vim-jsx-pretty

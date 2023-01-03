@@ -36,13 +36,17 @@ set rtp+=~/.fzf
 
 autocmd vimenter * nested colorscheme gruvbox
 
-" YouCompleteMe
-let g:ycm_key_list_previous_completion=['<Up>']
-let g:ycm_autoclose_preview_window_after_completion = 0
-let g:ycm_add_preview_to_completeopt = 'popup'
-let g:ycm_auto_hover = 'CursorHold'
+" Conquer of Completion
+" use <tab> to trigger completion and navigate to the next complete item
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
-"au BufNewFile,BufRead *.ejs set filetype=html " Syntax highlight for .ejs files
+inoremap <silent><expr> <Tab>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
 
 "set mouse=n " tell vim to recognize mouse commands in "Normal" modes
 set ttyfast " improve fluidity of mouse commands, this isn't necessary but I believe improves performance

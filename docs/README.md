@@ -31,12 +31,13 @@
   :set spell spelllang=de_DE
 ```
 
-> YouCompleteMe add JavaScript and TypeScript
+>  Coc auto-completion 
 
 ```bash
-  cd .vim/bundle/YouCompleteMe
-  ./install.py --ts-completer # only JavaScipt|TS
-  ./install.py --all          # install all
+  cd .vim/bundle/coc.nvim
+  yarn install
+  open vim and type 
+  :CocInstall coc-git coc-html coc-tsserver coc-json coc-css
 ```
 
 ## Ansible Tree
