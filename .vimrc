@@ -27,7 +27,7 @@ set ai
 set background=dark
 
 let g:gruvbox_transparent_bg = '1'
-let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_dark = 'medium'
 let g:gruvbox_contrast_light = 'medium'
 let g:gruvbox_termcolors = 256
 
@@ -47,6 +47,8 @@ inoremap <silent><expr> <Tab>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
+
+let g:coc_global_extensions = [ 'coc-css', 'coc-git', 'coc-html', 'coc-json', 'coc-markdownlint', 'coc-sh', 'coc-sql', 'coc-tsserver', 'coc-yaml', '@yaegassy/coc-ansible']
 
 "set mouse=n " tell vim to recognize mouse commands in "Normal" modes
 set ttyfast " improve fluidity of mouse commands, this isn't necessary but I believe improves performance
@@ -92,13 +94,25 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 let g:ycm_use_clangd = 0
 
+" lightline
 let g:lightline = {
-      \ 'colorscheme': 'powerline',
-      \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-        \ },
-        \ 'component_function': {
-          \   'gitbranch': 'gitbranch#name'
-          \ },
-          \ }
+  \ 'active': {
+  \   'left': [
+  \     [ 'mode', 'paste' ],
+  \     [ 'ctrlpmark', 'git', 'diagnostic', 'cocstatus', 'filename', 'method' ]
+  \   ],
+  \   'right':[
+  \     [ 'filetype', 'fileencoding', 'lineinfo', 'percent' ],
+  \     [ 'blame' ]
+  \   ],
+  \ },
+  \ 'component_function': {
+  \   'blame': 'LightlineGitBlame',
+  \ }
+\ }
+
+function! LightlineGitBlame() abort
+  let blame = get(b:, 'coc_git_blame', '')
+  " return blame
+  return winwidth(0) > 120 ? blame : ''
+endfunction
