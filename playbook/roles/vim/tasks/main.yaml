@@ -32,6 +32,12 @@
     dest: ~/.vim/bundle/gitgutter.vim
     update: yes
 
+- name: addon indentLine
+  ansible.builtin.git:
+    repo: 'https://github.com/Yggdroot/indentLine.git'
+    dest: ~/.vim/bundle/indentLine
+    update: yes
+
 - name: addon vim-gitbranch provides a function which returns the name of the git branch.
   ansible.builtin.git:
     repo: 'https://github.com/itchyny/vim-gitbranch.git'
@@ -78,12 +84,6 @@
     repo: 'https://github.com/tinoschroeter/vim.UltiSnips.git'
     dest: ~/.vim/UltiSnips
     update: yes
-
-#- name: addon vim-irblack.vim (Infinite Red's vim theme)
-#  ansible.builtin.git:
-#    repo: 'https://github.com/wgibbs/vim-irblack.git'
-#    dest: ~/.vim/bundle/vim-irblack
-#    update: yes
 
 - name: addon vim-prettier.vim (An opinionated code formatter)
   ansible.builtin.git:

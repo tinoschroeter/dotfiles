@@ -27,7 +27,7 @@ set ai
 set background=dark
 
 let g:gruvbox_transparent_bg = '1'
-let g:gruvbox_contrast_dark = 'medium'
+let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_contrast_light = 'medium'
 let g:gruvbox_termcolors = 256
 
@@ -80,6 +80,7 @@ if has('persistent_undo')      "check if your vim version supports it
 endif    
 
 "yaml foo
+let g:indentLine_enabled = 1
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_color_term = 239
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
@@ -96,6 +97,7 @@ let g:ycm_use_clangd = 0
 
 " lightline
 let g:lightline = {
+  \ 'colorscheme': 'nord',
   \ 'active': {
   \   'left': [
   \     [ 'mode', 'paste' ],
@@ -113,6 +115,6 @@ let g:lightline = {
 
 function! LightlineGitBlame() abort
   let blame = get(b:, 'coc_git_blame', '')
-  " return blame
+  return blame
   return winwidth(0) > 120 ? blame : ''
 endfunction

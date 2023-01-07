@@ -25,5 +25,5 @@ if grep --quiet Ubuntu /etc/issue; then
   sudo apt-get install python3 ansible git -y
   ansible-playbook -i playbook/inventory playbook/site.yaml -c local
 else
-  echo "only works on Ubuntu"
+  echo "only works on Linux"
 fi
