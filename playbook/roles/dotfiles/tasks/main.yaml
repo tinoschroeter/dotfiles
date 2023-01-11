@@ -28,6 +28,11 @@
     url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/dockerfile.vim
     dest: ~/.vim/dockerfile.vim
 
+- name: get coc-settings.json
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/coc-settings.json
+    dest: ~/.vim/coc-settings.json
+
 - name: create terminator config file 
   ansible.builtin.file:
     path: ~/.config/terminator
