@@ -97,6 +97,12 @@
     dest: ~/.vim/bundle/vim-snippets
     update: yes
 
+- name: addon vim-polyglot A collection of language packs for Vim.
+  ansible.builtin.git:
+    repo: 'https://github.com/sheerun/vim-polyglot.git'
+    dest: ~/.vim/bundle/vim-polyglot
+    update: yes
+
 - name: addon vim-jsx-pretty
   ansible.builtin.git:
     repo: 'https://github.com/MaxMEllon/vim-jsx-pretty.git'
