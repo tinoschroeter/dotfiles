@@ -31,8 +31,16 @@ let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_contrast_light = 'medium'
 let g:gruvbox_termcolors = 256
 
+let g:vim_markdown_conceal = 0
 " fzf folder
 set rtp+=~/.fzf
+
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 autocmd vimenter * nested colorscheme gruvbox
 
@@ -48,7 +56,7 @@ inoremap <silent><expr> <Tab>
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 
-let g:coc_global_extensions = [ 'coc-css', 'coc-git', 'coc-html', 'coc-json', 'coc-markdownlint', 'coc-sh', 'coc-sql', 'coc-tsserver', 'coc-yaml', '@yaegassy/coc-ansible']
+let g:coc_global_extensions = [ 'coc-css', 'coc-git', 'coc-html', 'coc-pairs', 'coc-docker', 'coc-spell-checker', 'coc-json', 'coc-markdownlint', 'coc-sh', 'coc-sql', 'coc-tsserver', 'coc-yaml', '@yaegassy/coc-ansible']
 
 "set mouse=n " tell vim to recognize mouse commands in "Normal" modes
 set ttyfast " improve fluidity of mouse commands, this isn't necessary but I believe improves performance
@@ -64,6 +72,7 @@ set clipboard=unnamedplus           " interact with linux clipboard
 set cul
 map <C-n> :NERDTreeToggle<CR>       " toggle NERDTree
 map <F5> :MundoToggle<CR>           " toggle the undo graph
+imap ii <Esc>                       " press ii to exit insert mode
 let g:mundo_right = 1
 set foldenable                      " Enable folders
 set foldmethod=marker               " Do the marker folding thing
