@@ -144,12 +144,12 @@ fi
 # https://blog.confirm.ch/zsh-tips-changing-directories/
 setopt auto_cd
 
-# ChatGPT by OpenAI
-alias chatgtp="cd && python3 -m revChatGPT && cd -"
-
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
+
+# use xdg-opne to show files 
+alias show="xdg-open"
 
 # Command line alias to start the browser-sync server
 alias serve="browser-sync start --server --files ."
