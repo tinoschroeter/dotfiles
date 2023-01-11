@@ -195,6 +195,13 @@ d$                           # delete to end of line
 [Control][f]                 # Move forward one full screen
 [Control][d]                 # Move forward 1/2 screen
 [Control][u]                 # Move back (up) 1/2 screen
+[Control][k] + h || l        # switch between split screen
+
+# NerdTree
+o                            # open in prev window
+t                            # open in new tab
+T                            # open in new tab silently
+I                            # toggle hidden files
 ```
 
 ## bash
