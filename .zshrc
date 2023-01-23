@@ -144,6 +144,10 @@ fi
 # https://blog.confirm.ch/zsh-tips-changing-directories/
 setopt auto_cd
 
+#gpick contained.
+alias gpick='xhost local:root
+sudo docker run -d --rm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY aimvector/gpick'
+
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
@@ -195,7 +199,7 @@ alias bcat="batcat"
 # fzf
 alias f="fzf"
 
-export FZF_DEFAULT_OPTS="--border --height 90% --preview 'batcat --style numbers,changes --theme Coldark-Cold --color=always {}'"
+export FZF_DEFAULT_OPTS="--bind up:preview-up,down:preview-down --border --height 90% --preview 'batcat --style numbers,changes --theme Coldark-Cold --color=always {}'"
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 # ssh tunnel k3s
