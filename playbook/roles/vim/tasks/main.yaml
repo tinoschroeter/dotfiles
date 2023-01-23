@@ -56,6 +56,12 @@
     dest: ~/.vim/bundle/gruvbox
     update: yes
 
+- name: The fancy start screen for vim
+  ansible.builtin.git:
+    repo: 'https://github.com/mhinz/vim-startify.git'
+    dest: ~/.vim/bundle/vim-startify
+    update: yes
+
 - name: Create undo directory
   ansible.builtin.file:
     path: ~/.vim/undo
