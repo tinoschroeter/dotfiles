@@ -40,6 +40,95 @@
   :CocInstall coc-git coc-html coc-tsserver coc-json coc-css
 ```
 
+## vim
+
+```shell
+:X                           # encrypt files with a password
+gg=G                         # formating code
+:set nu!                     # hide line Number
+:50                          # go to line Number 50
+/search                      # search type n for next
+:%s/this/that/               # replace thist with that
+:66,70s/^/#                  # comment line 66 - 70
+:66,70s/^#/                  # and reverse
+[ctrl] +n or [ctrl] + p key  # auto completion
+:File | :File!               # fuzzy search files 
+:Ag   | :Ag!                 # fuzzy search code
+"+y                          # Copy to Your System Clipboard
+:tabe                        # open  a new tab
+gt                           # switch between tabs
+1gt                          # switch to first tab (rotate)
+4gt                          # seitch to fourth tab
+d$                           # delete to end of line
+[Control][b]                 # Move back one full screen
+[Control][f]                 # Move forward one full screen
+[Control][d]                 # Move forward 1/2 screen
+[Control][u]                 # Move back (up) 1/2 screen
+[Control][k] + h || l        # switch between split screen
+
+# NerdTree
+o                            # open in prev window
+t                            # open in new tab
+T                            # open in new tab silently
+I                            # toggle hidden files
+```
+
+## Search syntax
+
+Unless otherwise specified, fzf starts in "extended-search mode" where you can
+type in multiple search terms delimited by spaces. e.g. `^music .mp3$ sbtrkt
+!fire`
+
+| Token     | Match type                 | Description                          |
+| --------- | -------------------------- | ------------------------------------ |
+| `sbtrkt`  | fuzzy-match                | Items that match `sbtrkt`            |
+| `'wild`   | exact-match (quoted)       | Items that include `wild`            |
+| `^music`  | prefix-exact-match         | Items that start with `music`        |
+| `.mp3$`   | suffix-exact-match         | Items that end with `.mp3`           |
+| `!fire`   | inverse-exact-match        | Items that do not include `fire`     |
+| `!^music` | inverse-prefix-exact-match | Items that do not start with `music` |
+| `!.mp3$`  | inverse-suffix-exact-match | Items that do not end with `.mp3`    |
+
+If you don't prefer fuzzy matching and do not wish to "quote" every word,
+start fzf with `-e` or `--exact` option. Note that when  `--exact` is set,
+`'`-prefix "unquotes" the term.
+
+A single bar character term acts as an OR operator. For example, the following
+query matches entries that start with `core` and end with either `go`, `rb`,
+or `py`.
+
+```
+^core go$ | rb$ | py$
+```
+## bash
+
+```shell
+z                            # maintains a jump-list of the directories you actually use
+f | fzf                      # General-purpose command-line fuzzy finder.
+bcat                         # A cat clone with syntax highlighting
+```
+## helper scripts
+
+```bash
+help() {
+    /usr/local/bin/cht.sh
+}
+
+spell() {
+    /usr/local/bin/spell.sh
+}
+
+reload() {
+    source ~/.zshrc
+}
+
+sync_history() {
+    /usr/local/bin/sync-zsh-history.js ~/Dropbox/zsh_history
+}
+```
+
+![help command](docs/help.gif)
+
 ## Ansible Tree
 
 ```shell
@@ -170,65 +259,3 @@
   * Install vagrant
 
 </details>
-
-## vim
-
-```shell
-:X                           # encrypt files with a password
-gg=G                         # formating code
-:set nu!                     # hide line Number
-:50                          # go to line Number 50
-/search                      # search type n for next
-:%s/this/that/               # replace thist with that
-:66,70s/^/#                  # comment line 66 - 70
-:66,70s/^#/                  # and reverse
-[ctrl] +n or [ctrl] + p key  # auto completion
-:File | :File!               # fuzzy search files 
-:Ag   | :Ag!                 # fuzzy search code
-"+y                          # Copy to Your System Clipboard
-:tabe                        # open  a new tab
-gt                           # switch between tabs
-1gt                          # switch to first tab (rotate)
-4gt                          # seitch to fourth tab
-d$                           # delete to end of line
-[Control][b]                 # Move back one full screen
-[Control][f]                 # Move forward one full screen
-[Control][d]                 # Move forward 1/2 screen
-[Control][u]                 # Move back (up) 1/2 screen
-[Control][k] + h || l        # switch between split screen
-
-# NerdTree
-o                            # open in prev window
-t                            # open in new tab
-T                            # open in new tab silently
-I                            # toggle hidden files
-```
-
-## bash
-
-```shell
-z                            # maintains a jump-list of the directories you actually use
-f | fzf                      # General-purpose command-line fuzzy finder.
-bcat                         # A cat clone with syntax highlighting
-```
-## helper scripts
-
-```bash
-help() {
-    /usr/local/bin/cht.sh
-}
-
-spell() {
-    /usr/local/bin/spell.sh
-}
-
-reload() {
-    source ~/.zshrc
-}
-
-sync_history() {
-    /usr/local/bin/sync-zsh-history.js ~/Dropbox/zsh_history
-}
-```
-
-![help command](docs/help.gif)
