@@ -90,6 +90,9 @@ set nopaste " don't mess up the indenting of pasted text
 let g:gitgutter_preview_win_floating = 1
 set updatetime=50
 
+" lauch quickfix list in a new tab
+:set switchbuf+=newtab
+
 source ~/.vim/dockerfile.vim 
 
 map <F10> :w!<CR>:!aspell -c %<CR>:e! %<CR>  " spell check aspell
