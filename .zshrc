@@ -202,6 +202,21 @@ alias f="fzf"
 export FZF_DEFAULT_OPTS="--bind up:preview-up,down:preview-down --border --height 90% --preview 'batcat --style numbers,changes --theme Coldark-Cold --color=always {}'"
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
+# Advanced customization of fzf options via _fzf_comprun function
+# - The first argument to the function is the name of the command.
+# - You should make sure to pass the rest of the arguments to fzf.
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'tree -C {} | head -200'   "$@" ;;
+    export|unset) fzf --preview "eval 'echo \$'{}"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview 'bat -n --color=always {}' "$@" ;;
+  esac
+}
+
 # ssh tunnel k3s
 tunnel="ssh -p 22 -L 6443:localhost:6443 root@tino.sh"
 
