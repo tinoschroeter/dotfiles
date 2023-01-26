@@ -62,6 +62,12 @@
     dest: ~/.vim/bundle/vim-startify
     update: yes
 
+- name: vim-bookmarks 
+  ansible.builtin.git:
+    repo: 'https://github.com/MattesGroeger/vim-bookmarks.git'
+    dest: ~/.vim/bundle/vim-bookmarks
+    update: yes
+
 - name: Create undo directory
   ansible.builtin.file:
     path: ~/.vim/undo
