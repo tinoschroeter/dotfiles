@@ -60,6 +60,11 @@ gt                           # switch between tabs
 1gt                          # switch to first tab (rotate)
 4gt                          # seitch to fourth tab
 d$                           # delete to end of line
+di{                          # delete inside braces
+cw                           # change word under the cursor
+gx                           # Open file (for file under the cursor)
+gf                           # Go to file (for file under the cursor)
+gd                           # Go to definition (of the word under the cursor)
 [Control][b]                 # Move back one full screen
 [Control][f]                 # Move forward one full screen
 [Control][d]                 # Move forward 1/2 screen
