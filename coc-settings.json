@@ -1,4 +1,22 @@
 {
+  "cSpell.language": "en, de",
+  "cSpell.words": [
+    "eventim",
+    "fansale",
+    "kubernetes",
+    "teraform",
+    "quickfix",
+    "nocache"
+  ],
+  "suggest.noselect": true,
   "cSpellExt.enableDictionaries": ["german"],
-  "cSpell.language": "en, de"
+  "coc.preferences.extensionUpdateCheck": "never",
+  "coc.preferences.snippets.enable": true,
+  "coc.preferences.useQuickfixForLocations": true,
+  "suggest.disableMenu": true,
+  "suggest.snippetIndicator": "",
+  "markdownlint.config": {
+    "default": true,
+    "line_length": false
+  }
 }
