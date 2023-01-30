@@ -24,6 +24,7 @@
       - bat               # A cat clone with syntax highlighting and Git integration.
       - build-essential 
       - cmake 
+      - cmatrix           # The Matrix
       - curl              # curl is a tool to transfer data from or to a server, using one of the supported protocols.
       - dnsutils          # is a flexible tool for interrogating DNS name servers. 
       - dstat             # versatile tool for generating system resource statistics
@@ -159,6 +160,25 @@
 - name: make kubectl executable
   ansible.builtin.file:
     path: /usr/local/bin/kubectl
+    owner: root
+    group: root
+    mode: '0755'
+  become: yes
+
+- name: Install lazygit
+  ansible.builtin.get_url:
+    url: https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_0.36.0_Linux_x86_64.tar.gz  
+    dest: /tmp/lazygit_0.36.0_Linux_x86_64.tar.gz
+
+- name: Extract /tmp/lazygit_0.36.0_Linux_x86_64.tar.gz
+  ansible.builtin.unarchive:
+    src: /tmp/lazygit_0.36.0_Linux_x86_64.tar.gz
+    dest: /usr/local/bin/lazygit
+  become: yes
+
+- name: make lazygit executable
+  ansible.builtin.file:
+    path: /usr/local/bin/lazygit
     owner: root
     group: root
     mode: '0755'

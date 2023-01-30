@@ -69,7 +69,7 @@ gd                           # Go to definition (of the word under the cursor)
 [Control][f]                 # Move forward one full screen
 [Control][d]                 # Move forward 1/2 screen
 [Control][u]                 # Move back (up) 1/2 screen
-[Control][k] + h || l        # switch between split screen
+[Control][w] + h || l        # switch between split screen
 
 # NerdTree
 o                            # open in prev window

@@ -36,6 +36,19 @@ let g:vim_markdown_conceal = 0
 " fzf folder
 set rtp+=~/.fzf
 
+" floaterm configuration
+let g:floaterm_width = 0.9
+let g:floaterm_height = 0.9
+
+" FloatermNew Configuration
+" Enable lazygit
+map <C-l> :FloatermNew lazygit<CR>  
+map <C-k> :FloatermNew cmatrix<CR>  
+" Enable Terminal
+map <C-t> :FloatermNew<CR>
+
+let g:netrw_browsex_viewer="xdg-open"
+
 " returns all modified files of the current git repo
 " `2>/dev/null` makes the command fail quietly, so that when we are not
 " in a git repo, the list will be empty

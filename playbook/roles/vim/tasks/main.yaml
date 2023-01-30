@@ -68,6 +68,12 @@
     dest: ~/.vim/bundle/vim-bookmarks
     update: yes
 
+- name: vim-floaterm 
+  ansible.builtin.git:
+    repo: 'https://github.com/voldikss/vim-floaterm.git'
+    dest: ~/.vim/bundle/vim-floaterm 
+    update: yes
+
 - name: Create undo directory
   ansible.builtin.file:
     path: ~/.vim/undo
