@@ -1,13 +1,5 @@
 {
   "cSpell.language": "en, de",
-  "cSpell.words": [
-    "eventim",
-    "fansale",
-    "kubernetes",
-    "teraform",
-    "quickfix",
-    "nocache"
-  ],
   "suggest.noselect": true,
   "cSpellExt.enableDictionaries": ["german"],
   "coc.preferences.extensionUpdateCheck": "never",
@@ -18,5 +10,31 @@
   "markdownlint.config": {
     "default": true,
     "line_length": false
-  }
+  },
+  "cSpell.userWords": [
+    "Deploye",
+    "configmap",
+    "deployen",
+    "eticket",
+    "eventim",
+    "fansale",
+    "galera",
+    "grafana",
+    "highstate",
+    "journalctl",
+    "kubectl",
+    "kubernetes",
+    "loadbalancer",
+    "loadbalancers",
+    "lucene",
+    "markdownlint",
+    "nocache",
+    "noselect",
+    "pdap",
+    "psql",
+    "quickfix",
+    "seatmap",
+    "teraform",
+    "zabbix"
+  ]
 }

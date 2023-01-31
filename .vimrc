@@ -43,11 +43,15 @@ let g:floaterm_height = 0.9
 " FloatermNew Configuration
 " Enable lazygit
 map <C-l> :FloatermNew lazygit<CR>  
-map <C-k> :FloatermNew cmatrix<CR>  
+map <C-k> :FloatermNew musikcube<CR>  
 " Enable Terminal
 map <C-t> :FloatermNew<CR>
 
 let g:netrw_browsex_viewer="xdg-open"
+
+" coc-spell-checker
+vmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)
 
 " returns all modified files of the current git repo
 " `2>/dev/null` makes the command fail quietly, so that when we are not
@@ -93,7 +97,7 @@ inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 "      \ coc#refresh()
 
 
-let g:coc_global_extensions = [ 'coc-css', 'coc-git', 'coc-html', 'coc-pairs', 'coc-docker', 'coc-spell-checker', 'coc-json', 'coc-markdownlint', 'coc-sh', 'coc-sql', 'coc-tsserver', 'coc-yaml', '@yaegassy/coc-ansible']
+let g:coc_global_extensions = [ 'coc-css', 'coc-copilot', 'coc-git', 'coc-html', 'coc-pairs', 'coc-docker', 'coc-spell-checker', 'coc-json', 'coc-markdownlint', 'coc-sh', 'coc-sql', 'coc-tsserver', 'coc-yaml', '@yaegassy/coc-ansible']
 
 "set mouse=n " tell vim to recognize mouse commands in "Normal" modes
 set ttyfast " improve fluidity of mouse commands, this isn't necessary but I believe improves performance
