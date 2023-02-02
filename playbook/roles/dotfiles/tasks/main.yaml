@@ -54,7 +54,7 @@
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/moc/keymap
     dest: ~/.moc/keymap
- 
+
 - name: create .secrets file
   ansible.builtin.file:
     path: ~/.secrets
