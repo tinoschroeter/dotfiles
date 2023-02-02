@@ -12,8 +12,8 @@
     "line_length": false
   },
   "cSpell.userWords": [
-    "deploye",
-    "edgeworkers",
+    "Deploye",
+    "EDGEWORKERS",
     "Edgekv",
     "Onsale",
     "Onsales",
@@ -27,6 +27,7 @@
     "grafana",
     "highstate",
     "journalctl",
+    "keymap",
     "kubectl",
     "kubernetes",
     "loadbalancer",

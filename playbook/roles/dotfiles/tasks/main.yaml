@@ -43,6 +43,18 @@
     url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.config/terminator/config 
     dest: ~/.config/terminator/config
 
+# moc ncurses based console audio player
+
+- name: create moc config file
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/moc/config
+    dest: ~/.moc/config
+
+- name: create moc keymap file
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/moc/keymap
+    dest: ~/.moc/keymap
+ 
 - name: create .secrets file
   ansible.builtin.file:
     path: ~/.secrets

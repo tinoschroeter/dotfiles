@@ -40,6 +40,7 @@
       - nextcloud-desktop # Connect to your Nextcloud from Windows, macOS or Linux.
       - nfs-common        # nsf tools
       - nmap              # network scanner
+      - moc               # ncurses based console audio player
       - nodejs            # V8 javascript runtime 
       - pwgen             # Automatic Password generation
       - python-setuptools # 

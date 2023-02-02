@@ -43,7 +43,7 @@ let g:floaterm_height = 0.9
 " FloatermNew Configuration
 " Enable lazygit
 map <C-l> :FloatermNew lazygit<CR>  
-map <C-k> :FloatermNew musikcube<CR>  
+map <C-k> :FloatermNew mocp<CR>  
 " Enable Terminal
 map <C-t> :FloatermNew<CR>
 
