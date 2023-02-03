@@ -145,6 +145,12 @@
     dest: ~/.vim/bundle/coc.nvim
     update: yes
 
+- name: addon Markdown Preview for (Neo)vim
+  ansible.builtin.git:
+    repo: 'https://github.com/iamcco/markdown-preview.nvim.git'
+    dest: ~/.vim/bundle/markdown-preview.nvim
+    update: yes
+
 - name: Create symbolic link for vim_vim-jsx-pretty
   ansible.builtin.file:
     src: ~/.vim/bundle/vim-jsx-pretty/autoload/jsx_pretty/indent.vim
