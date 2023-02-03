@@ -64,6 +64,7 @@
   ansible.builtin.get_url:
     url: https://github.com/szazeski/checkssl/releases/download/v0.4.3/checkssl_0.4.3_Linux_x86_64.tar.gz
     dest: /usr/bin/checkssl
+    force: no
   become: yes
 
 - name: make checkssl executable
@@ -97,6 +98,8 @@
   ansible.builtin.get_url:
     url: https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64
     dest: /usr/local/bin/skaffold
+    force: no
+  become: yes
   become: yes
 
 - name: make skaffold executable
@@ -111,6 +114,7 @@
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens
     dest: /usr/local/bin/kubens
+    force: no
   become: yes
 
 - name: make kubens executable
@@ -125,6 +129,7 @@
   ansible.builtin.get_url:
     url: https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
     dest: /tmp/kubeval-linux-amd64.tar.gz
+    force: no
 
 - name: Extract /tmp/kubeval-linux-amd64.tar.gz
   ansible.builtin.unarchive:
@@ -142,6 +147,7 @@
   ansible.builtin.get_url:
     url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
     dest: /usr/local/bin/minikube
+    force: no
   become: yes
 
 - name: make Minikube executable
@@ -156,6 +162,7 @@
   ansible.builtin.get_url:
     url: https://dl.k8s.io/release/v1.22.7/bin/linux/amd64/kubectl
     dest: /usr/local/bin/kubectl
+    force: no
   become: yes
 
 - name: make kubectl executable
@@ -168,13 +175,14 @@
 
 - name: Install lazygit
   ansible.builtin.get_url:
-    url: https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_0.36.0_Linux_x86_64.tar.gz  
-    dest: /tmp/lazygit_0.36.0_Linux_x86_64.tar.gz
+    url: https://github.com/jesseduffield/lazygit/releases/download/v0.37.0/lazygit_0.37.0_Linux_x86_64.tar.gz
+    dest: /tmp/lazygit.tar.gz
+    force: no
 
-- name: Extract /tmp/lazygit_0.36.0_Linux_x86_64.tar.gz
+- name: Extract /tmp/lazygit.tar.gz
   ansible.builtin.unarchive:
-    src: /tmp/lazygit_0.36.0_Linux_x86_64.tar.gz
-    dest: /usr/local/bin/lazygit
+    src: /tmp/lazygit.tar.gz
+    dest: /usr/local/bin/
   become: yes
 
 - name: make lazygit executable
@@ -211,6 +219,7 @@
   ansible.builtin.get_url:
     url: https://github.com/vmware-tanzu/velero/releases/download/v1.7.1/velero-v1.7.1-linux-amd64.tar.gz
     dest: /tmp/velero-v1.7.1-linux-amd64.tar.gz
+    force: no
 
 - name: Extract /tmp/velero-v1.7.1-linux-amd64.tar.gz
   ansible.builtin.unarchive:
@@ -228,6 +237,7 @@
   ansible.builtin.get_url:
     url: https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
     dest: /usr/local/go1.17.6.linux-amd64.tar.gz
+    force: no
   become: yes
 
 - name: Extract go1.17.6.linux-amd64.tar.gz
@@ -240,6 +250,7 @@
   ansible.builtin.get_url:
     url: https://github.com/protocolbuffers/protobuf/releases/download/v3.14.0/protoc-3.14.0-linux-x86_64.zip
     dest: /usr/local/protoc-3.14.0-linux-x86_64.zip
+    force: no
   become: yes
 
 - name: Extract protoc-3.14.0-linux-x86_64.zip
@@ -253,12 +264,14 @@
     url: https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
     dest: /usr/local/bin/argocd
     mode: '0555'
+    force: no
   become: yes
 
 - name: get argo cli 
   ansible.builtin.get_url:
     url: https://github.com/argoproj/argo-workflows/releases/download/v3.2.6/argo-linux-amd64.gz
     dest: /tmp
+    force: no
 
 - name: Extract argo-linux-amd64.gz
   ansible.builtin.shell:
