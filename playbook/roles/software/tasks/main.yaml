@@ -311,6 +311,13 @@
     dest: /usr/local/bin/todo.sh
     mode: '777'
   become: yes
+
+- name: move youtube downloader in place
+  copy:
+    src: files/ydl.sh
+    dest: /usr/local/bin/ydl.sh
+    mode: '774'
+  become: yes
   
 - name: create .toto folder
   file:
