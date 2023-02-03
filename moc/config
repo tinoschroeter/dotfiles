@@ -4,7 +4,7 @@
 # is not owned by either root or the current user, or if it is writable by
 # anyone other than its owner.
 
-MusicDir = /home/tino/Dropbox/music
+MusicDir = /home/tino/Music
 
 # Default FormatString:
 #
