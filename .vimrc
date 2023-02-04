@@ -32,6 +32,10 @@ let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_contrast_light = 'medium'
 let g:gruvbox_termcolors = 256
 
+" Prettier config
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+
 let g:vim_markdown_conceal = 0
 " fzf folder
 set rtp+=~/.fzf
@@ -44,7 +48,6 @@ let g:floaterm_height = 0.9
 " Enable lazygit
 map <C-l> :FloatermNew lazygit<CR>  
 map <C-k> :FloatermNew mocp<CR>  
-" Enable Terminal
 map <C-t> :FloatermNew<CR>
 
 let g:netrw_browsex_viewer="xdg-open"
