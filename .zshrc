@@ -24,6 +24,14 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # secrets
 source ~/.secrets
 
+# jump to folder
+
+jump() {
+  cd $(z|fzf --no-border --no-preview --layout=reverse --height=23% --no-scrollbar --color=16|awk '{ print $2}')
+}
+
+alias j="jump"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME

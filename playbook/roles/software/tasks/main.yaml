@@ -22,6 +22,7 @@
       - aspell-de 
       - aspell-en
       - bat               # A cat clone with syntax highlighting and Git integration.
+      - btop              # Modern and colorful command line resource monitor that shows usage and stats
       - build-essential 
       - cmake 
       - cmatrix           # The Matrix
