@@ -27,10 +27,14 @@ source ~/.secrets
 # jump to folder
 
 jump() {
-  cd $(z|fzf --no-border --no-preview --layout=reverse --height=23% --no-scrollbar --color=16|awk '{ print $2}')
+  cd $(z|tac|fzf --no-border --no-preview --layout=reverse --height=42% --no-scrollbar --color=16|awk '{ print $2}')
 }
 
 alias j="jump"
+
+# Zsh-z is a command line tool that allows you to jump quickly to directories
+setopt COMPLETE_ALIASES
+compdef _z ${ZSHZ_CMD:-${_Z_CMD:-z}}
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -98,22 +102,22 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  fd
-  dnf
-  zsh-autosuggestions
-  zsh-syntax-highlighting
   aws
+  dnf
   docker
+  fd
+  gcloud
+  git
   helm
-  knife
+  kubectl
   node
   npm
   terraform
   vagrant
-  gcloud
-  kubectl
+  z
+  zsh-autosuggestions
   zsh-kubectl-prompt
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
