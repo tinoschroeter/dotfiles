@@ -48,7 +48,7 @@ let g:floaterm_height = 0.9
 " Enable lazygit
 map <C-l> :FloatermNew lazygit<CR>  
 map <C-k> :FloatermNew mocp<CR>  
-map <C-t> :FloatermNew<CR>
+map <C-t> :FloatermNew --wintype=split --height=10<CR>
 
 let g:netrw_browsex_viewer="xdg-open"
 
