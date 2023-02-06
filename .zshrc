@@ -26,11 +26,13 @@ source ~/.secrets
 
 # jump to folder
 
-jump() {
+function jump() {
   cd $(z|tac|fzf --no-border --no-preview --layout=reverse --height=42% --no-scrollbar --color=16|awk '{ print $2}')
 }
-
 alias j="jump"
+
+zle -N jump
+bindkey '^j' jump
 
 # Zsh-z is a command line tool that allows you to jump quickly to directories
 setopt COMPLETE_ALIASES
