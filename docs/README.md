@@ -31,7 +31,7 @@
   :set spell spelllang=de_DE
 ```
 
->  Coc auto-completion 
+> Coc auto-completion
 
 ```bash
   cd .vim/bundle/coc.nvim
@@ -102,7 +102,7 @@ A single bar character term acts as an OR operator. For example, the following
 query matches entries that start with `core` and end with either `go`, `rb`,
 or `py`.
 
-```
+```shell
 ^core go$ | rb$ | py$
 ```
 ## bash
