@@ -13,7 +13,7 @@ setopt nocorrectall
 setopt correct
 
 # Remote Docker
-export DOCKER_HOST=tcp://10.0.1.70:2375
+# export DOCKER_HOST=tcp://10.0.1.70:2375
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/tino/.oh-my-zsh"
@@ -158,9 +158,35 @@ fi
 # https://blog.confirm.ch/zsh-tips-changing-directories/
 setopt auto_cd
 
-#gpick contained.
-alias gpick='xhost local:root
-sudo docker run -d --rm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY aimvector/gpick'
+# contained apps
+
+# ab
+alias d_ab='docker run -it --rm aimvector/ab'
+
+# gpick
+alias d_gpick='xhost local:root
+docker run -d --rm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY aimvector/gpick'
+
+# postman
+alias d_postman='xhost local:root 
+docker run -d --rm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY --net host --name Postman postman'
+
+# JasemAdmin
+alias d_jasemAdmin='xhost local:root 
+docker run -d --rm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY --net host --name jasemadmin jasemadmin'
+
+# maarkdownlint
+alias d_mdl='docker run -it --rm -v $PWD:/md registry.gitlab.com/pipeline-components/markdownlint:latest mdl --style all --warnings /md'
+
+# powershell
+alias d_powershell='docker run -it --rm --net host jess/powershell'
+
+# firefox
+alias d_firefox='xhost local:root
+docker run -d --rm --net host -v /etc/hosts:/etc/hosts -v /tmp/.X11-unix:/tmp/.X11-unix -v /etc/localtime:/etc/localtime:ro \
+  -v ~/containers/firefox/data:/root/.mozilla -e DISPLAY=unix$DISPLAY \
+  -v ~/Downloads:/root/Downloads --device /dev/snd --device /dev/dri \
+  -v /dev/shm:/dev/shm --name firefox aimvector/firefox'
 
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
@@ -188,6 +214,7 @@ alias t="terraform"
 
 # Docker
 alias d="docker"
+alias ld="lazydocker"
 
 # git 
 alias g="git"
@@ -202,6 +229,9 @@ alias v="vim"
 alias todo="todo.sh"
 
 export TODO_DIR="/home/tino/Dropbox/todo"
+
+# mocp
+alias m="mocp"
 
 # nodejs
 alias n="node"
