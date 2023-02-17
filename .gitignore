@@ -1,5 +1,6 @@
 **/node_modules
 *.log
+*.swp
 .vagrant
 .cache/
 password.txt
