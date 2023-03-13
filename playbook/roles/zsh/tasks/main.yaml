@@ -17,22 +17,22 @@
   ansible.builtin.git:
     repo: 'https://github.com/zsh-users/zsh-syntax-highlighting.git'
     dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-    update: yes
+    update: True
 
 - name: zsh-autosuggestions (Fish-like fast/unobtrusive autosuggestions for zsh.)
   ansible.builtin.git:
     repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
     dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-    update: yes
+    update: True
 
 - name: zsh-kubectl-prompt (displays information about the kubectl current context and namespace in zsh prompt.)
   ansible.builtin.git:
     repo: 'https://github.com/superbrothers/zsh-kubectl-prompt.git'
     dest: ~/.oh-my-zsh/custom/plugins/zsh-kubectl-prompt
-    update: yes
+    update: True
 
 - name: Powerlevel10k Theme 
   ansible.builtin.git: 
     repo: 'https://github.com/romkatv/powerlevel10k.git'
     dest: ~/.oh-my-zsh/custom/themes/powerlevel10k
-    update: yes
+    update: True

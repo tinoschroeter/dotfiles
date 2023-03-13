@@ -4,5 +4,5 @@
 
 - name: Set login shell of user {{ ansible_env.USER }} to `/bin/zsh` with `usermod`
   ansible.builtin.command: usermod --shell /bin/zsh {{ ansible_env.USER }}
-  become: true
-  changed_when: false
+  become: True
+  changed_when: False

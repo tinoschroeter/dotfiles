@@ -6,13 +6,13 @@
 - name: Run Docker install script
   ansible.builtin.shell:
     cmd: ls /etc/docker || cat /tmp/docker.sh | sh -s -- -y
-  become: yes
+  become: True
 
 - name: Reload Docker Service
   ansible.builtin.service:
     name: docker
     state: reloaded
-  become: yes
+  become: True
 
 - name: Install utility packages
   apt:
@@ -29,6 +29,7 @@
       - curl              # curl is a tool to transfer data from or to a server, using one of the supported protocols.
       - dnsutils          # is a flexible tool for interrogating DNS name servers. 
       - dstat             # versatile tool for generating system resource statistics
+      - fd-find           # Simple, fast and user-friendly alternative to find
       - firefox           # browser
       - firefox-locale-de
       - gnupg             # GNU Privacy Guard
@@ -36,12 +37,12 @@
       - iotop             # iotop watches I/O usage information output by the Linux kernel  
       - jq                # jq is a lightweight and flexible command-line JSON processor.
       - lolcat            # color output
+      - moc               # ncurses based console audio player
       - neofetch          # Shows Linux System Information with Distribution Logo
       - net-tools         # collection of base networking utilities for Linux.
       - nextcloud-desktop # Connect to your Nextcloud from Windows, macOS or Linux.
       - nfs-common        # nsf tools
       - nmap              # network scanner
-      - moc               # ncurses based console audio player
       - nodejs            # V8 javascript runtime 
       - pwgen             # Automatic Password generation
       - python-setuptools # 
@@ -59,14 +60,14 @@
       - tig               # ncurses-based text-mode interface for Git
       - tree              # recursively list or display the content of a directory in a tree-like format.
       - zsh               # nice shell
-  become: yes
+  become: True
 
 - name: Install checkssl
   ansible.builtin.get_url:
     url: https://github.com/szazeski/checkssl/releases/download/v0.4.3/checkssl_0.4.3_Linux_x86_64.tar.gz
     dest: /usr/bin/checkssl
     force: no
-  become: yes
+  become: True
 
 - name: make checkssl executable
   ansible.builtin.file:
@@ -74,7 +75,7 @@
     owner: root
     group: root
     mode: '0755'
-  become: yes
+  become: True
 
 - name: Install AWS CLI
   pip:
@@ -92,16 +93,15 @@
   apt:
     state: present
     name: google-chrome-stable
-    update_cache: yes
-  become: yes
+    update_cache: True
+  become: True
 
 - name: Install skaffold
   ansible.builtin.get_url:
     url: https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64
     dest: /usr/local/bin/skaffold
     force: no
-  become: yes
-  become: yes
+  become: True
 
 - name: make skaffold executable
   ansible.builtin.file:
@@ -109,14 +109,14 @@
     owner: root
     group: root
     mode: '0755'
-  become: yes
+  become: True
 
 - name: Install kubens
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens
     dest: /usr/local/bin/kubens
     force: no
-  become: yes
+  become: True
 
 - name: make kubens executable
   ansible.builtin.file:
@@ -124,7 +124,7 @@
     owner: root
     group: root
     mode: '0755'
-  become: yes
+  become: True
 
 - name: Install kubeval
   ansible.builtin.get_url:
@@ -142,14 +142,14 @@
     src: /tmp/kubeval
     dest: /usr/local/bin/kubeval
     mode: '0555'
-  become: yes
+  become: True
 
 - name: Install Minikube
   ansible.builtin.get_url:
     url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
     dest: /usr/local/bin/minikube
     force: no
-  become: yes
+  become: True
 
 - name: make Minikube executable
   ansible.builtin.file:
@@ -157,14 +157,14 @@
     owner: root
     group: root
     mode: '0755'
-  become: yes
+  become: True
 
 - name: Install kubectl
   ansible.builtin.get_url:
     url: https://dl.k8s.io/release/v1.22.7/bin/linux/amd64/kubectl
     dest: /usr/local/bin/kubectl
     force: no
-  become: yes
+  become: True
 
 - name: make kubectl executable
   ansible.builtin.file:
@@ -172,7 +172,7 @@
     owner: root
     group: root
     mode: '0755'
-  become: yes
+  become: True
 
 - name: Install lazygit
   ansible.builtin.get_url:
@@ -184,7 +184,7 @@
   ansible.builtin.unarchive:
     src: /tmp/lazygit.tar.gz
     dest: /usr/local/bin/
-  become: yes
+  become: True
 
 - name: make lazygit executable
   ansible.builtin.file:
@@ -192,25 +192,7 @@
     owner: root
     group: root
     mode: '0755'
-  become: yes
-
-    #- name: Add the HashiCorp GPG key
-    #  ansible.builtin.shell:
-    #    cmd: 
-    #      - curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-    #  become: yes
-    #
-    #- name: Add the HashiCorp repo
-    #  ansible.builtin.shell:
-    #    cmd: 
-    #      - sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-    #  become: yes
-    #
-    #- name: install the Terraform CLI.
-    #  apt:
-    #    name: terraform
-    #    update_cache: yes
-    #  become: yes
+  become: True
 
 - name: Install helm 3
   ansible.builtin.shell:
@@ -232,33 +214,33 @@
     src: /tmp/velero-v1.7.1-linux-amd64/velero
     dest: /usr/local/bin/velero
     mode: '0555'
-  become: yes
+  become: True
 
 - name: download golang (don't installed new version of Go on top a previous one. rm -rvf /usr/local/go/)
   ansible.builtin.get_url:
     url: https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
     dest: /usr/local/go1.17.6.linux-amd64.tar.gz
     force: no
-  become: yes
+  become: True
 
 - name: Extract go1.17.6.linux-amd64.tar.gz
   ansible.builtin.unarchive:
     src: /usr/local/go1.17.6.linux-amd64.tar.gz
     dest: /usr/local
-  become: yes
+  become: True
 
 - name: download protoc (API for protocol buffers using modern Haskell language and library patterns.)
   ansible.builtin.get_url:
     url: https://github.com/protocolbuffers/protobuf/releases/download/v3.14.0/protoc-3.14.0-linux-x86_64.zip
     dest: /usr/local/protoc-3.14.0-linux-x86_64.zip
     force: no
-  become: yes
+  become: True
 
 - name: Extract protoc-3.14.0-linux-x86_64.zip
   ansible.builtin.unarchive:
     src: /usr/local/protoc-3.14.0-linux-x86_64.zip
     dest: /usr/local
-  become: yes
+  become: True
   
 - name: get and install argocd cli 
   ansible.builtin.get_url:
@@ -266,7 +248,7 @@
     dest: /usr/local/bin/argocd
     mode: '0555'
     force: no
-  become: yes
+  become: True
 
 - name: get argo cli 
   ansible.builtin.get_url:
@@ -284,7 +266,7 @@
     src: /tmp/argo-linux-amd64
     dest: /usr/local/bin/argo
     mode: '0555'
-  become: yes
+  become: True
 
 - name: Install nvm (Node Version Manager)
   ansible.builtin.shell:
@@ -293,45 +275,45 @@
 - name: Setup nvm env
   ansible.builtin.shell:
     cmd: cat /home/tino/.nvm/nvm.sh | bash  # This loads nvm 
-  become: yes
+  become: True
 
 - name: Install Slack chat client
   snap:
     name: slack
-    classic: yes
-  become: yes
+    classic: True
+  become: True
 
 - name: download fzf command-line fuzzy finder
   ansible.builtin.git:
     repo: 'https://github.com/junegunn/fzf.git'
     dest: ~/.fzf
-    update: yes
+    update: True
 
 - name: install fzf
   ansible.builtin.shell:
     cmd: ~/.fzf/install
-#  become: yes
+#  become: True
 #
 - name: install z
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/rupa/z/master/z.sh
     dest: /usr/local/bin/z.sh
     mode: '777'
-  become: yes
+  become: True
 
 - name: install todo.sh
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/todotxt/todo.txt-cli/master/todo.sh
     dest: /usr/local/bin/todo.sh
     mode: '777'
-  become: yes
+  become: True
 
 - name: move youtube downloader in place
   copy:
     src: files/ydl.sh
     dest: /usr/local/bin/ydl.sh
     mode: '774'
-  become: yes
+  become: True
   
 - name: create .toto folder
   file:
@@ -348,18 +330,18 @@
     src: cht.sh
     dest: /usr/local/bin/cht.sh
     mode: '777'
-  become: yes
+  become: True
 
 - name: copy spell.sh to /usr/local/bin/
   ansible.builtin.copy:
     src: spell.sh
     dest: /usr/local/bin/spell.sh
     mode: '777'
-  become: yes
+  become: True
 
 - name: copy sync-zsh-history to /usr/local/bin/
   ansible.builtin.copy:
     src: sync-zsh-history/index.js
     dest: /usr/local/bin/sync-zsh-history.js
     mode: '777'
-  become: yes
+  become: True
