@@ -14,7 +14,6 @@ set ruler
 set shiftwidth=4
 set smartindent
 set tabstop=4
-set expandtab
 "set nowrap
 set spell
 set spelllang=de_de
@@ -23,6 +22,7 @@ set sw=2
 set ai
 %retab
 
+let mapleader=" "
 
 " color theme
 set background=dark
@@ -41,16 +41,21 @@ let g:vim_markdown_conceal = 0
 " fzf folder
 set rtp+=~/.fzf
 
+map <leader>f :Files<CR>
+map <leader>g :Ag<CR>
+
+map <leader><tab><tab> :tabe<CR>	
+
 " floaterm configuration
 let g:floaterm_width = 0.9
 let g:floaterm_height = 0.9
 
 " FloatermNew Configuration
 " Enable lazygit
-map <C-l> :FloatermNew lazygit<CR>  
-map <C-k> :FloatermNew mocp<CR>  
-map <C-j> :FloatermNew tig %<CR>  
-map <C-t> :FloatermNew --wintype=split --height=10<CR>
+map <leader>gl :FloatermNew lazygit<CR>  
+map <leader>m :FloatermNew mocp<CR>  
+map <leader>gt :FloatermNew tig %<CR>  
+map <leader>t :FloatermNew <CR>
 
 let g:netrw_browsex_viewer="xdg-open"
 
@@ -120,7 +125,7 @@ source ~/.vim/dockerfile.vim
 map <F10> :w!<CR>:!aspell -c %<CR>:e! %<CR>  " spell check aspell
 set clipboard=unnamedplus           " interact with linux clipboard
 set cul
-map <C-n> :NERDTreeToggle<CR>       " toggle NERDTree
+map <leader>e :NERDTreeToggle<CR>       " toggle NERDTree
 map <F5> :MundoToggle<CR>           " toggle the undo graph
 imap ii <Esc>                       " press ii to exit insert mode
 let g:mundo_right = 1
