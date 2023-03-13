@@ -44,6 +44,12 @@
     dest: ~/.config/terminator/config
 
 # moc ncurses based console audio player
+#
+- name: Create a directory for moc if it does not exist
+  ansible.builtin.file:
+    path: ~/.moc
+    state: directory
+    mode: '0755'
 
 - name: create moc config file
   ansible.builtin.get_url:
