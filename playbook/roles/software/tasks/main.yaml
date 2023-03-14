@@ -161,7 +161,7 @@
 
 - name: Install kubectl
   ansible.builtin.get_url:
-    url: https://dl.k8s.io/release/v1.22.7/bin/linux/amd64/kubectl
+    url: https://dl.k8s.io/release/v1.26.2/bin/linux/amd64/kubectl
     dest: /usr/local/bin/kubectl
     force: no
   become: True
