@@ -93,7 +93,7 @@ Keymap = keymap
 
 # Use ASCII rather than graphic characters for drawing lines.  This
 # helps on some terminals.
-ASCIILines = yes
+ASCIILines = no
 
 # Number items in the playlist.
 PlaylistNumbering = yes
