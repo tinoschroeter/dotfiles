@@ -36,3 +36,7 @@ sqlite3
 eventim
 moc
 ncurses
+javascript
+lua
+tsx
+yaml
