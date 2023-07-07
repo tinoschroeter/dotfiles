@@ -6,6 +6,11 @@
   become: True
 
 - name: Creates autoload directory
+- name: Creates autoload directory
+  file:
+    path: ~/.vim/autoload
+    state: directory
+
   file:
     path: ~/.vim/autoload
     state: directory

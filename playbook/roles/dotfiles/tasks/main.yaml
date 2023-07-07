@@ -43,8 +43,13 @@
     url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.config/terminator/config 
     dest: ~/.config/terminator/config
 
+- name: Copy nvim config
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.config/nvim 
+    dest: ~/.config/nvim
+
 # moc ncurses based console audio player
-#
+
 - name: Create a directory for moc if it does not exist
   ansible.builtin.file:
     path: ~/.moc

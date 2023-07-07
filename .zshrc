@@ -206,9 +206,6 @@ alias ska="skaffold"
 alias kv="kubeval"
 alias m="minikube"
 
-# Velero Backup
-alias v=velero
-
 # Terraform
 alias t="terraform"
 
@@ -222,8 +219,10 @@ alias gs="git status"
 alias gd="git diff"
 alias gl="git log"
 alias lg="lazygit"
+
 # vim 
-alias v="vim"
+alias v="nvim"
+alias vim="nvim"
 
 # todo.sh
 alias todo="todo.sh"

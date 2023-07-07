@@ -81,6 +81,18 @@
   pip:
     name: awscli
 
+- name: Install ppa:neovim
+  ansible.builtin.shell:
+    cmd: add-apt-repository ppa:neovim-ppa/stable
+  become: True
+
+- name: Install neovim
+  apt:
+    state: present
+    name: nvim
+    update_cache: True
+  become: True
+
 - name: add google ppa
   ansible.builtin.shell:
     cmd: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 

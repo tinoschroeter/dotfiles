@@ -2,19 +2,19 @@
 
 language="de\nen"
 
-selected=`printf $language | fzf --no-border --height 5% --no-preview`
+selected=$(printf $language | fzf --no-border --height 5% --no-preview)
 
 if [[ $selected =~ "de" ]]; then
-  echo -n "Gebe einen Text ein und Enter: "
+	echo -n "Gebe einen Text ein und Enter: "
 elif [[ $selected =~ "en" ]]; then
-  echo -n "Type some text and Enter: "
+	echo -n "Type some text and Enter: "
 else
-  exit 1
+	exit 1
 fi
 
-read data
-if [[ ${#data} -eq 0 ]]; then                                                                                        
-  exit 1 
+read -r data
+if [[ ${#data} -eq 0 ]]; then
+	exit 1
 fi
 
-echo $data|aspell pipe -l $selected
+echo $data | aspell pipe -l $selected
