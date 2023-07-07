@@ -26,12 +26,18 @@
     cursor_color = "#002b36"
     foreground_color = "#002b36"
     palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+  [[Tokyo Night Storm]]
+    background_color = "#24283b"
+    cursor_color = "#c0caf5"
+    font = MonoLisa Bold 12
+    foreground_color = "#c0caf5"
+    palette = "#1d202f:#f7768e:#9ece6a:#e0af68:#7aa2f7:#bb9af7:#7dcfff:#a9b1d6:#414868:#f7768e:#9ece6a:#e0af68:#7aa2f7:#bb9af7:#7dcfff:#9d7cd8"
 [layouts]
   [[default]]
     [[[child1]]]
       type = Terminal
       parent = window0
-      profile = gruvbox-dark
+      profile = Tokyo Night Storm
     [[[window0]]]
       type = Window
       parent = ""
