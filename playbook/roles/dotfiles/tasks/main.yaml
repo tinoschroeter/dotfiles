@@ -44,9 +44,10 @@
     dest: ~/.config/terminator/config
 
 - name: Copy nvim config
-  ansible.builtin.get_url:
-    url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.config/nvim 
-    dest: ~/.config/nvim
+  ansible.builtin.copy:
+    src: "{{inventory_dir}}/../.config/nvim/"
+    dest: ~/.config/nvim/
+    directory_mode:
 
 # moc ncurses based console audio player
 

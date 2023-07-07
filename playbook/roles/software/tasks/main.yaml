@@ -89,7 +89,7 @@
 - name: Install neovim
   apt:
     state: present
-    name: nvim
+    name: neovim
     update_cache: True
   become: True
 
