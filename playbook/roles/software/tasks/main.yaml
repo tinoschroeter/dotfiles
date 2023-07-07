@@ -83,7 +83,7 @@
 
 - name: Install ppa:neovim
   ansible.builtin.shell:
-    cmd: add-apt-repository ppa:neovim-ppa/stable
+    cmd: add-apt-repository ppa:neovim-ppa/unstable
   become: True
 
 - name: Install neovim
