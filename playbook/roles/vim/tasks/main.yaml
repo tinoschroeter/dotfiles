@@ -10,10 +10,6 @@
     path: ~/.vim/autoload
     state: directory
 
-  file:
-    path: ~/.vim/autoload
-    state: directory
-
 - name: Creates bundle directory
   file:
     path: ~/.vim/bundle
