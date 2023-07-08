@@ -207,6 +207,28 @@
     mode: '0755'
   become: True
 
+- name: Install lazydocker
+  ansible.builtin.shell:
+    cmd: curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+
+- name: download k9s
+  ansible.builtin.get_url:
+    url: https://github.com/derailed/k9s/releases/download/v0.27.4/k9s_Linux_amd64.tar.gz
+    dest: /tmp/k9s_Linux_amd64.tar.gz
+    force: no
+
+- name: Extract /tmp/k9s_Linux_amd64.tar.gz
+  ansible.builtin.unarchive:
+    src: /tmp/k9s_Linux_amd64.tar.gz
+    dest: /tmp
+
+- name: Copy k9s binary
+  ansible.builtin.copy:
+    src: /tmp/k9s
+    dest: /usr/local/bin/k9s
+    mode: '0555'
+  become: True
+
 - name: Install helm 3
   ansible.builtin.shell:
     cmd: curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash 

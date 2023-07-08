@@ -43,6 +43,11 @@
     url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.config/terminator/config 
     dest: ~/.config/terminator/config
 
+- name: Copy k9s theme
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.config/k9s/skin.yml 
+    dest: ~/.config/k9s/skin.yml
+
 - name: Copy nvim config
   ansible.builtin.copy:
     src: "{{inventory_dir}}/../.config/nvim/"

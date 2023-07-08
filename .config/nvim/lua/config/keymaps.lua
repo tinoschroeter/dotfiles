@@ -12,6 +12,14 @@ vim.keymap.set("n", "<leader>h", function()
   Util.float_term({ "htop" })
 end, { desc = "htop" })
 
+vim.keymap.set("n", "<leader>d", function()
+  Util.float_term({ "lazydocker" })
+end, { desc = "lazydocker" })
+
+vim.keymap.set("n", "<leader>k", function()
+  Util.float_term({ "k9s" })
+end, { desc = "k9s" })
+
 vim.keymap.set(
   "n",
   "<leader>sx",
