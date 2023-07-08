@@ -48,6 +48,7 @@
       - python-setuptools # 
       - python3-dev       # 
       - python3-pip       # package installer for Python.
+      - python3.10-venv   # install python3 virtualenv
       - rdesktop          # RDP client for Windows Terminal Server 
       - ripgrep           # ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern.
       - shellcheck        # lint tool for shell scripts
