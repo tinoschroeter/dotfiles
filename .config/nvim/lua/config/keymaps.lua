@@ -18,3 +18,10 @@ vim.keymap.set(
   require("telescope.builtin").resume,
   { noremap = true, silent = true, desc = "Resume" }
 )
+
+vim.keymap.set(
+  "n",
+  "<leader>r",
+  require("telescope.builtin").oldfiles,
+  { noremap = true, silent = true, desc = "previously open files" }
+)
