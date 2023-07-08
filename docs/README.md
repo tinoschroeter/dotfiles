@@ -40,6 +40,14 @@
   :CocInstall coc-git coc-html coc-tsserver coc-json coc-css
 ```
 
+## neovim
+
+Plugin folder
+
+```bash
+~/.local/share/nvim
+```
+
 ## vim
 
 ```shell
