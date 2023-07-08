@@ -1,10 +1,7 @@
 # ![dotfile](dotfile.png)
 
 > **Install my new Notebook** or sync my setup between all of my computers. ":computer:"
-
-[![Ansible](https://img.shields.io/badge/Ansible-blue.svg)](https://github.com/ansible/ansible)
-[![GitHub Super-Linter](https://github.com/tinoschroeter/dotfiles/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/tinoschroeter/dotfiles/actions/workflows/linter.yml)
-![last-commit](https://img.shields.io/github/last-commit/tinoschroeter/dotfiles.svg?style=flat)
+> [![Ansible](https://img.shields.io/badge/Ansible-blue.svg)](https://github.com/ansible/ansible) > [![GitHub Super-Linter](https://github.com/tinoschroeter/dotfiles/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/tinoschroeter/dotfiles/actions/workflows/linter.yml) > ![last-commit](https://img.shields.io/github/last-commit/tinoschroeter/dotfiles.svg?style=flat)
 
 ```shell
   git clone https://github.com/tinoschroeter/dotfiles.git \
@@ -36,7 +33,7 @@
 ```bash
   cd .vim/bundle/coc.nvim
   yarn install
-  open vim and type 
+  open vim and type
   :CocInstall coc-git coc-html coc-tsserver coc-json coc-css
 ```
 
@@ -60,7 +57,7 @@ gg=G                         # formating code
 :66,70s/^/#                  # comment line 66 - 70
 :66,70s/^#/                  # and reverse
 [ctrl] +n or [ctrl] + p key  # auto completion
-:File | :File!               # fuzzy search files 
+:File | :File!               # fuzzy search files
 :Ag   | :Ag!                 # fuzzy search code
 "+y                          # Copy to Your System Clipboard
 :tabe                        # open  a new tab
@@ -103,7 +100,7 @@ type in multiple search terms delimited by spaces. e.g. `^music .mp3$ sbtrkt
 | `!.mp3$`  | inverse-suffix-exact-match | Items that do not end with `.mp3`    |
 
 If you don't prefer fuzzy matching and do not wish to "quote" every word,
-start fzf with `-e` or `--exact` option. Note that when  `--exact` is set,
+start fzf with `-e` or `--exact` option. Note that when `--exact` is set,
 `'`-prefix "unquotes" the term.
 
 A single bar character term acts as an OR operator. For example, the following
@@ -113,6 +110,7 @@ or `py`.
 ```shell
 ^core go$ | rb$ | py$
 ```
+
 ## bash
 
 ```shell
@@ -120,6 +118,7 @@ z                            # maintains a jump-list of the directories you actu
 f | fzf                      # General-purpose command-line fuzzy finder.
 bcat                         # A cat clone with syntax highlighting
 ```
+
 ## helper scripts
 
 ```bash
@@ -184,8 +183,8 @@ sync_history() {
 <details>
   <summary>folder</summary>
 
-* Setup [roles/folder/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/folder/tasks/main.yaml)
-  * create folder structure
+- Setup [roles/folder/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/folder/tasks/main.yaml)
+  - create folder structure
 
 </details>
 
@@ -214,61 +213,61 @@ sync_history() {
 <details>
   <summary>system</summary>
 
-* Setup [roles/system/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/system/tasks/main.yaml)
-  * Set timezone to Europe/Berlin
-  * Set login shell to zsh
+- Setup [roles/system/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/system/tasks/main.yaml)
+  - Set timezone to Europe/Berlin
+  - Set login shell to zsh
 
 </details>
 
 <details>
   <summary>zsh</summary>
 
-* Setup [roles/zsh/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/zsh/tasks/main.yaml)
-  * Install zsh
-  * Install Oh My Zsh
-  * setup some plugins
+- Setup [roles/zsh/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/zsh/tasks/main.yaml)
+  - Install zsh
+  - Install Oh My Zsh
+  - setup some plugins
 
 </details>
 
 <details>
   <summary>vim</summary>
 
-* Setup [roles/vim/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/vim/tasks/main.yaml)
-  * Install vim
-  * Setup vim plugins
+- Setup [roles/vim/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/vim/tasks/main.yaml)
+  - Install vim
+  - Setup vim plugins
 
 </details>
 
 <details>
   <summary>dotfiles</summary>
 
-* Setup [roles/dotfiles/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/dotfiles/tasks/main.yaml)
-  * put .zshrc in place
-  * put .vimrc in place
+- Setup [roles/dotfiles/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/dotfiles/tasks/main.yaml)
+  - put .zshrc in place
+  - put .vimrc in place
 
 </details>
 
 <details>
   <summary>npm</summary>
 
-* Setup [roles/npm/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/npm/tasks/main.yaml)
-  * install global npm packages
+- Setup [roles/npm/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/npm/tasks/main.yaml)
+  - install global npm packages
 
 </details>
 
 <details>
   <summary>pip</summary>
 
-* Setup [roles/pip/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/pip/tasks/main.yaml)
-  * install pip packages
+- Setup [roles/pip/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/pip/tasks/main.yaml)
+  - install pip packages
 
 </details>
 
 <details>
   <summary>vm</summary>
 
-* Setup [roles/vm/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/vm/tasks/main.yaml)
-  * Install virtualbox
-  * Install vagrant
+- Setup [roles/vm/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/vm/tasks/main.yaml)
+  - Install virtualbox
+  - Install vagrant
 
 </details>
