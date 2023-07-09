@@ -6,7 +6,7 @@
 vim.opt.mouse = ""
 -- enable spelling
 vim.opt.spelllang = { "en", "de" }
-vim.opt.spell = true
+vim.opt.spell = false
 vim.opt.conceallevel = 3
 -- Centering with scrolloff (scroll offset)
 vim.opt.so = 999
