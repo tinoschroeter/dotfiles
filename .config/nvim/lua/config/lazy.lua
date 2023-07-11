@@ -49,6 +49,8 @@ require("lazy").setup({
     opts = {
       ensure_installed = {
         "bash",
+        "css",
+        "ejs",
         "help",
         "html",
         "javascript",
