@@ -18,49 +18,49 @@
   apt:
     state: present
     name:
-      - aspell            # interactive spell checker  
-      - aspell-de 
+      - aspell # interactive spell checker
+      - aspell-de
       - aspell-en
-      - bat               # A cat clone with syntax highlighting and Git integration.
-      - btop              # Modern and colorful command line resource monitor that shows usage and stats
-      - build-essential 
-      - cmake 
-      - cmatrix           # The Matrix
-      - curl              # curl is a tool to transfer data from or to a server, using one of the supported protocols.
-      - dnsutils          # is a flexible tool for interrogating DNS name servers. 
-      - dstat             # versatile tool for generating system resource statistics
-      - fd-find           # Simple, fast and user-friendly alternative to find
-      - firefox           # browser
+      - bat # A cat clone with syntax highlighting and Git integration.
+      - btop # Modern and colorful command line resource monitor that shows usage and stats
+      - build-essential
+      - cmake
+      - cmatrix # The Matrix
+      - curl # curl is a tool to transfer data from or to a server, using one of the supported protocols.
+      - dnsutils # is a flexible tool for interrogating DNS name servers.
+      - dstat # versatile tool for generating system resource statistics
+      - fd-find # Simple, fast and user-friendly alternative to find
+      - firefox # browser
       - firefox-locale-de
-      - gnupg             # GNU Privacy Guard
-      - htop              # interactively monitor the system’s vital resources.
-      - iotop             # iotop watches I/O usage information output by the Linux kernel  
-      - jq                # jq is a lightweight and flexible command-line JSON processor.
-      - lolcat            # color output
-      - moc               # ncurses based console audio player
-      - neofetch          # Shows Linux System Information with Distribution Logo
-      - net-tools         # collection of base networking utilities for Linux.
+      - gnupg # GNU Privacy Guard
+      - htop # interactively monitor the system’s vital resources.
+      - iotop # iotop watches I/O usage information output by the Linux kernel
+      - jq # jq is a lightweight and flexible command-line JSON processor.
+      - lolcat # color output
+      - moc # ncurses based console audio player
+      - neofetch # Shows Linux System Information with Distribution Logo
+      - net-tools # collection of base networking utilities for Linux.
       - nextcloud-desktop # Connect to your Nextcloud from Windows, macOS or Linux.
-      - nfs-common        # nsf tools
-      - nmap              # network scanner
-      - nodejs            # V8 javascript runtime 
-      - pwgen             # Automatic Password generation
-      - python-setuptools # 
-      - python3-dev       # 
-      - python3-pip       # package installer for Python.
-      - python3.10-venv   # install python3 virtualenv
-      - rdesktop          # RDP client for Windows Terminal Server 
-      - ripgrep           # ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern.
-      - shellcheck        # lint tool for shell scripts
-      - silversearcher-ag # A code searching tool 
-      - snapd             #   
+      - nfs-common # nsf tools
+      - nmap # network scanner
+      - nodejs # V8 javascript runtime
+      - pwgen # Automatic Password generation
+      - python-setuptools #
+      - python3-dev #
+      - python3-pip # package installer for Python.
+      - python3.10-venv # install python3 virtualenv
+      - rdesktop # RDP client for Windows Terminal Server
+      - ripgrep # ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern.
+      - shellcheck # lint tool for shell scripts
+      - silversearcher-ag # A code searching tool
+      - snapd #
       - software-properties-common
-      - sqlite3           # sqlite3 client 
-      - sysstat           # system performance tools for Linux
-      - terminator        # terminal
-      - tig               # ncurses-based text-mode interface for Git
-      - tree              # recursively list or display the content of a directory in a tree-like format.
-      - zsh               # nice shell
+      - sqlite3 # sqlite3 client
+      - sysstat # system performance tools for Linux
+      - terminator # terminal
+      - tig # ncurses-based text-mode interface for Git
+      - tree # recursively list or display the content of a directory in a tree-like format.
+      - zsh # nice shell
   become: True
 
 - name: Install checkssl
@@ -75,7 +75,7 @@
     path: /usr/bin/checkssl
     owner: root
     group: root
-    mode: '0755'
+    mode: "0755"
   become: True
 
 - name: Install AWS CLI
@@ -96,7 +96,7 @@
 
 - name: add google ppa
   ansible.builtin.shell:
-    cmd: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+    cmd: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 
 - name: add google source list
   ansible.builtin.shell:
@@ -121,7 +121,7 @@
     path: /usr/local/bin/skaffold
     owner: root
     group: root
-    mode: '0755'
+    mode: "0755"
   become: True
 
 - name: Install kubens
@@ -136,7 +136,7 @@
     path: /usr/local/bin/kubens
     owner: root
     group: root
-    mode: '0755'
+    mode: "0755"
   become: True
 
 - name: Install kubeval
@@ -154,7 +154,7 @@
   ansible.builtin.copy:
     src: /tmp/kubeval
     dest: /usr/local/bin/kubeval
-    mode: '0555'
+    mode: "0555"
   become: True
 
 - name: Install Minikube
@@ -169,7 +169,7 @@
     path: /usr/local/bin/minikube
     owner: root
     group: root
-    mode: '0755'
+    mode: "0755"
   become: True
 
 - name: Install kubectl
@@ -184,12 +184,12 @@
     path: /usr/local/bin/kubectl
     owner: root
     group: root
-    mode: '0755'
+    mode: "0755"
   become: True
 
 - name: Install lazygit
   ansible.builtin.get_url:
-    url: https://github.com/jesseduffield/lazygit/releases/download/v0.37.0/lazygit_0.37.0_Linux_x86_64.tar.gz
+    url: https://github.com/jesseduffield/lazygit/releases/download/v0.40.2/lazygit_0.40.2_Linux_x86_64.tar.gz
     dest: /tmp/lazygit.tar.gz
     force: no
 
@@ -204,7 +204,7 @@
     path: /usr/local/bin/lazygit
     owner: root
     group: root
-    mode: '0755'
+    mode: "0755"
   become: True
 
 - name: Install lazydocker
@@ -226,12 +226,12 @@
   ansible.builtin.copy:
     src: /tmp/k9s
     dest: /usr/local/bin/k9s
-    mode: '0555'
+    mode: "0555"
   become: True
 
 - name: Install helm 3
   ansible.builtin.shell:
-    cmd: curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash 
+    cmd: curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
 - name: download velero
   ansible.builtin.get_url:
@@ -248,7 +248,7 @@
   ansible.builtin.copy:
     src: /tmp/velero-v1.7.1-linux-amd64/velero
     dest: /usr/local/bin/velero
-    mode: '0555'
+    mode: "0555"
   become: True
 
 - name: download golang (don't installed new version of Go on top a previous one. rm -rvf /usr/local/go/)
@@ -276,16 +276,16 @@
     src: /usr/local/protoc-3.14.0-linux-x86_64.zip
     dest: /usr/local
   become: True
-  
-- name: get and install argocd cli 
+
+- name: get and install argocd cli
   ansible.builtin.get_url:
     url: https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
     dest: /usr/local/bin/argocd
-    mode: '0555'
+    mode: "0555"
     force: no
   become: True
 
-- name: get argo cli 
+- name: get argo cli
   ansible.builtin.get_url:
     url: https://github.com/argoproj/argo-workflows/releases/download/v3.2.6/argo-linux-amd64.gz
     dest: /tmp
@@ -300,16 +300,16 @@
   ansible.builtin.copy:
     src: /tmp/argo-linux-amd64
     dest: /usr/local/bin/argo
-    mode: '0555'
+    mode: "0555"
   become: True
 
 - name: Install nvm (Node Version Manager)
   ansible.builtin.shell:
-    cmd: ls ~/.nvm || curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+    cmd: ls ~/.nvm || curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
 - name: Setup nvm env
   ansible.builtin.shell:
-    cmd: cat /home/tino/.nvm/nvm.sh | bash  # This loads nvm 
+    cmd: cat /home/tino/.nvm/nvm.sh | bash # This loads nvm
   become: True
 
 - name: Install Slack chat client
@@ -320,7 +320,7 @@
 
 - name: download fzf command-line fuzzy finder
   ansible.builtin.git:
-    repo: 'https://github.com/junegunn/fzf.git'
+    repo: "https://github.com/junegunn/fzf.git"
     dest: ~/.fzf
     update: True
 
@@ -333,23 +333,23 @@
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/rupa/z/master/z.sh
     dest: /usr/local/bin/z.sh
-    mode: '777'
+    mode: "777"
   become: True
 
 - name: install todo.sh
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/todotxt/todo.txt-cli/master/todo.sh
     dest: /usr/local/bin/todo.sh
-    mode: '777'
+    mode: "777"
   become: True
 
 - name: move youtube downloader in place
   copy:
     src: files/ydl.sh
     dest: /usr/local/bin/ydl.sh
-    mode: '774'
+    mode: "774"
   become: True
-  
+
 - name: create .toto folder
   file:
     path: ~/.todo
@@ -364,19 +364,19 @@
   ansible.builtin.copy:
     src: cht.sh
     dest: /usr/local/bin/cht.sh
-    mode: '777'
+    mode: "777"
   become: True
 
 - name: copy spell.sh to /usr/local/bin/
   ansible.builtin.copy:
     src: spell.sh
     dest: /usr/local/bin/spell.sh
-    mode: '777'
+    mode: "777"
   become: True
 
 - name: copy sync-zsh-history to /usr/local/bin/
   ansible.builtin.copy:
     src: sync-zsh-history/index.js
     dest: /usr/local/bin/sync-zsh-history.js
-    mode: '777'
+    mode: "777"
   become: True

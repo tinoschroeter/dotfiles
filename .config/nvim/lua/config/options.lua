@@ -9,4 +9,4 @@ vim.opt.spelllang = { "en", "de" }
 vim.opt.spell = false
 vim.opt.conceallevel = 3
 -- Centering with scrolloff (scroll offset)
-vim.opt.so = 999
+vim.opt.so = 99
