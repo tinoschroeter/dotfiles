@@ -82,17 +82,17 @@
   pip:
     name: awscli
 
-- name: Install ppa:neovim
-  ansible.builtin.shell:
-    cmd: add-apt-repository ppa:neovim-ppa/unstable
-  become: True
-
-- name: Install neovim
-  apt:
-    state: present
-    name: neovim
-    update_cache: True
-  become: True
+#- name: Install ppa:neovim
+#  ansible.builtin.shell:
+#    cmd: add-apt-repository ppa:neovim-ppa/unstable
+#  become: True
+#
+#- name: Install neovim
+#  apt:
+#    state: present
+#    name: neovim
+#    update_cache: True
+#  become: True
 
 - name: add google ppa
   ansible.builtin.shell:

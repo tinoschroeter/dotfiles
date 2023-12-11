@@ -1,158 +1,158 @@
-- name: Install vim
-  apt:
-    state: present
-    name:
-      - vim
-  become: True
-
-- name: Creates autoload directory
-  file:
-    path: ~/.vim/autoload
-    state: directory
-
-- name: Creates bundle directory
-  file:
-    path: ~/.vim/bundle
-    state: directory
-
-- name: install pathogen 
-  get_url:
-    url: https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-    dest: ~/.vim/autoload/pathogen.vim
-
-- name: addon indentLine.vim (A light and configurable statusline/tabline plugin for Vim)
-  ansible.builtin.git:
-    repo: 'https://github.com/itchyny/lightline.vim.git'
-    dest: ~/.vim/bundle/lightline.vim
-    update: True
-
-- name: addon vim-gitgutter A Vim plugin which shows a git diff in the sign column.
-  ansible.builtin.git:
-    repo: 'https://github.com/airblade/vim-gitgutter.git'
-    dest: ~/.vim/bundle/gitgutter.vim
-    update: True
-
-- name: addon indentLine
-  ansible.builtin.git:
-    repo: 'https://github.com/Yggdroot/indentLine.git'
-    dest: ~/.vim/bundle/indentLine
-    update: True
-
-- name: addon vim-gitbranch provides a function which returns the name of the git branch.
-  ansible.builtin.git:
-    repo: 'https://github.com/itchyny/vim-gitbranch.git'
-    dest: ~/.vim/bundle/gitbranch.vim
-    update: True
-      
-- name: addon mundo.vim (A Vim plugin to visualizes the Vim undo tree.)
-  ansible.builtin.git:
-    repo: 'https://github.com/simnalamburt/vim-mundo.git'
-    dest: ~/.vim/bundle/vim-mundo
-    update: True
-
-- name: The only theme you should be using. Heavily influenced by The Primeagen
-  ansible.builtin.git:
-    repo: 'https://github.com/morhetz/gruvbox.git'
-    dest: ~/.vim/bundle/gruvbox
-    update: True
-
-- name: The fancy start screen for vim
-  ansible.builtin.git:
-    repo: 'https://github.com/mhinz/vim-startify.git'
-    dest: ~/.vim/bundle/vim-startify
-    update: True
-
-- name: vim-bookmarks 
-  ansible.builtin.git:
-    repo: 'https://github.com/MattesGroeger/vim-bookmarks.git'
-    dest: ~/.vim/bundle/vim-bookmarks
-    update: True
-
-- name: vim-floaterm 
-  ansible.builtin.git:
-    repo: 'https://github.com/voldikss/vim-floaterm.git'
-    dest: ~/.vim/bundle/vim-floaterm 
-    update: True
-
-- name: Create undo directory
-  ansible.builtin.file:
-    path: ~/.vim/undo
-    state: directory
-
-- name: addon nerdtree.vim (The NERDTree is a file system explorer for the Vim editor.)
-  ansible.builtin.git:
-    repo: 'https://github.com/scrooloose/nerdtree.git'
-    dest: ~/.vim/bundle/nerdtree
-    update: True
-
-- name: addon ultisnips.vim (UltiSnips is the ultimate solution for snippets in Vim.)
-  ansible.builtin.git:
-    repo: 'https://github.com/SirVer/ultisnips.git'
-    dest: ~/.vim/bundle/ultisnips
-    update: True
-
-- name: addon salt-vim
-  ansible.builtin.git:
-    repo: 'https://github.com/vmware-archive/salt-vim.git'
-    dest: ~/.vim/bundle/salt-vim
-    update: True
-
-- name: setup my ultisnips
-  ansible.builtin.git:
-    repo: 'https://github.com/tinoschroeter/vim.UltiSnips.git'
-    dest: ~/.vim/UltiSnips
-    update: True
-
-- name: addon vim-prettier.vim (An opinionated code formatter)
-  ansible.builtin.git:
-    repo: 'https://github.com/prettier/vim-prettier.git'
-    dest: ~/.vim/bundle/vim-prettier
-    update: no
-
-- name: addon vim-snippets.vim (This repository contains snippets files for various programming languages.)
-  ansible.builtin.git:
-    repo: 'https://github.com/honza/vim-snippets.git'
-    dest: ~/.vim/bundle/vim-snippets
-    update: True
-
-- name: addon vim-jsx-pretty
-  ansible.builtin.git:
-    repo: 'https://github.com/MaxMEllon/vim-jsx-pretty.git'
-    dest: ~/.vim/bundle/vim-jsx-pretty
-    update: True
-
-- name: addon vim-go
-  ansible.builtin.git:
-    repo: 'https://github.com/fatih/vim-go.git'
-    dest: ~/.vim/bundle/vim-go
-    update: True
-
-- name: addon vim-fzf
-  ansible.builtin.git:
-    repo: 'https://github.com/junegunn/fzf.vim'
-    dest: ~/.vim/bundle/vim-fzf
-    update: True
-
-- name: addon ConquerOfCompletion
-  ansible.builtin.git:
-    repo: 'https://github.com/neoclide/coc.nvim.git'
-    dest: ~/.vim/bundle/coc.nvim
-    update: True
-
-- name: addon Markdown Preview for (Neo)vim
-  ansible.builtin.git:
-    repo: 'https://github.com/iamcco/markdown-preview.nvim.git'
-    dest: ~/.vim/bundle/markdown-preview.nvim
-    update: no
-
-- name: Create symbolic link for vim_vim-jsx-pretty
-  ansible.builtin.file:
-    src: ~/.vim/bundle/vim-jsx-pretty/autoload/jsx_pretty/indent.vim
-    dest: ~/.vim/autoload/jsx_pretty_indent.vim
-    state: link
-
-- name: Create symbolic link for vim_snippets
-  ansible.builtin.file:
-    src: ~/.vim/bundle/vim-snippets/autoload/vim_snippets.vim
-    dest: ~/.vim/autoload/vim_snippets.vim
-    state: link
+#- name: Install vim
+#  apt:
+#    state: present
+#    name:
+#      - vim
+#  become: True
+#
+#- name: Creates autoload directory
+#  file:
+#    path: ~/.vim/autoload
+#    state: directory
+#
+#- name: Creates bundle directory
+#  file:
+#    path: ~/.vim/bundle
+#    state: directory
+#
+#- name: install pathogen
+#  get_url:
+#    url: https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+#    dest: ~/.vim/autoload/pathogen.vim
+#
+#- name: addon indentLine.vim (A light and configurable statusline/tabline plugin for Vim)
+#  ansible.builtin.git:
+#    repo: 'https://github.com/itchyny/lightline.vim.git'
+#    dest: ~/.vim/bundle/lightline.vim
+#    update: True
+#
+#- name: addon vim-gitgutter A Vim plugin which shows a git diff in the sign column.
+#  ansible.builtin.git:
+#    repo: 'https://github.com/airblade/vim-gitgutter.git'
+#    dest: ~/.vim/bundle/gitgutter.vim
+#    update: True
+#
+#- name: addon indentLine
+#  ansible.builtin.git:
+#    repo: 'https://github.com/Yggdroot/indentLine.git'
+#    dest: ~/.vim/bundle/indentLine
+#    update: True
+#
+#- name: addon vim-gitbranch provides a function which returns the name of the git branch.
+#  ansible.builtin.git:
+#    repo: 'https://github.com/itchyny/vim-gitbranch.git'
+#    dest: ~/.vim/bundle/gitbranch.vim
+#    update: True
+#
+#- name: addon mundo.vim (A Vim plugin to visualizes the Vim undo tree.)
+#  ansible.builtin.git:
+#    repo: 'https://github.com/simnalamburt/vim-mundo.git'
+#    dest: ~/.vim/bundle/vim-mundo
+#    update: True
+#
+#- name: The only theme you should be using. Heavily influenced by The Primeagen
+#  ansible.builtin.git:
+#    repo: 'https://github.com/morhetz/gruvbox.git'
+#    dest: ~/.vim/bundle/gruvbox
+#    update: True
+#
+#- name: The fancy start screen for vim
+#  ansible.builtin.git:
+#    repo: 'https://github.com/mhinz/vim-startify.git'
+#    dest: ~/.vim/bundle/vim-startify
+#    update: True
+#
+#- name: vim-bookmarks
+#  ansible.builtin.git:
+#    repo: 'https://github.com/MattesGroeger/vim-bookmarks.git'
+#    dest: ~/.vim/bundle/vim-bookmarks
+#    update: True
+#
+#- name: vim-floaterm
+#  ansible.builtin.git:
+#    repo: 'https://github.com/voldikss/vim-floaterm.git'
+#    dest: ~/.vim/bundle/vim-floaterm
+#    update: True
+#
+#- name: Create undo directory
+#  ansible.builtin.file:
+#    path: ~/.vim/undo
+#    state: directory
+#
+#- name: addon nerdtree.vim (The NERDTree is a file system explorer for the Vim editor.)
+#  ansible.builtin.git:
+#    repo: 'https://github.com/scrooloose/nerdtree.git'
+#    dest: ~/.vim/bundle/nerdtree
+#    update: True
+#
+#- name: addon ultisnips.vim (UltiSnips is the ultimate solution for snippets in Vim.)
+#  ansible.builtin.git:
+#    repo: 'https://github.com/SirVer/ultisnips.git'
+#    dest: ~/.vim/bundle/ultisnips
+#    update: True
+#
+#- name: addon salt-vim
+#  ansible.builtin.git:
+#    repo: 'https://github.com/vmware-archive/salt-vim.git'
+#    dest: ~/.vim/bundle/salt-vim
+#    update: True
+#
+#- name: setup my ultisnips
+#  ansible.builtin.git:
+#    repo: 'https://github.com/tinoschroeter/vim.UltiSnips.git'
+#    dest: ~/.vim/UltiSnips
+#    update: True
+#
+#- name: addon vim-prettier.vim (An opinionated code formatter)
+#  ansible.builtin.git:
+#    repo: 'https://github.com/prettier/vim-prettier.git'
+#    dest: ~/.vim/bundle/vim-prettier
+#    update: no
+#
+#- name: addon vim-snippets.vim (This repository contains snippets files for various programming languages.)
+#  ansible.builtin.git:
+#    repo: 'https://github.com/honza/vim-snippets.git'
+#    dest: ~/.vim/bundle/vim-snippets
+#    update: True
+#
+#- name: addon vim-jsx-pretty
+#  ansible.builtin.git:
+#    repo: 'https://github.com/MaxMEllon/vim-jsx-pretty.git'
+#    dest: ~/.vim/bundle/vim-jsx-pretty
+#    update: True
+#
+#- name: addon vim-go
+#  ansible.builtin.git:
+#    repo: 'https://github.com/fatih/vim-go.git'
+#    dest: ~/.vim/bundle/vim-go
+#    update: True
+#
+#- name: addon vim-fzf
+#  ansible.builtin.git:
+#    repo: 'https://github.com/junegunn/fzf.vim'
+#    dest: ~/.vim/bundle/vim-fzf
+#    update: True
+#
+#- name: addon ConquerOfCompletion
+#  ansible.builtin.git:
+#    repo: 'https://github.com/neoclide/coc.nvim.git'
+#    dest: ~/.vim/bundle/coc.nvim
+#    update: True
+#
+#- name: addon Markdown Preview for (Neo)vim
+#  ansible.builtin.git:
+#    repo: 'https://github.com/iamcco/markdown-preview.nvim.git'
+#    dest: ~/.vim/bundle/markdown-preview.nvim
+#    update: no
+#
+#- name: Create symbolic link for vim_vim-jsx-pretty
+#  ansible.builtin.file:
+#    src: ~/.vim/bundle/vim-jsx-pretty/autoload/jsx_pretty/indent.vim
+#    dest: ~/.vim/autoload/jsx_pretty_indent.vim
+#    state: link
+#
+#- name: Create symbolic link for vim_snippets
+#  ansible.builtin.file:
+#    src: ~/.vim/bundle/vim-snippets/autoload/vim_snippets.vim
+#    dest: ~/.vim/autoload/vim_snippets.vim
+#    state: link
