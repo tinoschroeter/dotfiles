@@ -16,7 +16,7 @@ setopt correct
 # export DOCKER_HOST=tcp://10.0.1.70:2375
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/tino/.oh-my-zsh"
+export ZSH="/home/${USER}/.oh-my-zsh"
 
 # Krew is the plugin manager for kubectl command-line tool.
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
@@ -227,7 +227,7 @@ alias vim="nvim"
 # todo.sh
 alias todo="todo.sh"
 
-export TODO_DIR="/home/tino/Dropbox/todo"
+export TODO_DIR="/home/${USER}/Dropbox/todo"
 
 # mocp
 alias m="mocp"
@@ -342,7 +342,7 @@ if [[ -f /home/${USER}/.kube/config ]]; then
   echo red || echo green)]$fg[white]%}[$ZSH_KUBECTL_PROMPT]%{$reset_color%}'
 fi
 
-export NVM_DIR="/home/tino/.nvm"
+export NVM_DIR="/home/${USER}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

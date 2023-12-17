@@ -309,7 +309,7 @@
 
 - name: Setup nvm env
   ansible.builtin.shell:
-    cmd: cat /home/tino/.nvm/nvm.sh | bash # This loads nvm
+    cmd: cat /home/${USER}/.nvm/nvm.sh | bash # This loads nvm
   become: True
 
 - name: Install Slack chat client
