@@ -1,3 +1,6 @@
 [user]
-	email = tino.schroter@eventim.de
-	name = Tino Schroeter
+	email = tino.schroeter@eventim.de
+	name = Tino Schröter
+	signingkey = 9EFB05EFEB4B28F262A724849125B5C87BBF698E
+[commit]
+	gpgSign = true

@@ -140,11 +140,11 @@ fi
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='nvim'
+ fi
 
 # Compilation flags
 # expor tARCHFLAGS="-arch x86_64"
@@ -197,6 +197,10 @@ alias show="xdg-open"
 
 # Command line alias to start the browser-sync server
 alias serve="browser-sync start --server --files ."
+
+# Auto completion
+source <(kubectl completion zsh)
+complete -F __start_kubectl k
 
 # kubectl aliase
 alias kls="kubectl get all"
@@ -314,9 +318,6 @@ fi
 if [[ -r /usr/local/bin/z.sh ]]; then
   source /usr/local/bin/z.sh
 fi
-# Auto completion
-source <(kubectl completion zsh)
-complete -F __start_kubectl k
 
 # Velero completion
 source <(velero completion zsh)
@@ -349,3 +350,10 @@ export NVM_DIR="/home/${USER}/.nvm"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# bun completions
+[ -s "/home/${USER}/.bun/_bun" ] && source "/home/${USER}/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
