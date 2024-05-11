@@ -2,7 +2,7 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
-vim.opt.mouse = "a" -- Enable mouse mode
+vim.opt.mouse = "" -- Disable mouse mode
 vim.opt.clipboard = "unnamedplus" -- Sync with system clipboard
 vim.opt.spelllang = { "en", "de" } -- enable spelling
 vim.opt.spell = false

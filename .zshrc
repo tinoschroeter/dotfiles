@@ -128,6 +128,7 @@ source $ZSH/oh-my-zsh.sh
 
 if [[ -d /usr/local/go ]]; then
   export PATH=$PATH:/usr/local/go/bin
+  export PATH=$PATH:~/go/bin
 fi
 
 if [[ -d ~/.local/bin ]]; then
@@ -163,6 +164,9 @@ setopt auto_cd
 # ab
 alias d_ab='docker run -it --rm aimvector/ab'
 
+# vim be good 
+alias d_vim-be-good='docker run -it --rm brandoncc/vim-be-good:latest'
+
 # gpick
 alias d_gpick='xhost local:root
 docker run -d --rm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY aimvector/gpick'
@@ -197,10 +201,6 @@ alias show="xdg-open"
 
 # Command line alias to start the browser-sync server
 alias serve="browser-sync start --server --files ."
-
-# Auto completion
-source <(kubectl completion zsh)
-complete -F __start_kubectl k
 
 # kubectl aliase
 alias kls="kubectl get all"
@@ -318,6 +318,9 @@ fi
 if [[ -r /usr/local/bin/z.sh ]]; then
   source /usr/local/bin/z.sh
 fi
+# Auto completion
+source <(kubectl completion zsh)
+complete -F __start_kubectl k
 
 # Velero completion
 source <(velero completion zsh)
@@ -352,8 +355,23 @@ export NVM_DIR="/home/${USER}/.nvm"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # bun completions
-[ -s "/home/${USER}/.bun/_bun" ] && source "/home/${USER}/.bun/_bun"
+[ -s "/home/tinoschroeter/.bun/_bun" ] && source "/home/tinoschroeter/.bun/_bun"
 
 # bun
-export BUN_INSTALL="$HOME/.bun"
+export BUN_INSTALL="$HOME/.bun/bin"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/tinoschroeter/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/tinoschroeter/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/tinoschroeter/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/tinoschroeter/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+

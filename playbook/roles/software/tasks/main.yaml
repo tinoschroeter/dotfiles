@@ -253,14 +253,14 @@
 
 - name: download golang (don't installed new version of Go on top a previous one. rm -rvf /usr/local/go/)
   ansible.builtin.get_url:
-    url: https://go.dev/dl/go1.17.6.linux-amd64.tar.gz
-    dest: /usr/local/go1.17.6.linux-amd64.tar.gz
+    url: https://go.dev/dl/go1.22.3.linux-amd64.tar.gz
+    dest: /usr/local/go1.22.3.linux-amd64.tar.gz
     force: no
   become: True
 
-- name: Extract go1.17.6.linux-amd64.tar.gz
+- name: Extract go1.22.3.linux-amd64.tar.gz
   ansible.builtin.unarchive:
-    src: /usr/local/go1.17.6.linux-amd64.tar.gz
+    src: /usr/local/go1.22.3.linux-amd64.tar.gz
     dest: /usr/local
   become: True
 

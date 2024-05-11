@@ -5,7 +5,7 @@ local Util = require("lazyvim.util")
 local Terminal = require("toggleterm")
 
 vim.keymap.set("n", "<leader>m", function()
-  Util.float_term({ "mocp" })
+  Util.float_term({ "mfp" })
 end, { desc = "Music" })
 
 vim.keymap.set("n", "<leader>h", function()
