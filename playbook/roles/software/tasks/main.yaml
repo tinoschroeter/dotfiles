@@ -60,6 +60,7 @@
       - terminator # terminal
       - tig # ncurses-based text-mode interface for Git
       - tree # recursively list or display the content of a directory in a tree-like format.
+      - xclip
       - zsh # nice shell
   become: True
 
@@ -364,6 +365,13 @@
   ansible.builtin.copy:
     src: cht.sh
     dest: /usr/local/bin/cht.sh
+    mode: "777"
+  become: True
+
+- name: copy extract_k8s_secrets.sh to /usr/local/bin/
+  ansible.builtin.copy:
+    src: extract_k8s_secrets.sh
+    dest: /usr/local/bin/extract_k8s_secrets.sh
     mode: "777"
   become: True
 
