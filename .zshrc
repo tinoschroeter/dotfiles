@@ -107,7 +107,6 @@ plugins=(
   aws
   dnf
   docker
-  fd
   gcloud
   git
   helm
@@ -206,6 +205,7 @@ alias serve="browser-sync start --server --files ."
 alias kls="kubectl get all"
 alias k="kubectl"
 alias ks="kubens"
+alias kx ="kubectx"
 alias ska="skaffold"
 alias kv="kubeval"
 alias m="minikube"
@@ -279,14 +279,6 @@ update_home() {
         sudo apt-get dist-upgrade -y && \
         sudo apt-get autoremove -y"
     done
-}
-
-kx() {
-if [ -z "$1" ];then
-    kubectl config get-contexts|lolcat
-else
-    kubectl config use-context "$1"
-fi
 }
 
 # cheat cheat helper tool
@@ -375,3 +367,4 @@ else
 fi
 unset __conda_setup
 
+if [ -f "/home/tinoschroeter/.config/fabric/fabric-bootstrap.inc" ]; then . "/home/tinoschroeter/.config/fabric/fabric-bootstrap.inc"; fi

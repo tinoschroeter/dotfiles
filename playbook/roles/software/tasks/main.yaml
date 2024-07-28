@@ -140,6 +140,21 @@
     mode: "0755"
   become: True
 
+- name: Install kubectx
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/ahmetb/kubectx/master/kubectx
+    dest: /usr/local/bin/kubectx
+    force: no
+  become: True
+
+- name: make kubectx executable
+  ansible.builtin.file:
+    path: /usr/local/bin/kubectx
+    owner: root
+    group: root
+    mode: "0755"
+  become: True
+
 - name: Install kubeval
   ansible.builtin.get_url:
     url: https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz

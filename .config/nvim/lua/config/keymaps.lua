@@ -9,16 +9,12 @@ vim.keymap.set("n", "<leader>m", function()
 end, { desc = "Music" })
 
 vim.keymap.set("n", "<leader>h", function()
-  Util.float_term({ "htop" })
-end, { desc = "htop" })
+  Util.float_term({ "tig", vim.api.nvim_buf_get_name(0) })
+end, { desc = "tig git tool" })
 
 vim.keymap.set("n", "<leader>d", function()
   Util.float_term({ "lazydocker" })
 end, { desc = "lazydocker" })
-
-vim.keymap.set("n", "<leader>k", function()
-  Util.float_term({ "k9s" })
-end, { desc = "k9s" })
 
 vim.keymap.set(
   "n",
