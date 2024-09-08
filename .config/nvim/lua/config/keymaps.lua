@@ -2,18 +2,17 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 local Util = require("lazyvim.util")
-local Terminal = require("toggleterm")
 
 vim.keymap.set("n", "<leader>m", function()
-  Util.float_term({ "mfp" })
+  Util.terminal.open ({ "mfp" })
 end, { desc = "Music" })
 
 vim.keymap.set("n", "<leader>h", function()
-  Util.float_term({ "tig", vim.api.nvim_buf_get_name(0) })
+  Util.terminal.open({ "tig", vim.api.nvim_buf_get_name(0) })
 end, { desc = "tig git tool" })
 
 vim.keymap.set("n", "<leader>d", function()
-  Util.float_term({ "lazydocker" })
+  Util.terminal.open({ "lazydocker" })
 end, { desc = "lazydocker" })
 
 vim.keymap.set(

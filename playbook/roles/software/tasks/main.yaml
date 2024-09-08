@@ -190,7 +190,7 @@
 
 - name: Install kubectl
   ansible.builtin.get_url:
-    url: https://dl.k8s.io/release/v1.26.2/bin/linux/amd64/kubectl
+    url: https://dl.k8s.io/release/v1.31.0/bin/linux/amd64/kubectl
     dest: /usr/local/bin/kubectl
     force: no
   become: True
@@ -205,7 +205,7 @@
 
 - name: Install lazygit
   ansible.builtin.get_url:
-    url: https://github.com/jesseduffield/lazygit/releases/download/v0.40.2/lazygit_0.40.2_Linux_x86_64.tar.gz
+    url: https://github.com/jesseduffield/lazygit/releases/download/v0.44.0lazygit_0.44.0.tar.gz
     dest: /tmp/lazygit.tar.gz
     force: no
 
