@@ -67,7 +67,26 @@ require("lazy").setup({
         "vim",
         "yaml",
       },
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
     },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      if type(opts.ensure_installed) == "table" then
+        vim.list_extend(opts.ensure_installed, { "html" })
+      end
+      opts.highlight = opts.highlight or {}
+      opts.highlight.additional_vim_regex_highlighting = false
+      return opts
+    end,
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+      vim.treesitter.language.register("html", "ejs")
+    end,
   },
   {
     "hrsh7th/nvim-cmp",
