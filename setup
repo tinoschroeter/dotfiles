@@ -13,17 +13,17 @@ EOF
 sleep 2
 
 if [ -n "$1" ]; then
-	sudo ls &&
-		ansible-playbook -i playbook/inventory playbook/site.yaml -c local
-	exit 0
+  sudo ls &&
+    ansible-playbook -i playbook/inventory playbook/site.yaml -c local
+  exit 0
 fi
 
 if grep --quiet Ubuntu /etc/issue; then
-	sudo apt-get update
-	sudo apt install software-properties-common -y
-	sudo add-apt-repository --yes --update ppa:ansible/ansible
-	sudo apt-get install python3 ansible git -y
-	ansible-playbook -i playbook/inventory playbook/site.yaml -c local
+  sudo apt-get update
+  sudo apt install software-properties-common -y
+  sudo add-apt-repository --yes --update ppa:ansible/ansible
+  sudo apt-get install python3 ansible git -y
+  ansible-playbook -i playbook/inventory playbook/site.yaml -c local
 else
-	echo "only works on Linux"
+  echo "only works on Ubuntu Linux"
 fi

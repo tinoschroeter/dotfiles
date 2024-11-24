@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/tinoschroeter/.zsh/completions:"* ]]; then export FPATH="/home/tinoschroeter/.zsh/completions:$FPATH"; fi
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -228,11 +230,6 @@ alias lg="lazygit"
 alias v="nvim"
 alias vim="nvim"
 
-# todo.sh
-alias todo="todo.sh"
-
-export TODO_DIR="/home/${USER}/Dropbox/todo"
-
 # mocp
 alias m="mocp"
 
@@ -272,6 +269,7 @@ alias wrk="cd ~/work/"
 alias pri="cd ~/privat/"
 alias doc="~/work/documentation/"
 alias notes="cd ~/Dropbox/dev-notebook && ls"
+alias todo="cd ~/Dropbox/dev-notebook && vim todo.md"
 
 update_home() {
     for i in 60 70 100 101 102 103; do 
@@ -352,19 +350,3 @@ export NVM_DIR="/home/${USER}/.nvm"
 # bun
 export BUN_INSTALL="$HOME/.bun/bin"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/tinoschroeter/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/tinoschroeter/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/tinoschroeter/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/tinoschroeter/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-
-if [ -f "/home/tinoschroeter/.config/fabric/fabric-bootstrap.inc" ]; then . "/home/tinoschroeter/.config/fabric/fabric-bootstrap.inc"; fi

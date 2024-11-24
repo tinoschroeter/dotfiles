@@ -352,29 +352,12 @@
     mode: "777"
   become: True
 
-- name: install todo.sh
-  ansible.builtin.get_url:
-    url: https://raw.githubusercontent.com/todotxt/todo.txt-cli/master/todo.sh
-    dest: /usr/local/bin/todo.sh
-    mode: "777"
-  become: True
-
 - name: move youtube downloader in place
   copy:
     src: files/ydl.sh
     dest: /usr/local/bin/ydl.sh
     mode: "774"
   become: True
-
-- name: create .toto folder
-  file:
-    path: ~/.todo
-    state: directory
-
-- name: get .todo-config
-  ansible.builtin.get_url:
-    url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/todo-config
-    dest: ~/.todo/config
 
 - name: copy cht.sh to /usr/local/bin/
   ansible.builtin.copy:
