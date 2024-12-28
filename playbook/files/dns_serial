@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+date_now=$(date +%Y%m%d)
+echo "${date_now}01 ; Serial"
+echo -n "${date_now}01" | xclip -selection c

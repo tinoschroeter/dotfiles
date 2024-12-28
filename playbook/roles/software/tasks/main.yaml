@@ -359,6 +359,13 @@
     mode: "774"
   become: True
 
+- name: copy dns_serial to /usr/local/bin/
+  ansible.builtin.copy:
+    src: dns_serial
+    dest: /usr/local/bin/dns_serial
+    mode: "777"
+  become: True
+
 - name: copy cht.sh to /usr/local/bin/
   ansible.builtin.copy:
     src: cht.sh
