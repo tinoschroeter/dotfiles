@@ -1,0 +1,6 @@
+#!/bin/bash
+
+MODEL=gemma2:27b
+
+echo "Generate an answer from the clipboard content..."
+wl-paste | ollama run ${MODEL} "provide a concise and comprehensive summary of the given text:" | glow -

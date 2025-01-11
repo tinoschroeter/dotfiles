@@ -1,0 +1,12 @@
+#!/bin/bash
+
+MODEL=codellama:13b
+MAX_LENGT=50
+GIT_DIFF=$(git diff | cat)
+
+if [ ${#GIT_DIFF} -ge 10 ]; then
+  echo "Generate a git commit message based on a git diff..."
+  echo $GIT_DIFF | ollama run ${MODEL} "Generate a concise git commit message written in present tense for the following code diff with the given specifications below: Commit message must be a maximum of ${MAX_LENGTH} characters. Exclude anything unnecessary such as translation. Your entire response will be passed directly into git commit." | glow -
+else
+  echo "The directory is not a Git repository or there is no diff"
+fi

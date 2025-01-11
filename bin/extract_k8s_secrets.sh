@@ -1,1 +1,0 @@
-../playbook/files/extract_k8s_secrets.sh
