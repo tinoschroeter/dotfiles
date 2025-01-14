@@ -373,10 +373,10 @@
     mode: "777"
   become: True
 
-- name: copy extract_k8s_secrets.sh to /usr/local/bin/
+- name: copy extract_k8s_secrets to /usr/local/bin/
   ansible.builtin.copy:
-    src: extract_k8s_secrets.sh
-    dest: /usr/local/bin/extract_k8s_secrets.sh
+    src: extract_k8s_secrets
+    dest: /usr/local/bin/extract_k8s_secrets
     mode: "777"
   become: True
 

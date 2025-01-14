@@ -33,25 +33,25 @@
     url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/coc-settings.json
     dest: ~/.vim/coc-settings.json
 
-- name: create terminator config file 
+- name: create terminator config file
   ansible.builtin.file:
     path: ~/.config/terminator
     state: directory
 
 - name: Copy terminator config
   ansible.builtin.get_url:
-    url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.config/terminator/config 
+    url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.config/terminator/config
     dest: ~/.config/terminator/config
 
 - name: Create a directory for k9s if it does not exist
   ansible.builtin.file:
     path: ~/.config/k9s
     state: directory
-    mode: '0755'
+    mode: "0755"
 
 - name: Copy k9s theme
   ansible.builtin.get_url:
-    url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.config/k9s/skin.yml 
+    url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/.config/k9s/skin.yml
     dest: ~/.config/k9s/skin.yml
 
 - name: Copy nvim config
@@ -59,24 +59,6 @@
     src: "{{inventory_dir}}/../.config/nvim/"
     dest: ~/.config/nvim/
     directory_mode:
-
-# moc ncurses based console audio player
-
-- name: Create a directory for moc if it does not exist
-  ansible.builtin.file:
-    path: ~/.moc
-    state: directory
-    mode: '0755'
-
-- name: create moc config file
-  ansible.builtin.get_url:
-    url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/moc/config
-    dest: ~/.moc/config
-
-- name: create moc keymap file
-  ansible.builtin.get_url:
-    url: https://raw.githubusercontent.com/tinoschroeter/dotfiles/master/moc/keymap
-    dest: ~/.moc/keymap
 
 - name: create .secrets file
   ansible.builtin.file:
