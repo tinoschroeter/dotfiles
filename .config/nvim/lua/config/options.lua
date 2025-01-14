@@ -13,7 +13,12 @@ vim.opt.cursorline = true -- Enable highlighting of the current line
 
 -- Centering with scrolloff (scroll offset)
 vim.opt.so = 99
+
 -- misc
 vim.opt.undofile = true
 vim.opt.tabstop = 2 -- Number of spaces tabs count for
 vim.opt.termguicolors = true -- True color support
+vim.opt.laststatus = 3
+
+-- Snacks animations
+vim.g.snacks_animate = true

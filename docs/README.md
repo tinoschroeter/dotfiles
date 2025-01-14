@@ -194,22 +194,22 @@ sync_history() {
 <details>
   <summary>software</summary>
   
-* Setup [roles/software/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/software/tasks/main.yaml)
-  * install docker
-  * Install [utility packages](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/software/tasks/main.yaml#L21-L49)
-  * Install aws cli
-  * Install skaffold
-  * Install kubens
-  * Install Minikube
-  * Install kubectl
-  * Install terraform
-  * Install helm3
-  * Install velero
-  * Install argocd
-  * Install argo
-  * Install nvm (Node.js Version Manager)
-  * Install Slack
-  * Instal help cheat.sh script
+- Setup [roles/software/tasks/main.yaml](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/software/tasks/main.yaml)
+  - install docker
+  - Install [utility packages](https://github.com/tinoschroeter/dotfiles/blob/master/playbook/roles/software/tasks/main.yaml#L21-L49)
+  - Install aws cli
+  - Install skaffold
+  - Install kubens
+  - Install Minikube
+  - Install kubectl
+  - Install terraform
+  - Install helm3
+  - Install velero
+  - Install argocd
+  - Install argo
+  - Install nvm (Node.js Version Manager)
+  - Install Slack
+  - Instal help cheat.sh script
 
 </details>
 
