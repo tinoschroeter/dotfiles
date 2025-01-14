@@ -5,7 +5,7 @@
 vim.opt.mouse = "" -- Disable mouse mode
 vim.opt.clipboard = "unnamedplus" -- Sync with system clipboard
 vim.opt.spelllang = { "en", "de" } -- enable spelling
-vim.opt.spell = false
+vim.opt.spell = true
 vim.opt.conceallevel = 3
 vim.opt.relativenumber = true
 vim.opt.number = true
