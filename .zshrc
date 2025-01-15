@@ -27,16 +27,19 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 source ~/.secrets
 
 # jump to folder
-
 function jump() {
-  cd $(z|tac|fzf --no-border --no-preview --layout=reverse --height=42% --no-scrollbar --color=16|awk '{ print $2}')
+  local dir=$(z|tac|fzf --no-border --no-preview --layout=reverse --height=42% --no-scrollbar --color=16|awk '{ print $2}')
+  if [ -n "$dir" ]; then
+    cd "$dir"
+  fi
 }
+
 alias j="jump"
 
 zle -N jump
 bindkey '^j' jump
 
-# Zsh-z is a command line tool that allows you to jump quickly to directories
+# zsh-z is a command line tool that allows you to jump quickly to directories
 setopt COMPLETE_ALIASES
 compdef _z ${ZSHZ_CMD:-${_Z_CMD:-z}}
 
@@ -149,7 +152,7 @@ fi
  fi
 
 # Compilation flags
-# expor tARCHFLAGS="-arch x86_64"
+# export tARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -180,13 +183,13 @@ docker run -d --rm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY --ne
 alias d_jasemAdmin='xhost local:root 
 docker run -d --rm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY --net host --name jasemadmin jasemadmin'
 
-# maarkdownlint
+# markdownlint
 alias d_mdl='docker run -it --rm -v $PWD:/md registry.gitlab.com/pipeline-components/markdownlint:latest mdl --style all --warnings /md'
 
-# powershell
+# Powershell
 alias d_powershell='docker run -it --rm --net host jess/powershell'
 
-# firefox
+# Firefox
 alias d_firefox='xhost local:root
 docker run -d --rm --net host -v /etc/hosts:/etc/hosts -v /tmp/.X11-unix:/tmp/.X11-unix -v /etc/localtime:/etc/localtime:ro \
   -v ~/containers/firefox/data:/root/.mozilla -e DISPLAY=unix$DISPLAY \
@@ -197,7 +200,7 @@ docker run -d --rm --net host -v /etc/hosts:/etc/hosts -v /tmp/.X11-unix:/tmp/.X
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
 
-# use xdg-opne to show files 
+# use xdg-open to show files 
 alias show="xdg-open"
 
 # Command line alias to start the browser-sync server
@@ -230,9 +233,6 @@ alias lg="lazygit"
 alias v="nvim"
 alias vim="nvim"
 
-# mocp
-alias m="mocp"
-
 # nodejs
 alias n="node"
 alias nv="node --verion"
@@ -264,7 +264,7 @@ _fzf_comprun() {
 # ssh tunnel k3s
 tunnel="ssh -p 22 -L 6443:localhost:6443 root@tino.sh"
 
-# folder 
+# folder
 alias wrk="cd ~/work/"
 alias pri="cd ~/privat/"
 alias doc="~/work/documentation/"
