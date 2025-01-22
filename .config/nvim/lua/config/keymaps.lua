@@ -13,3 +13,7 @@ end, { desc = "Terminal" })
 vim.keymap.set("n", "<leader>h", function()
   Snacks.terminal.open({ "tig", vim.api.nvim_buf_get_name(0) })
 end, { desc = "tig git tool" })
+
+vim.keymap.set("n", "<leader>j", function()
+  Snacks.terminal.open({ "jirator" })
+end, { desc = "Music" })
