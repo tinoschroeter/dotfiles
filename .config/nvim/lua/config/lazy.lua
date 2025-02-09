@@ -9,6 +9,8 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 vim.filetype.add({
   extension = {
     sls = "yaml",
+    jinja = "yaml",
+    ejs = "html",
   },
 })
 

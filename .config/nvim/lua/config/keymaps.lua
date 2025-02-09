@@ -16,4 +16,4 @@ end, { desc = "tig git tool" })
 
 vim.keymap.set("n", "<leader>j", function()
   Snacks.terminal.open({ "jirator" })
-end, { desc = "Music" })
+end, { desc = "jirator" })
