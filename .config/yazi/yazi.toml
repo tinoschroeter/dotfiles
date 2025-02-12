@@ -1,0 +1,7 @@
+[manager]
+show_hidden = false
+show_symlink = true
+
+[flavor]
+use = "tokyo-night"
+dark = "tokyo-night"

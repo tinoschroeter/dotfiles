@@ -15,8 +15,5 @@ vim.keymap.set("n", "<leader>h", function()
 end, { desc = "tig git tool" })
 
 vim.keymap.set("n", "<leader>j", function()
-  Snacks.terminal.open({ "jirator" })
-end, { desc = "jirator" })
-
-require("eve-online").setup()
-vim.keymap.set("n", "<leader>o", require("eve-online").show_status_picker, { desc = "Eve Online Status" })
+  Snacks.terminal.open({ "jirator", vim.api.nvim_buf_get_name(0) })
+end, { desc = "Jira" })

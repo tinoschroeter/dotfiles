@@ -18,6 +18,7 @@
   apt:
     state: present
     name:
+      - 7zip
       - aspell # interactive spell checker
       - aspell-de
       - aspell-en
@@ -30,10 +31,12 @@
       - dnsutils # is a flexible tool for interrogating DNS name servers.
       - dstat # versatile tool for generating system resource statistics
       - fd-find # Simple, fast and user-friendly alternative to find
+      - ffmpeg
       - firefox # browser
       - firefox-locale-de
       - gnupg # GNU Privacy Guard
       - htop # interactively monitor the system’s vital resources.
+      - imagemagick
       - iotop # iotop watches I/O usage information output by the Linux kernel
       - jq # jq is a lightweight and flexible command-line JSON processor.
       - lolcat # color output
@@ -44,6 +47,7 @@
       - nfs-common # nsf tools
       - nmap # network scanner
       - nodejs # V8 javascript runtime
+      - poppler-utils # for manipulating PDF files and converting them to other formats.
       - pwgen # Automatic Password generation
       - python-setuptools #
       - python3-dev #
@@ -61,6 +65,7 @@
       - tig # ncurses-based text-mode interface for Git
       - tree # recursively list or display the content of a directory in a tree-like format.
       - xclip
+      - zoxide # zoxide is a smarter cd command, inspired by z and autojump.
       - zsh # nice shell
   become: True
 
@@ -293,6 +298,25 @@
     dest: /usr/local
   become: True
 
+- name: download Yazi - Terminal File Manager
+  ansible.builtin.get_url:
+    url: https://github.com/sxyazi/yazi/releases/download/v25.2.11/yazi-x86_64-unknown-linux-musl.zip
+    dest: /usr/local/yazi-x86_64-unknown-linux-musl.zip
+    force: no
+  become: True
+
+- name: Extract yazi-x86_64-unknown-linux-musl.zip
+  ansible.builtin.unarchive:
+    src: /usr/local/yazi-x86_64-unknown-linux-musl.zip
+    dest: /usr/local
+  become: True
+
+- name: Tokyo Night Flavor for Yazi
+  ansible.builtin.git:
+    repo: "https://github.com/BennyOe/tokyo-night.yazi.git"
+    dest: ~/.config/yazi/flavors/tokyo-night.yazi
+    update: True
+
 - name: get and install argocd cli
   ansible.builtin.get_url:
     url: https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
@@ -344,7 +368,7 @@
   ansible.builtin.shell:
     cmd: ~/.fzf/install
 #  become: True
-#
+
 - name: install z
   ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/rupa/z/master/z.sh
