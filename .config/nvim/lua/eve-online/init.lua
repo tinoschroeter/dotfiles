@@ -150,7 +150,7 @@ function M.select_status(buf)
   local status = status_options[selected_line]
 
   if set_status(status) then
-    vim.notify(string.format("Status on '%s' set", status))
+    vim.notify(string.format("Status set to '%s'", status))
   else
     vim.notify("Error setting status", vim.log.levels.ERROR)
   end
