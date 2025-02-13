@@ -2,6 +2,5 @@
   pip:
     name: "{{ item }}"
   with_items:
-    - pipenv     # creates and manages a virtualenv for your projects.
-    - salt-lint  # checks Salt State files (SLS) for best practices and behavior that could potentially be improved.
-    - revChatGPT # Reverse Engineered ChatGPT by OpenAI. Extensible for chatbots etc. (https://github.com/acheong08/ChatGPT) 
+    - pipenv # creates and manages a virtualenv for your projects.
+    - salt-lint # checks Salt State files (SLS) for best practices and behavior that could potentially be improved.

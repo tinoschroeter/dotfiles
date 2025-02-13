@@ -71,9 +71,9 @@
 
 - name: Install checkssl
   ansible.builtin.get_url:
-    url: https://github.com/szazeski/checkssl/releases/download/v0.4.3/checkssl_0.4.3_Linux_x86_64.tar.gz
+    url: https://github.com/szazeski/checkssl/releases/download/v0.6.0/checkssl_Linux_x86_64.tar.gz
     dest: /usr/bin/checkssl
-    force: no
+    force: yes
   become: True
 
 - name: make checkssl executable
@@ -87,18 +87,6 @@
 - name: Install AWS CLI
   pip:
     name: awscli
-
-#- name: Install ppa:neovim
-#  ansible.builtin.shell:
-#    cmd: add-apt-repository ppa:neovim-ppa/unstable
-#  become: True
-#
-#- name: Install neovim
-#  apt:
-#    state: present
-#    name: neovim
-#    update_cache: True
-#  become: True
 
 - name: add google ppa
   ansible.builtin.shell:
@@ -145,19 +133,11 @@
     mode: "0755"
   become: True
 
-- name: Install kubectx
-  ansible.builtin.get_url:
-    url: https://raw.githubusercontent.com/ahmetb/kubectx/master/kubectx
-    dest: /usr/local/bin/kubectx
-    force: no
-  become: True
-
-- name: make kubectx executable
-  ansible.builtin.file:
-    path: /usr/local/bin/kubectx
-    owner: root
-    group: root
-    mode: "0755"
+- name: replace for kubectx
+  ansible.builtin.copy:
+    src: switch-kube-config.sh
+    dest: /usr/local/bin/switch-kube-config.sh
+    mode: "755"
   become: True
 
 - name: Install kubeval

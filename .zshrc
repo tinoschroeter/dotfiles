@@ -220,7 +220,7 @@ alias serve="browser-sync start --server --files ."
 alias kls="kubectl get all"
 alias k="kubectl"
 alias ks="kubens"
-alias kx="kubectx"
+alias kx="switch-kube-config.sh"
 alias ska="skaffold"
 alias kv="kubeval"
 alias m="minikube"
@@ -309,11 +309,6 @@ sync_history() {
     /usr/local/bin/sync-zsh-history.js ~/Dropbox/zsh_history
 }
 
-# export Multiple Kubernetes Clusters to KUBECONFIG
-if [[ -f /home/${USER}/.kube/config ]]; then
-  export KUBECONFIG="$(ls -m ~/.kube/custom-contexts/*|tr -d '\n'|sed 's/,/:/g'):/home/${USER}/.kube/config"
-fi
-
 # Source z
 if [[ -r /usr/local/bin/z.sh ]]; then
   source /usr/local/bin/z.sh
@@ -338,12 +333,6 @@ fi
 if [[ $#h -gt 0 ]]; then
   zstyle ':completion:*:ssh:*' hosts $h
   zstyle ':completion:*:slogin:*' hosts $h
-fi
-
-#
-if [[ -f /home/${USER}/.kube/config ]]; then
-  RPROMPT='%{$bg[$([[ "$(kubectl config current-context)" =~ "PRODUCTION" ]] && \
-  echo red || echo green)]$fg[white]%}[$ZSH_KUBECTL_PROMPT]%{$reset_color%}'
 fi
 
 export NVM_DIR="/home/${USER}/.nvm"
