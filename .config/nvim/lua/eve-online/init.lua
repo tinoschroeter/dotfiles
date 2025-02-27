@@ -1,4 +1,4 @@
-local M = {}
+local EVE = {}
 local api = vim.api
 local curl = require("plenary.curl")
 
@@ -7,7 +7,7 @@ local function get_env_or_default(var_name, default)
   return value ~= vim.NIL and value or default
 end
 
-M.config = {
+EVE.config = {
   api_url = get_env_or_default("EVE_ONLINE_API_URL", ""),
   api_user = get_env_or_default("EVE_ONLINE_API_USER", ""),
   api_key = get_env_or_default("EVE_ONLINE_API_KEY", ""),
@@ -42,7 +42,7 @@ local function create_window()
     row = row,
     col = col,
     border = "rounded",
-    title = " Online Status ",
+    title = " EVE Online Status ",
     title_pos = "center",
   }
 
@@ -56,19 +56,19 @@ end
 -- Validate configuration
 local function validate_config()
   local missing = {}
-  if M.config.api_url == "" then
+  if EVE.config.api_url == "" then
     table.insert(missing, "api_url")
   end
-  if M.config.api_user == "" then
+  if EVE.config.api_user == "" then
     table.insert(missing, "api_user")
   end
-  if M.config.api_key == "" then
+  if EVE.config.api_key == "" then
     table.insert(missing, "api_key")
   end
 
   if #missing > 0 then
     local msg = string.format(
-      "Missing configuration: %s. Set the environment variables AVAILABILITY_API_URL, AVAILABILITY_API_USER, AVAILABILITY_API_KEY oder konfiguriere sie in der setup() Funktion.",
+      "EVEissing configuration: %s. Set the environment variables AVAILABILITY_API_URL, AVAILABILITY_API_USER, AVAILABILITY_API_KEY oder konfiguriere sie in der setup() Funktion.",
       table.concat(missing, ", ")
     )
     vim.notify(msg, vim.log.levels.ERROR)
@@ -83,10 +83,10 @@ local function get_status()
     return nil
   end
 
-  local url = string.format("%s/availability/status/%s", M.config.api_url, M.config.api_user)
+  local url = string.format("%s/availability/status/%s", EVE.config.api_url, EVE.config.api_user)
   local response = curl.get(url, {
     headers = {
-      Authorization = string.format("Bearer %s", M.config.api_key),
+      Authorization = string.format("Bearer %s", EVE.config.api_key),
     },
   })
 
@@ -102,12 +102,12 @@ local function set_status(status)
     return false
   end
 
-  local url = string.format("%s/availability/status/%s", M.config.api_url, M.config.api_user)
+  local url = string.format("%s/availability/status/%s", EVE.config.api_url, EVE.config.api_user)
   local response = curl.post(url, {
     body = vim.fn.json_encode({ status = status }),
     headers = {
       content_type = "application/json",
-      Authorization = string.format("Bearer %s", M.config.api_key),
+      Authorization = string.format("Bearer %s", EVE.config.api_key),
     },
   })
 
@@ -115,7 +115,7 @@ local function set_status(status)
 end
 
 -- Show status list
-function M.show_status_picker()
+function EVE.show_status_picker()
   local buf, win = create_window()
 
   -- Fill buffer with status options
@@ -145,7 +145,7 @@ function M.show_status_picker()
 end
 
 -- Select and set status
-function M.select_status(buf)
+function EVE.select_status(buf)
   local selected_line = api.nvim_win_get_cursor(0)[1]
   local status = status_options[selected_line]
 
@@ -159,9 +159,9 @@ function M.select_status(buf)
 end
 
 -- Setup Funktion
-function M.setup(opts)
-  M.config = vim.tbl_deep_extend("force", M.config, opts or {})
+function EVE.setup(opts)
+  EVE.config = vim.tbl_deep_extend("force", EVE.config, opts or {})
   validate_config()
 end
 
-return M
+return EVE

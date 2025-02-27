@@ -1,12 +1,41 @@
-#!/bin/bash
+#!/usr/bin/env node
 
-MODEL=codellama:13b
-MAX_LENGT=50
-GIT_DIFF=$(git diff | cat)
+const { exec } = require("child_process");
+const util = require("util");
+const execAsync = util.promisify(exec);
 
-if [ ${#GIT_DIFF} -ge 10 ]; then
-  echo "Generate a git commit message based on a git diff..."
-  echo $GIT_DIFF | ollama run ${MODEL} "Generate a concise git commit message written in present tense for the following code diff with the given specifications below: Commit message must be a maximum of ${MAX_LENGT} characters. Exclude anything unnecessary such as translation. Your entire response will be passed directly into git commit." | glow -
-else
-  echo "The directory is not a Git repository or there is no diff"
-fi
+const API_KEY = process.env.OPENAI_API_KEY;
+const API_URL = "https://api.openai.com/v1/chat/completions";
+
+execAsync("git diff")
+  .then((diff) => {
+    fetch(API_URL, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "gpt-4",
+        messages: [
+          {
+            role: "system",
+            content:
+              "Generate a concise git commit message written in present tense for the following code diff with the given specifications below: Exclude anything unnecessary such as translation. Your entire response will be passed directly into git commit.",
+          },
+          { role: "user", content: diff.stdout },
+        ],
+        temperature: 0.7,
+      }),
+    })
+      .then((result) => result.json())
+      .then((data) => {
+        console.log(data.choices[0].message.content);
+      });
+  })
+  .catch((err) => {
+    console.log(
+      "The directory is not a Git repository or there is no diff ",
+      err,
+    );
+  });

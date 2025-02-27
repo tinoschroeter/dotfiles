@@ -218,12 +218,17 @@ alias serve="browser-sync start --server --files ."
 
 # kubectl aliase
 alias kls="kubectl get all"
-alias k="kubectl"
 alias ks="kubens"
 alias kx="switch-kube-config.sh"
 alias ska="skaffold"
 alias kv="kubeval"
 alias m="minikube"
+
+#autoload -Uz compinit
+compinit
+alias k=kubectl
+source <(kubectl completion zsh)
+compdef k="kubectl"
 
 # Terraform
 alias t="terraform"
@@ -278,7 +283,7 @@ tunnel="ssh -p 22 -L 6443:localhost:6443 root@tino.sh"
 alias wrk="cd ~/work/"
 alias pri="cd ~/privat/"
 alias doc="~/work/documentation/"
-alias notes="cd ~/Dropbox/dev-notebook && ls"
+alias notes="cd ~/Dropbox/dev-notebook && vim notes.md"
 alias todo="cd ~/Dropbox/dev-notebook && vim todo.md"
 
 update_home() {
@@ -313,9 +318,6 @@ sync_history() {
 if [[ -r /usr/local/bin/z.sh ]]; then
   source /usr/local/bin/z.sh
 fi
-# Auto completion
-source <(kubectl completion zsh)
-complete -F __start_kubectl k
 
 # Velero completion
 source <(velero completion zsh)
