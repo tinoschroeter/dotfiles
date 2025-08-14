@@ -130,3 +130,7 @@ apache2
 tomcat85
 nfs
 kubeseal
+Arduino
+mongoDB
+JWT
+MongoDB
